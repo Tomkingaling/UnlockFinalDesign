@@ -420,10 +420,7 @@
 <section class="sec" id="returns" style="background:var(--u-bg)">
   <div class="wrap">
     <p class="eyebrow">Returns &amp; exit</p>
-    <h2 class="h2" style="max-width:28ch;margin:0 0 44px">Validated economics, in a category acquirers already buy.</h2>
-    <div class="grid2" id="econ" style="margin-bottom:24px"></div>
-    <p class="fineprint" style="margin:0 0 48px">Conversion funnel, tested not projected (Q1 2026 pilot):
-      ≈ one subscriber per ~100 AI-outreach dials, 85% demo attendance, 50% demo-to-subscriber.</p>
+    <h2 class="h2" style="max-width:28ch;margin:0 0 44px">A category acquirers already buy into.</h2>
 
     <div class="grid2" style="align-items:start;gap:32px">
       <div>
@@ -457,21 +454,6 @@
   </div>
 </section>
 
-<!-- RISKS -->
-<section class="sec" style="background:var(--u-bg-deep)">
-  <div class="wrap">
-    <p class="eyebrow">What could go wrong</p>
-    <h2 class="h2" style="margin:0 0 16px">Five risks, named, with what we've done about them.</h2>
-    <p class="lede" style="margin:0 0 44px">Pre-empting due-diligence scrutiny is more defensible than an unblemished pitch.</p>
-    <div class="tblwrap">
-      <table class="tbl">
-        <thead><tr><th style="width:28%">Risk</th><th style="width:12%">Severity</th><th>Mitigation</th></tr></thead>
-        <tbody id="risks"></tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
 <!-- TEAM -->
 <section class="sec" style="background:var(--u-bg)">
   <div class="wrap">
@@ -498,15 +480,6 @@
         <a class="btn p" href="#reserve" style="margin-top:24px">Discuss your allocation <i data-lucide="arrow-right"></i></a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec" style="background:var(--u-bg)">
-  <div class="wrap narrow">
-    <p class="eyebrow">Questions investors ask</p>
-    <h2 class="h2" style="margin:0 0 40px">The reasonable objections, answered.</h2>
-    <div class="faq" id="faq"></div>
   </div>
 </section>
 
@@ -616,13 +589,6 @@
     ['UK assets under management','Investment Association','£10T+'],
   ].map(s=>`<tr><td><b>${s[0]}</b></td><td>${s[1]}</td><td>${s[2]}</td></tr>`).join('');
 
-  document.getElementById('econ').innerHTML=[
-    ['40+','customer interviews; desktop app operational.'],
-    ['70%','of those surveyed would pay for the platform.'],
-    ['10–15:1','LTV:CAC (CAC ~£200, LTV ~£3,000–3,250).'],
-    ['80%+','subscription gross margin; ~3-month payback.'],
-  ].map(e=>`<div class="card bigstat"><div class="v">${e[0]}</div><p style="font-size:14px;color:var(--u-text-muted);margin-top:12px;line-height:1.5">${e[1]}</p></div>`).join('');
-
   document.getElementById('revenue').innerHTML=[
     ['Year 1 (Apr 26–27)','£44K'],['Year 2','£839K'],['Year 3','£2.03M'],['Year 4','£4.94M'],['Year 5','£8.78M'],['5-year total','£16.3M'],
   ].map((r,i,a)=>`<tr><td${i===a.length-1?' style="color:#fff;border:none"':''}>${r[0]}</td><td${i===a.length-1?' style="border:none"':''}>${r[1]}</td></tr>`).join('');
@@ -633,14 +599,6 @@
     ['Intelliflo (IFA SaaS)','Carlyle (2025)','$135–200M*'],
     ['JHC Systems','FNZ (2019)','undisclosed'],
   ].map(c=>`<tr><td><b>${c[0]}</b></td><td>${c[1]}</td><td>${c[2]}</td></tr>`).join('');
-
-  document.getElementById('risks').innerHTML=[
-    ['Subscriber acquisition at scale','h','High','Three sequential pilot campaigns Q3–Q4 2026 prove rates before paid expansion; founding-investor referral loop = zero-CAC HNW relationships.'],
-    ['Key-person concentration','h','High','Round funds key hires from Q3 2026; documented playbooks per role; Tony Vine-Lott seat formalised.'],
-    ['8× ARR multiple defence','m','Med','Citywire is the only true UK subscription comp (4–6×); stress-tested at lower multiples.'],
-    ['Subscriber churn','l','Low','Quarterly white-glove touch in the £299 tier; the Sandbox feedback loop compounds product value.'],
-    ['Regulatory perimeter','l','Low','Former-TISA-DG advisory; perimeter audited each release; financial-promotions review before distribution.'],
-  ].map(r=>`<tr><td><b>${r[0]}</b></td><td><span class="sev ${r[1]}">${r[2]}</span></td><td>${r[3]}</td></tr>`).join('');
 
   document.getElementById('team').innerHTML=[
     ['Tom King, Founder &amp; CEO','15 years building investor-introduction and capital-facilitation technology; £250M+ capital facilitated.'],
@@ -654,13 +612,6 @@
     ['Invest now / later','First £250k SEIS (50%) · balance EIS (30%)'],['Anti-dilution','Until the Growth Capital round'],
     ['Illustrative 4-yr IRR','~78% (plan case · not a forecast)'],['Round closes','April 2027'],
   ].map(t=>`<tr><td>${t[0]}</td><td>${t[1]}</td></tr>`).join('');
-
-  document.getElementById('faq').innerHTML=[
-    ['Isn\u2019t this just another portfolio tracker?','Trackers solved the data problem and stopped there. Unlock adds lot-level cost basis, a forward-looking UK tax engine (EIS, SEIS, CGT, IHT, pensions) and a conflict-free model. The intelligence, not the balances, is the product.'],
-    ['Why can\u2019t an incumbent just copy it?','Two barriers. First, the revenue conflict: copying "earns from subscriptions, not from what you hold" means breaking their own model. Second, the UK tax engine, which takes 18–24 months minimum to replicate correctly, while the data flywheel compounds for the first mover.'],
-    ['What if EIS rules change?','EIS/SEIS is extended to 2035 and advance assurance is confirmed for this round. But reliefs always depend on your circumstances and on Unlock keeping its qualifying status, and rules can change, which is why this is information, not tax advice.'],
-    ['How would I ever get my money back?','This is illiquid with no guaranteed exit. Routes are a secondary sale, a strategic acquisition, or buyback once profitable, none guaranteed. The honest answer is that you may not get it back at all; size the position accordingly.'],
-  ].map(q=>`<details class="qa"><summary>${q[0]}<span class="pm"></span></summary><p class="a">${q[1]}</p></details>`).join('');
 
   // calculator
   const MULTS=[['Fails',0],['Holds · 1×',1],['Works · 3×',3],['Strong · 6×',6]];
