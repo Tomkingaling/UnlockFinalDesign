@@ -11,7 +11,7 @@ const REG = [
 ];
 
 const PROBLEMS = [
-  ['01', 'No consolidated view', 'The average HNW investor holds assets across 4.7 platforms. No single view exists — not from their IFA, not from their accountant, not from any one platform.'],
+  ['01', 'No consolidated view', 'The average HNW investor holds assets across multiple platforms, wrappers and structures. No single view exists — not from their IFA, not from their accountant, not from any one platform.'],
   ['02', 'No independent intelligence', "Every tool you use earns from what you hold through it. Your IFA can't legally advise on individual EIS companies. The gap sits exactly where the most tax-efficient decisions are."],
   ['03', 'Analysis locked away', 'Institutions have models, dashboards and analysts. Private investors with comparable wealth have a spreadsheet and gut instinct. Until now.'],
 ];
@@ -23,14 +23,14 @@ const SOLUTION = [
 ];
 
 const TOOLS = [
-  ['▦', 'Asset Register', 'Every asset, every wrapper. Lot-level cost basis, IHT status and BPR clocks, automatic.'],
-  ['◐', 'Safety Lights', 'Concentration, liquidity runway and cash. Red / amber / green, with the lever to pull.'],
-  ['£', 'IHT Calculator', 'Your real liability, updated whenever the register changes. What\'s exempt, what\'s in its BPR window.'],
-  ['◇', 'Portfolio Simulator', 'Ten named scenarios. Your beliefs weight each one. See the downside before you act.'],
-  ['↘', 'Decumulation Planner', 'Which wrapper to draw first, how long the money lasts, the estate at the end.'],
-  ['⊞', 'EIS / SEIS Tracker', 'Relief claimed, qualifying periods and IHT status across every vintage you hold.'],
-  ['✦', 'AI Assistant', 'Ask anything about your numbers. Intelligence only — signposts to an adviser for regulated decisions.'],
-  ['▣', 'Reports', 'Portfolio, decumulation and tax PDFs in one click — generated live, always current.'],
+  ['▦', 'Asset Register', 'Every asset, every wrapper. Lot-level cost basis, IHT status and BPR clocks, automatic.', 'live'],
+  ['◐', 'Safety Lights', 'Concentration, liquidity runway and cash. Red / amber / green, with the lever to pull.', 'dev'],
+  ['£', 'IHT Calculator', 'Your real liability, updated whenever the register changes. What\'s exempt, what\'s in its BPR window.', 'live'],
+  ['◇', 'Portfolio Simulator', 'Ten named scenarios. Your beliefs weight each one. See the downside before you act.', 'dev'],
+  ['↘', 'Decumulation Planner', 'Which wrapper to draw first, how long the money lasts, the estate at the end.', 'live'],
+  ['⊞', 'EIS / SEIS Tracker', 'Relief claimed, qualifying periods and IHT status across every vintage you hold.', 'dev'],
+  ['✦', 'AI Assistant', 'Ask anything about your numbers. Intelligence only — signposts to an adviser for regulated decisions.', 'dev'],
+  ['▣', 'Reports', 'Portfolio, decumulation and tax PDFs in one click — generated live, always current.', 'dev'],
 ];
 
 const STEPS = [
@@ -52,10 +52,9 @@ const ABOUT = [
 ];
 
 const TEAM = [
-  ['TK', 'Tom King — Founder & CEO', '15 years building investor-introduction and capital-facilitation technology; £250M+ capital facilitated.'],
+  ['TK', 'Tom King — Founder & CEO', '15 years building investor-introduction and capital-facilitation technology; facilitated significant investor capital over that period.'],
   ['WS', 'Werner Snyman — Head of Product', '19 years in senior product leadership at Nedbank; wealth-platform architecture across four markets.'],
   ['WC', 'William Corke — Head of Service & Compliance', 'Multi-million-pound delivery for FTSE 500 clients.'],
-  ['TV', 'Tony Vine-Lott — Commercial Strategy Adviser', 'Founder of Barclays Stockbrokers. Former Director General of TISA. Founding investor.'],
 ];
 
 export default function PlatformPage() {
@@ -117,7 +116,7 @@ export default function PlatformPage() {
             </div>
             <p className={styles.conflict}>
               Conflict-free by design — Unlock earns from subscriptions, not from what you hold.
-              Public access opens September 2026.
+              Public access opens October 2026.
             </p>
           </div>
 
@@ -217,7 +216,7 @@ export default function PlatformPage() {
       <section className={styles.band} id="demo">
         <div className={styles.wrap} style={{ maxWidth: '640px' }}>
           <h2>See it with a real portfolio in 20 minutes.</h2>
-          <p>The real tools, illustrative data, no commitment.</p>
+          <p>Core tools live, others in active development. Illustrative data, no commitment.</p>
           <a className={`${styles.btn} ${styles.btnP}`} href="https://calendly.com/tom-unlockdd/unlock-demo">
             Book a demo <span>→</span>
           </a>
@@ -237,7 +236,7 @@ export default function PlatformPage() {
             {TOOLS.map((t, i) => (
               <div key={i} className={styles.tool}>
                 <div className={styles.toolGly}>{t[0]}</div>
-                <h3>{t[1]}</h3>
+                <h3>{t[1]} <span style={{ fontSize: '10px', letterSpacing: '.12em', textTransform: 'uppercase', fontWeight: 500, color: t[3] === 'live' ? 'var(--u-green)' : 'var(--u-text-faint)', marginLeft: '6px' }}>{t[3] === 'live' ? 'Live' : 'In development'}</span></h3>
                 <p>{t[2]}</p>
               </div>
             ))}
