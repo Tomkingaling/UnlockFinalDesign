@@ -559,7 +559,7 @@
             </div>
           </div>
           <div class="outputs">
-            <div class="out cost"><p class="ok">Effective cost (after 50% SEIS relief)</p><div class="ov" id="eisCost">£20,000</div></div>
+            <div class="out cost"><p class="ok" id="eisCostLabel">Effective cost (after 50% SEIS relief)</p><div class="ov" id="eisCost">£20,000</div></div>
             <div class="out loss"><p class="ok">If it failed, net loss</p><div class="ov" id="eisLoss">£11,000</div></div>
             <div class="out exit"><p class="ok">Value at exit (CGT-free)</p><div class="ov" id="eisExit">£120,000</div></div>
           </div>
@@ -874,16 +874,22 @@ function initEis(){
   if(!range) return;
   const gbp=n=>'£'+Math.round(n).toLocaleString('en-GB');
   let mult=3;
+  const SEIS_CAP=200000;
   function calc(){
     const ticket=+range.value;
-    const effectiveCost=ticket*0.50;
-    const netLoss=effectiveCost*0.55;
+    const isSEIS=ticket<=SEIS_CAP;
+    const reliefRate=isSEIS?0.50:0.30;
+    const lossReliefRate=isSEIS?0.55:0.45; // net loss = effectiveCost × (1 − marginal rate)
+    const effectiveCost=ticket*(1-reliefRate);
+    const netLoss=effectiveCost*lossReliefRate;
     const failFloor=ticket-netLoss;
     const exit=mult===0?failFloor:ticket*mult;
     document.getElementById('eisTicket').textContent=gbp(ticket);
     document.getElementById('eisCost').textContent=gbp(effectiveCost);
     document.getElementById('eisLoss').textContent=gbp(netLoss);
     document.getElementById('eisExit').textContent=gbp(exit);
+    document.getElementById('eisCostLabel').textContent=
+      isSEIS?'Effective cost (after 50% SEIS relief)':'Effective cost (after 30% EIS relief)';
   }
   range.addEventListener('input',calc);
   toggle.addEventListener('click',e=>{
