@@ -55,7 +55,7 @@ const TEAM = [
   ['TK', 'Tom King — Founder & CEO', '15 years building investor-introduction and capital-facilitation technology; £250M+ capital facilitated.'],
   ['WS', 'Werner Snyman — Head of Product', '19 years in senior product leadership at Nedbank; wealth-platform architecture across four markets.'],
   ['WC', 'William Corke — Head of Service & Compliance', 'Multi-million-pound delivery for FTSE 500 clients.'],
-  ['TV', 'Tony Vine-Lott — Commercial Strategy Adviser', 'Founder of Barclays Stockbrokers; former Director General of TISA. Invested first.'],
+  ['TV', 'Tony Vine-Lott — Commercial Strategy Adviser', 'Founder of Barclays Stockbrokers. Former Director General of TISA. Founding investor.'],
 ];
 
 export default function PlatformPage() {
@@ -218,7 +218,7 @@ export default function PlatformPage() {
         <div className={styles.wrap} style={{ maxWidth: '640px' }}>
           <h2>See it with a real portfolio in 20 minutes.</h2>
           <p>The real tools, illustrative data, no commitment.</p>
-          <a className={`${styles.btn} ${styles.btnP}`} href="mailto:tom@unlockdd.com?subject=Unlock%20platform%20demo">
+          <a className={`${styles.btn} ${styles.btnP}`} href="https://calendly.com/tom-unlockdd/unlock-demo">
             Book a demo <span>→</span>
           </a>
         </div>
