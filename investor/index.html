@@ -29,7 +29,14 @@
     .opt input[type=radio] { margin-top: 3px; flex: none; accent-color: var(--u-green); }
     .opt label { cursor: pointer; }
     .opt .t { font-size: var(--u-type-body); color: #fff; font-weight: var(--u-weight-regular); display: block; margin-bottom: 4px; }
-    .opt .d { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; }
+    .opt .sum { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; }
+    .opt details { margin-top: 8px; }
+    .opt summary { font-size: 11.5px; color: var(--u-text-faint); cursor: pointer; list-style: none; text-transform: uppercase; letter-spacing: .08em; }
+    .opt summary::-webkit-details-marker { display: none; }
+    .opt summary:hover { color: var(--u-text-muted); }
+    .opt summary::before { content: 'Show full declaration ▾ '; }
+    .opt details[open] summary::before { content: 'Hide full declaration ▴ '; }
+    .opt .d { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; margin-top: 8px; }
     .opt .d em { color: var(--u-amber); font-style: normal; }
     .ack { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
     .ack input { margin-top: 3px; flex: none; accent-color: var(--u-green); }
@@ -60,21 +67,30 @@
         <input type="radio" name="ctype" id="t-hnw" value="hnw">
         <label for="t-hnw">
           <span class="t">Certified High Net Worth Individual <span style="font-size:var(--u-type-body-sm);color:var(--u-text-faint)">(Article 48)</span></span>
+          <span class="sum">£100k+ annual income, or £250k+ net assets (excluding your home and pension).</span>
+          <details><summary></summary>
           <span class="d">I make this statement so that I can receive financial promotions which are exempt from the restriction on financial promotion in section 21 of the Financial Services and Markets Act 2000. I declare that I am a certified high net worth individual for the purposes of the exemption. I understand that this means: (a) I can receive financial promotions that may relate to investment activity that is not regulated by the Financial Conduct Authority; (b) I may expose myself to a significant risk of losing all of the money or other property invested. I am a certified high net worth individual because at least one of the following applies: (i) I had, during the financial year immediately preceding the date below, an annual income to the value of £100,000 or more; (ii) I held, throughout the financial year immediately preceding the date below, net assets to the value of £250,000 or more. Net assets for these purposes do not include: (a) the property which is my primary residence or any loan secured on that residence; (b) any rights of mine under a qualifying contract of insurance within the meaning of the Financial Services and Markets Act 2000 (Regulated Activities) Order 2001; or (c) any benefits (in the form of pensions or otherwise) which are payable on the termination of my service or on my death or retirement and to which I am (or my dependants are) or may be entitled.</span>
+          </details>
         </label>
       </div>
       <div class="opt">
         <input type="radio" name="ctype" id="t-soph" value="sophisticated">
         <label for="t-soph">
           <span class="t">Certified Sophisticated Investor <span style="font-size:var(--u-type-body-sm);color:var(--u-text-faint)">(Article 50)</span></span>
+          <span class="sum">You hold a certificate from an authorised person confirming you understand investment risk.</span>
+          <details><summary></summary>
           <span class="d">I make this statement so that I can receive financial promotions which are exempt from the restriction on financial promotion in section 21 of the Financial Services and Markets Act 2000. I declare that I am a certified sophisticated investor for the purposes of the exemption. I understand that this means: (a) I can receive financial promotions that may relate to investment activity that is not regulated by the Financial Conduct Authority; (b) I may expose myself to a significant risk of losing all of the money or other property invested. I have been certified by an authorised person as being sufficiently knowledgeable to understand the risks associated with the type of investment to which this financial promotion relates.</span>
+          </details>
         </label>
       </div>
       <div class="opt">
         <input type="radio" name="ctype" id="t-self" value="self-sophisticated">
         <label for="t-self">
           <span class="t">Self-Certified Sophisticated Investor <span style="font-size:var(--u-type-body-sm);color:var(--u-text-faint)">(Article 50A)</span></span>
+          <span class="sum">Business angel network member, private-equity/SME-finance professional, or director of a £1m+ turnover company.</span>
+          <details><summary></summary>
           <span class="d">I make this statement so that I can receive financial promotions which are exempt from the restriction on financial promotion in section 21 of the Financial Services and Markets Act 2000. I declare that I am a self-certified sophisticated investor for the purposes of the exemption. I understand that this means: (a) I can receive financial promotions that may relate to investment activity that is not regulated by the Financial Conduct Authority; (b) I may expose myself to a significant risk of losing all of the money or other property invested. I am a self-certified sophisticated investor because at least one of the following applies: (i) I am a member of a network or syndicate of business angels and have been so for at least the last six months prior to the date below; (ii) I am working, or have worked in the two years prior to the date below, in a professional capacity in the private equity sector or in the provision of finance for small and medium enterprises; (iii) I am currently, or have been in the two years prior to the date below, a director of a company with an annual turnover of at least £1 million.</span>
+          </details>
         </label>
       </div>
     </div>
