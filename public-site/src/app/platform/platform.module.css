@@ -144,6 +144,35 @@
 }
 .card:hover { background: rgba(255,255,255,.05); border-color: var(--u-green-line); }
 .cardIx { font-family: var(--u-font-serif); font-size: 18px; color: var(--u-green); margin: 0 0 16px; }
+
+/* step cards — ghost numbers + icons */
+.stepCard { position: relative; overflow: hidden; }
+.ghostNum {
+  position: absolute; top: -14px; left: -6px;
+  font-size: 90px; font-weight: 300; color: #00bb77; opacity: .08;
+  line-height: 1; pointer-events: none; z-index: 0; user-select: none;
+}
+.stepIcon {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; background: var(--u-green-fill-strong);
+  color: var(--u-green); margin-bottom: 16px;
+}
+.stepIcon svg { width: 18px; height: 18px; }
+.stepCard h3, .stepCard p { position: relative; z-index: 1; }
+
+/* GridPulse */
+.gridPulse {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 3px;
+  pointer-events: none;
+  z-index: 0;
+}
+.gridCell { border-radius: 0; }
+.gridCellActive { background: #00bb77; opacity: .06; border-radius: 0; }
 .card h3 { font-size: 18px; font-weight: var(--u-weight-regular); color: #fff; margin: 0 0 10px; }
 .card p { font-size: 14px; line-height: var(--u-leading-body); color: var(--u-text-muted); margin: 0; }
 .ic {

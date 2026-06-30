@@ -1,6 +1,27 @@
 import Link from 'next/link';
-import { Check } from 'lucide-react';
+import { Check, User, Layers, Search } from 'lucide-react';
 import styles from './platform.module.css';
+
+// Sparse "default" pattern: [col, row] pairs out of a 12×8 grid
+const PULSE_CELLS = new Set([
+  '0,2','1,5','2,1','3,6','4,3','5,0','6,4','7,2','8,6','9,1','10,4','11,3',
+  '1,0','3,3','5,5','7,7','9,5','11,1','0,6','2,4','4,7','6,0','8,2','10,6',
+  '2,7','4,1','6,3','8,5','10,0','1,3','3,5','5,7',
+]);
+
+function GridPulse() {
+  const cells = [];
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 12; c++) {
+      cells.push(
+        <div key={`${c},${r}`} className={PULSE_CELLS.has(`${c},${r}`) ? styles.gridCellActive : styles.gridCell} />
+      );
+    }
+  }
+  return <div className={styles.gridPulse} aria-hidden="true">{cells}</div>;
+}
+
+const STEP_ICONS = [User, Layers, Search];
 
 const REG = [
   { name: 'Global equity tracker', sub: 'lot basis £6.90/unit', wrapper: 'HL ISA', value: '£284,100', status: 'CGT-free', green: true },
@@ -225,8 +246,9 @@ export default function PlatformPage() {
       </section>
 
       {/* TOOLS */}
-      <section className={styles.sec} id="tools" style={{ background: 'var(--u-bg)' }}>
-        <div className={styles.wrap}>
+      <section className={styles.sec} id="tools" style={{ background: 'var(--u-bg)', overflow: 'hidden' }}>
+        <GridPulse />
+        <div className={styles.wrap} style={{ position: 'relative', zIndex: 1 }}>
           <p className={styles.eyebrow}>The platform</p>
           <h2 className={styles.h2} style={{ margin: '0 0 16px' }}>Eight tools. One source of truth.</h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '60ch', margin: '0 0 52px', lineHeight: '1.6' }}>
@@ -304,13 +326,17 @@ export default function PlatformPage() {
             You&apos;re onboarded before you&apos;ve added a single asset.
           </p>
           <div className={styles.grid3}>
-            {STEPS.map((s, i) => (
-              <div key={i} className={styles.card}>
-                <p className={styles.cardIx}>{s[0]}</p>
-                <h3>{s[1]}</h3>
-                <p>{s[2]}</p>
-              </div>
-            ))}
+            {STEPS.map((s, i) => {
+              const Icon = STEP_ICONS[i];
+              return (
+                <div key={i} className={`${styles.card} ${styles.stepCard}`}>
+                  <span className={styles.ghostNum}>{s[0]}</span>
+                  <div className={styles.stepIcon}><Icon /></div>
+                  <h3>{s[1]}</h3>
+                  <p>{s[2]}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
