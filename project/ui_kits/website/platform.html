@@ -1,0 +1,396 @@
+<!-- @dsCard group="Website" viewport="1280x900" subtitle="Zone 1 platform marketing — hero dashboard, problems, 8 tools, asset register, pricing, team" name="Platform" -->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Unlock — The platform</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--u-bg-deepest);color:var(--u-text);font-family:var(--u-font-body);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{margin:0;font-weight:var(--u-weight-light)}
+  p{margin:0}
+  .wrap{max-width:var(--u-container);margin:0 auto;padding:0 var(--u-gutter)}
+  .eyebrow{color:var(--u-green);font-size:var(--u-type-label);font-weight:var(--u-weight-medium);letter-spacing:.25em;text-transform:uppercase;margin:0 0 18px}
+  .h2{font-size:var(--u-type-section);font-weight:var(--u-weight-light);line-height:var(--u-leading-section);letter-spacing:var(--u-tracking-section)}
+  .muted{color:var(--u-text-muted)}
+  .sec{padding:var(--u-space-section) var(--u-gutter);position:relative}
+
+  /* proto + nav */
+  .proto{background:var(--u-bg-deep);border-bottom:1px solid var(--u-hairline);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--u-text-faint);text-align:center;padding:9px 16px}
+  .proto b{color:var(--u-green);font-weight:var(--u-weight-medium)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(26,26,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--u-hairline)}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:var(--u-nav-height);max-width:var(--u-container);margin:0 auto;padding:0 var(--u-gutter)}
+  .navleft{display:flex;align-items:center;gap:44px}
+  .brand{display:inline-flex;align-items:baseline}
+  .brand img{height:20px;width:auto;display:block}
+  .brand .dot{color:var(--u-green);font-size:21px;line-height:0;transform:translateX(-11px)}
+  .navlinks{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+  .navlinks li{font-size:13.5px;color:var(--u-text-muted)}
+  .navlinks li.cur{color:var(--u-green)}
+  .navlinks li:hover{color:var(--u-text)}
+  .nav-cta{font-size:13px;color:var(--u-on-green);background:var(--u-green);padding:10px 20px;text-transform:uppercase;font-weight:var(--u-weight-button);letter-spacing:var(--u-tracking-button)}
+  .nav-cta:hover{box-shadow:var(--u-shadow-cta)}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:var(--u-bg-deep);padding:88px var(--u-gutter) 64px}
+  .glow{position:absolute;top:-180px;right:-120px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(0,138,85,.14),transparent 66%);pointer-events:none}
+  .heroin{position:relative;z-index:2;max-width:var(--u-container);margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px}
+  .hero h1{font-size:var(--u-type-display);line-height:var(--u-leading-tight);letter-spacing:var(--u-tracking-display);max-width:18ch}
+  .hero .lead{font-size:var(--u-type-lead);color:var(--u-text-muted);line-height:var(--u-leading-body);max-width:62ch;margin:26px 0 0}
+  .hero .lead b{color:#fff;font-weight:var(--u-weight-regular)}
+  .ctarow{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;align-items:center}
+  .btn{font-family:inherit;font-size:13px;cursor:pointer;border:none;padding:14px 26px;text-transform:uppercase;font-weight:var(--u-weight-button);letter-spacing:var(--u-tracking-button);display:inline-flex;align-items:center;gap:9px}
+  .btn.p{background:var(--u-green);color:var(--u-on-green)}
+  .btn.p:hover{box-shadow:var(--u-shadow-cta)}
+  .btn.o{background:transparent;color:var(--u-text-muted);border:1px solid rgba(255,255,255,.2)}
+  .btn.o:hover{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn svg{width:15px;height:15px}
+  .conflict{font-size:12.5px;color:var(--u-text-faint);margin-top:22px;max-width:60ch;line-height:1.6}
+
+  /* dashboard mock */
+  .dash{border:1px solid var(--u-border-strong);border-radius:var(--u-radius-l);background:var(--u-bg);overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+  .dash .bar{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--u-border-strong);background:var(--u-bg-deep)}
+  .dot3{display:flex;gap:7px}.dot3 i{width:11px;height:11px;border-radius:50%;background:var(--u-surface)}
+  .dash .tabs{display:flex;gap:4px;margin-left:6px}
+  .dash .tabs span{font-size:12px;padding:5px 14px;color:var(--u-text-muted);cursor:default}
+  .dash .tabs span.on{color:#fff;background:var(--u-surface)}
+  .dash .illus{margin-left:auto;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--u-amber)}
+  .dash .body{padding:22px}
+  .stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+  .stile{border:1px solid var(--u-border);padding:16px 18px;background:rgba(255,255,255,.02)}
+  .stile .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--u-text-faint);margin:0 0 8px}
+  .stile .v{font-size:26px;font-weight:var(--u-weight-light);color:#fff;font-variant-numeric:tabular-nums}
+  .stile .s{font-size:11.5px;margin-top:6px;color:var(--u-text-muted)}
+  .stile .s.up{color:var(--u-green)}
+  table.reg{width:100%;border-collapse:collapse;font-size:13px}
+  table.reg th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--u-text-faint);font-weight:var(--u-weight-medium);padding:10px 12px;border-bottom:1px solid var(--u-border-strong)}
+  table.reg th:last-child,table.reg td:last-child{text-align:right}
+  table.reg td{padding:13px 12px;border-bottom:1px solid var(--u-border);color:var(--u-text-muted);font-variant-numeric:tabular-nums}
+  table.reg td .nm{color:#fff;display:block}
+  table.reg td .sub{font-size:11px;color:var(--u-text-faint)}
+  table.reg tr.tot td{border-bottom:none;color:#fff;font-weight:var(--u-weight-regular)}
+  .badge{display:inline-block;font-size:11px;padding:3px 9px;background:var(--u-surface);color:var(--u-text-muted);white-space:nowrap}
+  .badge.g{background:var(--u-green-fill-strong);color:var(--u-green)}
+
+  /* generic grids */
+  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .card{padding:28px;border-radius:var(--u-radius-m);border:1px solid var(--u-border);background:rgba(255,255,255,.025);transition:background .3s var(--u-ease),border-color .3s var(--u-ease)}
+  .card:hover{background:rgba(255,255,255,.05);border-color:var(--u-green-line)}
+  .card .ix{font-family:var(--u-font-serif);font-size:18px;color:var(--u-green);margin:0 0 16px}
+  .card h3{font-size:18px;font-weight:var(--u-weight-regular);color:#fff;margin:0 0 10px}
+  .card p{font-size:14px;line-height:var(--u-leading-body);color:var(--u-text-muted)}
+  .ic{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--u-green-fill-strong);color:var(--u-green);margin-bottom:18px}
+  .ic svg{width:20px;height:20px}
+
+  /* tools */
+  .tools{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--u-border);border:1px solid var(--u-border)}
+  .tool{background:var(--u-bg);padding:26px 24px;transition:background .3s var(--u-ease)}
+  .tool:hover{background:var(--u-surface)}
+  .tool .gly{font-size:22px;color:var(--u-green);margin:0 0 14px;line-height:1}
+  .tool h3{font-size:16px;font-weight:var(--u-weight-regular);color:#fff;margin:0 0 8px}
+  .tool p{font-size:13px;line-height:1.55;color:var(--u-text-muted)}
+
+  /* demo band */
+  .band{background:var(--u-bg-deep);border-top:1px solid var(--u-hairline);border-bottom:1px solid var(--u-hairline);text-align:center;padding:80px var(--u-gutter)}
+  .band h2{font-size:var(--u-type-section-sm);font-weight:var(--u-weight-light);letter-spacing:var(--u-tracking-section)}
+  .band p{color:var(--u-text-muted);margin:14px 0 30px}
+
+  /* pricing */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+  .tier{border:1px solid var(--u-border);border-radius:var(--u-radius-l);background:rgba(255,255,255,.025);padding:32px 28px;display:flex;flex-direction:column}
+  .tier.feat{border-color:var(--u-green-line);background:var(--u-green-fill)}
+  .tier .pop{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--u-green);margin:0 0 14px}
+  .tier h3{font-size:20px;font-weight:var(--u-weight-regular);color:#fff;margin:0 0 6px}
+  .tier .price{font-size:34px;font-weight:var(--u-weight-light);color:#fff;margin:8px 0 4px}
+  .tier .price span{font-size:14px;color:var(--u-text-faint)}
+  .tier .desc{font-size:13px;color:var(--u-text-muted);margin:0 0 22px}
+  .tier ul{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:11px}
+  .tier li{font-size:13.5px;color:var(--u-text-muted);display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+  .tier li svg{width:15px;height:15px;color:var(--u-green);flex:none;margin-top:2px}
+  .tier .tbtn{margin-top:auto;font-family:inherit;font-size:12.5px;cursor:pointer;padding:12px;text-transform:uppercase;font-weight:var(--u-weight-button);letter-spacing:var(--u-tracking-button);border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;text-align:center}
+  .tier.feat .tbtn{background:var(--u-green);color:var(--u-on-green);border:none}
+  .tier .tbtn:hover{border-color:var(--u-green)}
+  .tier.feat .tbtn:hover{box-shadow:var(--u-shadow-cta)}
+  .pricenote{text-align:center;font-size:12.5px;color:var(--u-text-faint);margin-top:28px}
+
+  /* team */
+  .team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .member{border:1px solid var(--u-border);border-radius:var(--u-radius-m);padding:24px;background:rgba(255,255,255,.02)}
+  .member .av{width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-family:var(--u-font-serif);font-size:16px;color:var(--u-green);background:var(--u-green-fill-strong);margin-bottom:16px}
+  .member h3{font-size:15px;font-weight:var(--u-weight-regular);color:#fff;margin:0 0 8px}
+  .member p{font-size:12.5px;line-height:1.55;color:var(--u-text-muted)}
+
+  /* asset register section */
+  .twocol{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+  .feat-list{display:flex;flex-direction:column;gap:26px}
+  .feat-list .fi h3{font-size:17px;font-weight:var(--u-weight-regular);color:#fff;margin:0 0 8px}
+  .feat-list .fi p{font-size:14px;line-height:1.6;color:var(--u-text-muted)}
+
+  .linkrow{display:inline-flex;align-items:center;gap:9px;color:var(--u-green);font-size:13px;text-transform:uppercase;letter-spacing:var(--u-tracking-button);margin-top:32px;border-bottom:1px solid transparent;transition:border-color .3s var(--u-ease)}
+  .linkrow:hover{border-color:var(--u-green)}
+  .linkrow svg{width:15px;height:15px}
+
+  /* footer */
+  footer{background:var(--u-bg-deepest);border-top:1px solid var(--u-hairline);padding:48px var(--u-gutter) 32px}
+  .frow{max-width:var(--u-container);margin:0 auto;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+  .ftag{max-width:380px;font-size:12.5px;color:var(--u-text-footer);line-height:1.6}
+  .ftag .brand{margin-bottom:14px}.ftag .brand img{height:18px;opacity:.6}
+  .flinks{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--u-text-footer)}
+  .fbar{max-width:var(--u-container);margin:28px auto 0;border-top:1px solid var(--u-border);padding-top:18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:11px;color:var(--u-text-compliance);line-height:1.5}
+
+  @media(max-width:980px){
+    .grid3,.tiers,.team{grid-template-columns:1fr 1fr}
+    .tools{grid-template-columns:1fr 1fr}
+    .twocol{grid-template-columns:1fr;gap:32px}
+    .stat3{grid-template-columns:1fr}
+  }
+  @media(max-width:620px){
+    .grid3,.tiers,.team,.tools{grid-template-columns:1fr}
+    .navlinks{display:none}
+  }
+</style></head>
+<body>
+
+<div class="proto"><b>Prototype</b> · Zone 1 (open product path) · illustrative data · no investment inducement</div>
+
+<nav><div class="navin">
+  <div class="navleft">
+    <a class="brand" href="router.html"><img src="../../assets/unlock-white.svg" alt="Unlock"><span class="dot">.</span></a>
+    <ul class="navlinks">
+      <li><a href="router.html">Home</a></li>
+      <li class="cur">Platform</li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="investors.html">Investors</a></li>
+    </ul>
+  </div>
+  <a class="nav-cta" href="#demo">Book a demo</a>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow"></div>
+  <div class="heroin u-heroin">
+    <div>
+      <p class="eyebrow">Portfolio intelligence · for investors managing £1M+</p>
+      <h1>Everything you own, finally in one place — and finally making sense.</h1>
+      <p class="lead">Your wealth lives across more platforms, wrappers and structures than any single
+        tool was built to handle. Unlock assembles the complete picture — lot-level, tax-aware,
+        continuously checked — so you understand your position <b>before</b> you act, not after.</p>
+      <div class="ctarow">
+        <a class="btn p" href="#demo">Book a demo <i data-lucide="arrow-right"></i></a>
+        <a class="btn o" href="#tools">Explore the platform</a>
+      </div>
+      <p class="conflict">Conflict-free by design — Unlock earns from subscriptions, not from what you hold.
+        Public access opens September 2026.</p>
+    </div>
+
+    <!-- dashboard -->
+    <div class="dash">
+      <div class="bar">
+        <span class="dot3"><i></i><i></i><i></i></span>
+        <span class="tabs"><span class="on">Portfolio</span><span>Tax</span><span>Drawdown</span></span>
+        <span class="illus">Illustrative data</span>
+      </div>
+      <div class="body">
+        <div class="stat3">
+          <div class="stile"><p class="k">Total portfolio</p><div class="v">£1,847,320</div><p class="s up">↑ £42,100 this month</p></div>
+          <div class="stile"><p class="k">EIS / SEIS</p><div class="v">£285,000</div><p class="s">BPR clock active</p></div>
+          <div class="stile"><p class="k">IHT exposure</p><div class="v">£663,820</div><p class="s">review due</p></div>
+        </div>
+        <table class="reg">
+          <thead><tr><th>Holding</th><th>Wrapper</th><th>Value</th><th>Status</th></tr></thead>
+          <tbody id="regrows"></tbody>
+        </table>
+        <p style="font-size:11.5px;color:var(--u-text-faint);margin-top:14px">Liquidity runway: 14 months · Concentration: SIPP 33% · Cash buffer: healthy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="sec" style="background:var(--u-bg)">
+  <div class="wrap">
+    <p class="eyebrow">Why this exists</p>
+    <h2 class="h2" style="max-width:18ch;margin:0 0 52px">Three problems that were never properly solved.</h2>
+    <div class="grid3" id="problems"></div>
+  </div>
+</section>
+
+<div class="u-divider"></div>
+
+<!-- SOLUTION -->
+<section class="sec" style="background:var(--u-bg)">
+  <div class="wrap">
+    <p class="eyebrow">The solution</p>
+    <h2 class="h2" style="max-width:22ch;margin:0 0 16px">A single source of truth — with the interpretation layer on top.</h2>
+    <p class="muted" style="font-size:18px;max-width:54ch;margin:0 0 52px;line-height:1.6">The Asset Register is the heartbeat of Unlock. Everything else builds on it.</p>
+    <div class="grid3" id="solution"></div>
+  </div>
+</section>
+
+<!-- DEMO BAND -->
+<section class="band" id="demo">
+  <div class="wrap" style="max-width:640px">
+    <h2>See it with a real portfolio in 20 minutes.</h2>
+    <p>The real tools, illustrative data, no commitment.</p>
+    <a class="btn p" href="mailto:tom@unlockdd.com?subject=Unlock%20platform%20demo">Book a demo <i data-lucide="arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="sec" id="tools" style="background:var(--u-bg)">
+  <div class="wrap">
+    <p class="eyebrow">The platform</p>
+    <h2 class="h2" style="margin:0 0 16px">Eight tools. One source of truth.</h2>
+    <p class="muted" style="font-size:18px;max-width:60ch;margin:0 0 52px;line-height:1.6">Each tool runs off your Asset Register — the more complete it is, the sharper everything else gets. Read-only by design. The decision is always yours.</p>
+    <div class="tools" id="toolgrid"></div>
+  </div>
+</section>
+
+<!-- ASSET REGISTER DETAIL -->
+<section class="sec" style="background:var(--u-bg-deep)">
+  <div class="wrap">
+    <p class="eyebrow">The heartbeat</p>
+    <h2 class="h2" style="margin:0 0 52px">The Asset Register, in detail.</h2>
+    <div class="twocol">
+      <div class="dash">
+        <div class="bar"><span class="dot3"><i></i><i></i><i></i></span><span class="tabs"><span class="on">Asset Register</span></span><span class="illus">Illustrative data</span></div>
+        <div class="body"><table class="reg"><thead><tr><th>Holding</th><th>Wrapper</th><th>Value</th><th>Status</th></tr></thead><tbody id="regrows2"></tbody></table><p style="font-size:11px;color:var(--u-text-faint);margin-top:12px">All figures illustrative</p></div>
+      </div>
+      <div class="feat-list">
+        <div class="fi"><h3>Lot-level tracking</h3><p>Every holding decomposed into original purchase lots — date, units, price — with cost-basis evolution to current value.</p></div>
+        <div class="fi"><h3>Household view</h3><p>One picture across people, wrappers, accounts and entities. Hidden exposures surface naturally.</p></div>
+        <div class="fi"><h3>Plain-language queries</h3><p>"Show assets bought above £100K now worth less than £80K." Natural language over structured truth.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how" style="background:var(--u-bg)">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 class="h2" style="margin:0 0 12px">Three steps. The platform does the work.</h2>
+    <p class="muted" style="font-size:18px;margin:0 0 52px">You're onboarded before you've added a single asset.</p>
+    <div class="grid3" id="steps"></div>
+  </div>
+</section>
+
+<div class="u-divider"></div>
+
+<!-- PRICING -->
+<section class="sec" id="pricing" style="background:var(--u-bg)">
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <h2 class="h2" style="margin:0 0 12px">One subscription. No product conflicts.</h2>
+    <p class="muted" style="font-size:18px;max-width:54ch;margin:0 0 52px">Unlock earns from your subscription — never from what you hold, trade or buy.</p>
+    <div class="tiers" id="tiers"></div>
+    <p class="pricenote">Targeted at investors with £1M–£20M+ portfolios.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about" style="background:var(--u-bg-deep)">
+  <div class="wrap">
+    <p class="eyebrow">About Unlock</p>
+    <h2 class="h2" style="max-width:16ch;margin:0 0 16px">Built independent, on purpose.</h2>
+    <p class="muted" style="font-size:18px;max-width:60ch;margin:0 0 52px;line-height:1.6">Every existing platform earns from what you hold through it. Unlock doesn't. The only thing we optimise for is the clarity of your decisions.</p>
+    <div class="grid3" id="aboutGrid"></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec" style="background:var(--u-bg-deep);padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">The team</p>
+    <h2 class="h2" style="margin:0 0 52px">Who's building Unlock.</h2>
+    <div class="team" id="team"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="frow">
+    <div class="ftag">
+      <a class="brand" href="router.html"><img src="../../assets/unlock-white.svg" alt="Unlock"><span class="dot" style="color:var(--u-green);font-size:18px;transform:translateX(-9px)">.</span></a>
+      <p>Portfolio intelligence and investment access for UK investors managing £1M+. Subscription only.</p>
+    </div>
+    <div class="flinks"><a href="#about">About</a><a href="#about">Team</a><a href="investors.html">Investors</a><a href="#pricing">Pricing</a><a href="#how">How it works</a><a href="mailto:tom@unlockdd.com">Contact</a></div>
+  </div>
+  <div class="fbar">
+    <span>© 2026 Unlock Services Limited. Registered in England and Wales. Company No. 15610723.</span>
+    <span style="max-width:480px;text-align:right">This website is for information purposes only and does not constitute financial advice. Capital at risk.</span>
+  </div>
+</footer>
+
+<script>
+  const REG=[
+    ['Global equity tracker','lot basis £6.90/unit','HL ISA','£284,100','CGT-free','g'],
+    ['Mixed allocation','IHT scope Apr 2027','SIPP','£612,500','Pension IHT',''],
+    ['EIS portfolio · 4 cos','18 months into 2-yr clock','EIS','£285,000','BPR qualifying','g'],
+    ['AIM portfolio · 14 holdings','','AJ Bell','£193,800','BPR partial',''],
+    ['Primary residence','','Property','£471,920','IHT exposed',''],
+  ];
+  const rows = REG.map(r=>`<tr><td><span class="nm">${r[0]}</span>${r[1]?`<span class="sub">${r[1]}</span>`:''}</td><td>${r[2]}</td><td>${r[3]}</td><td><span class="badge ${r[5]}">${r[4]}</span></td></tr>`).join('');
+  document.getElementById('regrows').innerHTML = rows + `<tr class="tot"><td>Total</td><td></td><td>£1,847,320</td><td></td></tr>`;
+  document.getElementById('regrows2').innerHTML = REG.slice(0,4).map(r=>`<tr><td><span class="nm">${r[0]}</span></td><td>${r[2]}</td><td>${r[3]}</td><td><span class="badge ${r[5]}">${r[4]}</span></td></tr>`).join('') + `<tr class="tot"><td>Total</td><td></td><td>£1,847,320</td><td></td></tr>`;
+
+  document.getElementById('problems').innerHTML=[
+    ['01','No consolidated view','The average HNW investor holds assets across 4.7 platforms. No single view exists — not from their IFA, not from their accountant, not from any one platform.'],
+    ['02','No independent intelligence','Every tool you use earns from what you hold through it. Your IFA can\u2019t legally advise on individual EIS companies. The gap sits exactly where the most tax-efficient decisions are.'],
+    ['03','Analysis locked away','Institutions have models, dashboards and analysts. Private investors with comparable wealth have a spreadsheet and gut instinct. Until now.'],
+  ].map(p=>`<div class="card"><p class="ix">${p[0]}</p><h3>${p[1]}</h3><p>${p[2]}</p></div>`).join('');
+
+  document.getElementById('solution').innerHTML=[
+    ['Truth first','A dependable, lot-level record of what you own and what the evidence says — the tax status of every asset already calculated.'],
+    ['Interpretation second','Early warnings, risk checks and plain-English explanations grounded in facts. What matters, when it matters.'],
+    ['Control always yours','Read-only. No trading. No advice. Clarity you can act on — with your advisers, or independently.'],
+  ].map(s=>`<div class="card"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+
+  document.getElementById('toolgrid').innerHTML=[
+    ['▦','Asset Register','Every asset, every wrapper. Lot-level cost basis, IHT status and BPR clocks, automatic.'],
+    ['◐','Safety Lights','Concentration, liquidity runway and cash. Red / amber / green, with the lever to pull.'],
+    ['£','IHT Calculator','Your real liability, updated whenever the register changes. What\u2019s exempt, what\u2019s in its BPR window.'],
+    ['◇','Portfolio Simulator','Ten named scenarios. Your beliefs weight each one. See the downside before you act.'],
+    ['↘','Decumulation Planner','Which wrapper to draw first, how long the money lasts, the estate at the end.'],
+    ['⊞','EIS / SEIS Tracker','Relief claimed, qualifying periods and IHT status across every vintage you hold.'],
+    ['✦','AI Assistant','Ask anything about your numbers. Intelligence only — signposts to an adviser for regulated decisions.'],
+    ['▣','Reports','Portfolio, decumulation and tax PDFs in one click — generated live, always current.'],
+  ].map(t=>`<div class="tool"><div class="gly">${t[0]}</div><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join('');
+
+  document.getElementById('steps').innerHTML=[
+    ['01','It learns who you are','Eight questions about your situation and beliefs. Unlock computes your investor profile automatically. You arrive already known.'],
+    ['02','Everything in one place','Add every asset — CSV or manual. The moment it\u2019s added, Unlock flags its IHT status, BPR period and tax position.'],
+    ['03','It finds issues you didn\u2019t know you had','Ten automated checks surface an unmitigated IHT bill, an income gap, a pension entering IHT scope. Each with a clear action.'],
+  ].map(s=>`<div class="card"><p class="ix">${s[0]}</p><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+
+  const chk=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+  document.getElementById('tiers').innerHTML=[
+    ['','Demo','Free','','Synthetic-data sandbox.',['Explore the platform','Illustrative portfolio','Plain-language queries'],'Get started'],
+    ['Most popular','Standard','£99','/month','Manual upload, full intelligence.',['Unlimited holdings + household view','IHT Calculator + EIS/SEIS Tracker','Portfolio Simulator + Reports'],'Book a demo'],
+    ['','White Glove','£299','/month','Live feeds + concierge.',['Everything in Standard','Live data feeds','Decumulation Planner + AI Assistant'],'Book a demo'],
+  ].map(t=>`<div class="tier ${t[0]?'feat':''}">${t[0]?`<p class="pop">${t[0]}</p>`:''}<h3>${t[1]}</h3><div class="price">${t[2]}<span>${t[3]}</span></div><p class="desc">${t[4]}</p><ul>${t[5].map(li=>`<li>${chk}<span>${li}</span></li>`).join('')}</ul><button class="tbtn">${t[6]}</button></div>`).join('');
+
+  document.getElementById('aboutGrid').innerHTML=[
+    ['Structurally independent','No product commission. No AUM fee. We earn from your subscription — never from what you hold.'],
+    ['UK tax depth','EIS, SEIS, IHT, CGT and pension drawdown modelled forward, continuously, as the rules change.'],
+    ['The advice gap, filled','Your IFA can\u2019t legally advise on individual EIS companies. Unlock provides the intelligence for the territory they can\u2019t map.'],
+  ].map(a=>`<div class="card"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('');
+
+  document.getElementById('team').innerHTML=[
+    ['TK','Tom King — Founder &amp; CEO','15 years building investor-introduction and capital-facilitation technology; £250M+ capital facilitated.'],
+    ['WS','Werner Snyman — Head of Product','19 years in senior product leadership at Nedbank; wealth-platform architecture across four markets.'],
+    ['WC','William Corke — Head of Service &amp; Compliance','Multi-million-pound delivery for FTSE 500 clients.'],
+    ['TV','Tony Vine-Lott — Commercial Strategy Adviser','Founder of Barclays Stockbrokers; former Director General of TISA. Invested first.'],
+  ].map(m=>`<div class="member"><div class="av">${m[0]}</div><h3>${m[1]}</h3><p>${m[2]}</p></div>`).join('');
+
+  if(window.lucide) lucide.createIcons();
+</script>
+</body></html>

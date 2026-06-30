@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlock — slide templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#00bb77;--text-green:#008655;--ink:#1A1A1A;--muted:#5b6470;--line:#E8E8E8;--cream:#F0EBE0;--teal:#0D2D35;
+        --disp:'Barlow Condensed',sans-serif;--serif:'Source Serif 4',Georgia,serif;--sans:'Inter',sans-serif;}
+  *{box-sizing:border-box}
+  body{margin:0;background:#cfccc4;font-family:var(--sans);padding:32px 16px}
+  .lbl{max-width:960px;margin:0 auto 8px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6c685f}
+  .slide{max-width:960px;margin:0 auto 34px;aspect-ratio:16/9;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.18);
+         padding:54px 60px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+  /* MOTIFS the brand uses */
+  .sq{display:inline-block;width:9px;height:9px;background:var(--green)}              /* subtle green square */
+  .rule{height:2px;width:46px;background:var(--green);border:0}                       /* short green line / bookend */
+  .eyebrow{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-green);margin:0 0 16px}
+  .disp{font-family:var(--disp);font-weight:800;color:var(--ink);line-height:1;letter-spacing:.2px;margin:0}
+  .serif{font-family:var(--serif);color:var(--ink)}
+  .muted{color:var(--muted)}
+  .wm{position:absolute;bottom:26px;left:60px;font-family:var(--disp);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:.5px}
+  .wm i{color:var(--green);font-style:normal}
+  .pg{position:absolute;bottom:26px;right:60px;font-size:11px;color:var(--muted);font-family:var(--sans)}
+  .stat .fig{font-family:var(--disp);font-weight:800;font-size:64px;color:var(--ink);line-height:.9}
+  .stat .cap{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .pie{width:200px;height:200px;border-radius:50%;background:conic-gradient(var(--green) 0 46%,#9fd9bf 46% 64%,var(--text-green) 64% 82%,#E8E8E8 82% 100%)}
+  .leg{display:flex;flex-direction:column;gap:10px;font-size:14px}
+  .leg div{display:flex;align-items:center;gap:10px} .leg .k{width:11px;height:11px;border-radius:2px}
+  .cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink)}
+  .cmp .c{padding:18px 22px} .cmp .trad{border-right:1px solid var(--line)} .cmp .unl{background:var(--green);color:var(--ink)}
+  .cmp h4{font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin:0 0 10px}
+  .cmp ul{margin:0;padding-left:16px;font-family:var(--serif)} .cmp li{margin:5px 0}
+</style></head>
+<body>
+
+<!-- 1 · TITLE -->
+<div class="lbl">1 · Title slide</div>
+<div class="slide">
+  <div class="eyebrow"><span class="sq"></span>Portfolio intelligence</div>
+  <h1 class="disp" style="font-size:72px;max-width:13ch">Why 1 in 10 estates pays too much tax.</h1>
+  <hr class="rule" style="margin:22px 0 0">
+  <p class="serif muted" style="font-size:18px;max-width:46ch;margin:16px 0 0">A look at the inheritance-tax gap — and the planning that closes it.</p>
+  <div class="wm">UNLOCK<i>.</i></div><div class="pg">Private &amp; Confidential</div>
+</div>
+
+<!-- 2 · SECTION DIVIDER (dark) -->
+<div class="lbl">2 · Section divider</div>
+<div class="slide" style="background:var(--teal);color:#fff;justify-content:center">
+  <div class="eyebrow" style="color:#3DDC97"><span class="sq" style="background:#3DDC97"></span>Section 01</div>
+  <h2 class="disp" style="color:#fff;font-size:60px;max-width:16ch">The problem with leaving it to chance.</h2>
+  <hr class="rule" style="margin:22px 0 0;width:60px">
+  <div class="wm" style="color:#fff">UNLOCK<i style="color:#3DDC97">.</i></div>
+</div>
+
+<!-- 3 · STAT TRIO -->
+<div class="lbl">3 · Stat slide</div>
+<div class="slide">
+  <div class="eyebrow"><span class="sq"></span>The opportunity</div>
+  <h2 class="disp" style="font-size:36px;margin-bottom:34px">The numbers tell the story.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+    <div class="stat"><div style="height:2px;width:46px;background:var(--green);margin-bottom:14px"></div><div class="fig">£34B+</div><div class="cap">Addressable advice gap</div></div>
+    <div class="stat"><div style="height:2px;width:46px;background:var(--green);margin-bottom:14px"></div><div class="fig">40%</div><div class="cap">IHT on unprotected estates</div></div>
+    <div class="stat"><div style="height:2px;width:46px;background:var(--green);margin-bottom:14px"></div><div class="fig">73%</div><div class="cap">HNW lack a tax-efficient plan</div></div>
+  </div>
+  <div class="wm">UNLOCK<i>.</i></div><div class="pg">03</div>
+</div>
+
+<!-- 4 · PIE / CHART -->
+<div class="lbl">4 · Chart slide (pie)</div>
+<div class="slide">
+  <div class="eyebrow"><span class="sq"></span>Where the estate sits</div>
+  <h2 class="disp" style="font-size:36px;margin-bottom:24px">Asset allocation at a glance.</h2>
+  <div style="display:flex;gap:48px;align-items:center">
+    <div class="pie"></div>
+    <div class="leg">
+      <div><span class="k" style="background:var(--green)"></span>UK equity · 46%</div>
+      <div><span class="k" style="background:#9fd9bf"></span>Property · 18%</div>
+      <div><span class="k" style="background:var(--text-green)"></span>Pension · 18%</div>
+      <div><span class="k" style="background:#E8E8E8"></span>Cash &amp; other · 18%</div>
+    </div>
+  </div>
+  <div class="wm">UNLOCK<i>.</i></div><div class="pg">04</div>
+</div>
+
+<!-- 5 · COMPARISON -->
+<div class="lbl">5 · Comparison slide</div>
+<div class="slide">
+  <div class="eyebrow"><span class="sq"></span>Why Unlock</div>
+  <h2 class="disp" style="font-size:36px;margin-bottom:24px">Intelligence without the price tag.</h2>
+  <div class="cmp">
+    <div class="c trad"><h4 class="muted">Traditional adviser</h4><ul><li>1%+ AUM, every year</li><li>Annual review, months late</li><li>Deals gatekept</li></ul></div>
+    <div class="c unl"><h4>Unlock</h4><ul><li>Flat subscription</li><li>Real-time intelligence</li><li>Curated EIS/SEIS access</li></ul></div>
+  </div>
+  <div class="wm">UNLOCK<i>.</i></div><div class="pg">05</div>
+</div>
+
+<!-- 6 · QUOTE -->
+<div class="lbl">6 · Quote slide</div>
+<div class="slide" style="justify-content:center;align-items:flex-start">
+  <hr class="rule">
+  <p class="serif" style="font-size:34px;font-style:italic;line-height:1.3;max-width:24ch;margin:22px 0">"Finally, one place that shows my whole estate — and what HMRC will take."</p>
+  <hr class="rule">
+  <p class="muted" style="font-family:var(--sans);font-size:13px;margin:14px 0 0">David H. · Legacy builder</p>
+  <div class="wm">UNLOCK<i>.</i></div><div class="pg">06</div>
+</div>
+
+<!-- 7 · CLOSING -->
+<div class="lbl">7 · Closing slide</div>
+<div class="slide" style="background:var(--cream);justify-content:center">
+  <div class="eyebrow"><span class="sq"></span>Next step</div>
+  <h2 class="disp" style="font-size:54px;max-width:15ch">See everything. Protect everything.</h2>
+  <hr class="rule" style="margin:22px 0 0">
+  <p class="serif muted" style="font-size:17px;margin:16px 0 0">unlock.co · hello@unlock.co</p>
+  <div class="wm">UNLOCK<i>.</i></div>
+</div>
+
+</body></html>

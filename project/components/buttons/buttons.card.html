@@ -1,0 +1,17 @@
+<!-- @dsCard group="Components" viewport="700x150" subtitle="Primary + outline CTA — square, UPPERCASE, normal weight, arc-hover ring" name="ArcButton" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg-deep);font-family:var(--u-font-body);padding:30px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .btn{position:relative;font-size:14px;font-weight:400;text-transform:uppercase;letter-spacing:0.04em;padding:13px 26px;border-radius:0;cursor:pointer;border:none}
+  .primary{background:var(--u-green);color:var(--u-on-green)}
+  .primary.glow{box-shadow:var(--u-shadow-cta)}
+  .outline{background:transparent;color:var(--u-text-muted);border:1px solid rgba(255,255,255,0.2)}
+  .arc{position:relative}
+  .arc svg{position:absolute;inset:-4px;width:calc(100% + 8px);height:calc(100% + 8px);pointer-events:none}
+  .lab{position:absolute;top:8px;left:30px;font-size:10px;color:var(--u-text-faint)}
+</style></head><body>
+  <button class="btn primary arc"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="45" fill="none" stroke="var(--u-green)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283"/></svg>Join the waiting list</button>
+  <button class="btn primary glow arc"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="45" fill="none" stroke="var(--u-green)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="71"/></svg>Hover →</button>
+  <button class="btn outline arc"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="45" fill="none" stroke="var(--u-green)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283"/></svg>See how it works</button>
+</body></html>

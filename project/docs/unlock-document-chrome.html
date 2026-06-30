@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlock — document chrome</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#00bb77;--tg:#008655;--ink:#1A1A1A;--muted:#5b6470;--line:#E8E8E8;--cream:#F0EBE0;--teal:#0D2D35;
+        --disp:'Barlow Condensed',sans-serif;--serif:'Source Serif 4',Georgia,serif;--sans:'Inter',sans-serif;}
+  *{box-sizing:border-box}
+  body{margin:0;background:#cfccc4;font-family:var(--serif);padding:32px 16px;color:var(--ink)}
+  .lbl{max-width:780px;margin:0 auto 8px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6c685f}
+  .pg{max-width:780px;margin:0 auto 30px;aspect-ratio:1/1.414;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.16);padding:54px 56px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .sq{display:inline-block;width:9px;height:9px;background:var(--green)}
+  .rule{height:2px;width:46px;background:var(--green);border:0}
+  .eyebrow{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--tg);margin:0 0 14px}
+  .disp{font-family:var(--disp);font-weight:800;line-height:1.02;margin:0}
+  .muted{color:var(--muted)} .sans{font-family:var(--sans)}
+  .wm{position:absolute;bottom:24px;left:56px;font-family:var(--disp);font-weight:800;font-size:15px}.wm i{color:var(--green);font-style:normal}
+  .foot{position:absolute;bottom:24px;right:56px;font-family:var(--sans);font-size:10px;color:var(--muted)}
+  /* page header strip */
+  .phead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:24px;font-family:var(--sans);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .phead b{font-family:var(--disp);font-size:14px;color:var(--ink);letter-spacing:.5px}
+  .toc{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:9px 0;font-size:15px}
+  .toc .n{font-family:var(--sans);color:var(--muted)}
+  h3.sec{font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tg);margin:22px 0 8px}
+  dl{margin:0} dt{font-family:var(--disp);font-weight:700;font-size:16px;margin-top:14px} dd{margin:3px 0 0;font-size:14px;color:#333;line-height:1.5}
+</style></head>
+<body>
+
+<div class="lbl">1 · Cover (light)</div>
+<div class="pg">
+  <div class="eyebrow"><span class="sq"></span>Positioning paper · 2026</div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="wm" style="position:static;margin-bottom:24px;font-size:22px">UNLOCK<i>.</i></div>
+    <h1 class="disp" style="font-size:54px;max-width:14ch;color:var(--tg)">Private wealth clarity, without complexity.</h1>
+    <hr class="rule" style="margin:22px 0 0">
+    <p class="muted" style="font-size:17px;max-width:42ch;margin:16px 0 0">How the Asset Register turns scattered accounts into one clear, tax-aware picture.</p>
+  </div>
+  <div class="foot" style="left:56px;right:auto">Private &amp; Confidential</div>
+</div>
+
+<div class="lbl">2 · Cover (dark) &amp; section opener</div>
+<div class="pg" style="background:var(--teal);color:#fff">
+  <div class="eyebrow" style="color:#3DDC97"><span class="sq" style="background:#3DDC97"></span>Section 01</div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <h1 class="disp" style="font-size:48px;max-width:15ch">The inheritance-tax gap, in plain English.</h1>
+    <hr class="rule" style="margin:22px 0 0;width:60px">
+    <p style="font-size:16px;max-width:44ch;margin:16px 0 0;opacity:.8">What it is, who it hits, and the levers that close it.</p>
+  </div>
+  <div class="wm" style="color:#fff">UNLOCK<i style="color:#3DDC97">.</i></div>
+</div>
+
+<div class="lbl">3 · Table of contents</div>
+<div class="pg">
+  <div class="phead"><b>UNLOCK<i style="color:var(--green);font-style:normal">.</i></b><span>Positioning paper</span></div>
+  <div class="eyebrow"><span class="sq"></span>Contents</div>
+  <h2 class="disp" style="font-size:30px;margin-bottom:18px">What's inside.</h2>
+  <div class="toc"><span>01 · The advice gap</span><span class="n">03</span></div>
+  <div class="toc"><span>02 · The Asset Register</span><span class="n">06</span></div>
+  <div class="toc"><span>03 · Tax &amp; IHT intelligence</span><span class="n">11</span></div>
+  <div class="toc"><span>04 · EIS / SEIS access</span><span class="n">17</span></div>
+  <div class="toc"><span>Appendix · Methodology &amp; sources</span><span class="n">22</span></div>
+  <div class="wm">UNLOCK<i>.</i></div><div class="foot">02</div>
+</div>
+
+<div class="lbl">4 · Interior page (header / body / footer)</div>
+<div class="pg">
+  <div class="phead"><b>UNLOCK<i style="color:var(--green);font-style:normal">.</i></b><span>02 · The Asset Register</span></div>
+  <div class="eyebrow"><span class="sq"></span>The foundation</div>
+  <h2 class="disp" style="font-size:30px;margin-bottom:6px">One register. Every wrapper.</h2>
+  <hr class="rule" style="margin:6px 0 16px">
+  <p style="font-size:15px;line-height:1.6;max-width:62ch;color:#222">The register is the single source of truth — ISAs, SIPPs, GIAs and trusts in one place. Every intelligence module reads from it, so the next decision is the obvious one. Green marks structure and the Unlock position; never decoration.</p>
+  <p style="font-size:15px;line-height:1.6;max-width:62ch;color:#222;margin-top:12px">Figures are illustrative and based on synthetic data. <span style="background:rgba(0,187,119,.12);color:var(--tg);padding:1px 4px">As at June 2026.</span></p>
+  <div class="wm">UNLOCK<i>.</i></div><div class="foot">06</div>
+</div>
+
+<div class="lbl">5 · Back matter — glossary &amp; references</div>
+<div class="pg">
+  <div class="phead"><b>UNLOCK<i style="color:var(--green);font-style:normal">.</i></b><span>Appendix</span></div>
+  <h3 class="sec">Glossary</h3>
+  <dl>
+    <dt>BPR — Business Property Relief</dt><dd>Relief reducing IHT on qualifying business assets; capped at £2.5M per estate (Finance Act 2026).</dd>
+    <dt>EIS — Enterprise Investment Scheme</dt><dd>Tax-advantaged scheme: 30% income-tax relief; IHT-free after 2 years.</dd>
+    <dt>NRB — Nil-Rate Band</dt><dd>The £325,000 threshold below which no IHT is charged.</dd>
+  </dl>
+  <h3 class="sec">References</h3>
+  <ol class="sans" style="font-size:12px;color:#333;line-height:1.6;padding-left:18px;margin:4px 0 0">
+    <li>HMRC, Inheritance Tax statistics, 2025/26.</li>
+    <li>Finance Act 2026, s.— Business Property Relief cap.</li>
+    <li>FSMA 2000 (Financial Promotion) Order 2005.</li>
+  </ol>
+  <div class="wm">UNLOCK<i>.</i></div><div class="foot">22</div>
+</div>
+
+</body></html>

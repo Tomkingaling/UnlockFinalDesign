@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="700x230" subtitle="Eyebrow, heading, StatBlock, Badge" name="Text & Badge" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg-deep);font-family:var(--u-font-body);padding:26px;color:var(--u-text)}
+  .eyebrow{color:var(--u-green);font-size:12px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 12px}
+  h2{font-size:34px;font-weight:300;letter-spacing:-0.01em;margin:0 0 22px;line-height:1.1}
+  .stat{border-top:1px solid var(--u-green-line);padding-top:18px;display:inline-block;margin-right:36px}
+  .stat .v{font-size:44px;font-weight:300;color:var(--u-green);font-variant-numeric:tabular-nums}
+  .stat .l{font-size:13px;color:var(--u-text-muted);margin-top:6px}
+  .badges{display:flex;gap:10px;margin-top:18px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;border-radius:100px;padding:6px 14px}
+  .b-green{color:var(--u-green);background:var(--u-green-fill-strong);border:1px solid rgba(0,187,119,0.3)}
+  .b-amber{color:var(--u-amber);background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3)}
+  .b-neutral{color:var(--u-text-muted);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--u-green)}
+</style></head><body>
+  <p class="eyebrow">The opportunity</p>
+  <h2>The rules are changing.</h2>
+  <div class="stat"><div class="v">£2.5M</div><div class="l">BPR cap from April 2026</div></div>
+  <div class="stat"><div class="v">40%</div><div class="l">IHT rate on unprotected estates</div></div>
+  <div class="badges">
+    <span class="badge b-green"><span class="dot"></span>Live</span>
+    <span class="badge b-neutral">Most popular</span>
+    <span class="badge b-amber">Illustrative data</span>
+  </div>
+</body></html>

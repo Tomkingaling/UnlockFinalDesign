@@ -1,0 +1,232 @@
+<!-- @dsCard group="Website" viewport="1280x900" subtitle="Zone 0 neutral router — two ways in + investor self-certification gate" name="Router / Two Ways In" -->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Unlock — Portfolio intelligence for private investors</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--u-bg-deepest);color:var(--u-text);font-family:var(--u-font-body);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{margin:0;font-weight:var(--u-weight-light)}
+  .wrap{max-width:var(--u-container);margin:0 auto;padding:0 var(--u-gutter)}
+
+  /* prototype banner */
+  .proto{background:var(--u-bg-deep);border-bottom:1px solid var(--u-hairline);
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--u-text-faint);
+    text-align:center;padding:9px 16px}
+  .proto b{color:var(--u-green);font-weight:var(--u-weight-medium)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(26,26,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--u-hairline)}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:var(--u-nav-height);max-width:var(--u-container);margin:0 auto;padding:0 var(--u-gutter)}
+  .navleft{display:flex;align-items:center;gap:44px}
+  .brand{display:inline-flex;align-items:baseline}
+  .brand img{height:20px;width:auto;display:block}
+  .brand .dot{color:var(--u-green);font-size:21px;line-height:0;transform:translateX(-11px)}
+  .navlinks{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+  .navlinks li{font-size:13.5px;color:var(--u-text-muted)}
+  .navlinks li.cur{color:var(--u-text)}
+  .navlinks li:hover{color:var(--u-text)}
+  .nav-cta{font-size:13px;color:var(--u-on-green);background:var(--u-green);padding:10px 20px;
+    text-transform:uppercase;font-weight:var(--u-weight-button);letter-spacing:var(--u-tracking-button)}
+  .nav-cta:hover{box-shadow:var(--u-shadow-cta)}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:var(--u-bg-deep);padding:96px var(--u-gutter) 40px;text-align:center}
+  .glow{position:absolute;top:-220px;left:50%;width:900px;height:900px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,138,85,.16),transparent 66%);transform:translateX(-50%);pointer-events:none}
+  .hero .in{position:relative;z-index:2;max-width:720px;margin:0 auto}
+  .hero .mark{font-family:var(--u-font-serif);font-size:30px;color:var(--u-text);margin-bottom:28px;display:inline-flex;align-items:baseline}
+  .hero .mark span{color:var(--u-green)}
+  .hero h1{font-size:var(--u-type-display);line-height:var(--u-leading-tight);letter-spacing:var(--u-tracking-display)}
+  .hero p.lead{font-size:var(--u-type-lead);color:var(--u-text-muted);line-height:var(--u-leading-body);margin:24px auto 0;max-width:54ch}
+
+  /* doors */
+  .doors{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:start;
+    max-width:1040px;margin:0 auto;padding:56px var(--u-gutter) 40px}
+  .door{border:1px solid var(--u-border);border-radius:var(--u-radius-l);background:rgba(255,255,255,.025);
+    padding:34px 34px 30px;display:flex;flex-direction:column}
+  .door .tag{font-size:var(--u-type-label);letter-spacing:.2em;text-transform:uppercase;color:var(--u-text-faint);margin:0 0 18px}
+  .door.invest .tag{color:var(--u-green)}
+  .door h2{font-size:24px;font-weight:var(--u-weight-light);color:#fff;margin:0 0 14px}
+  .door p.body{font-size:var(--u-type-body-sm);line-height:var(--u-leading-body);color:var(--u-text-muted);margin:0}
+
+  /* gate form */
+  .gate-q{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--u-text-faint);margin:26px 0 12px}
+  .opt{display:flex;gap:13px;padding:16px;border:1px solid var(--u-border);background:rgba(255,255,255,.02);cursor:pointer;margin-bottom:10px;transition:border-color .25s var(--u-ease),background .25s var(--u-ease)}
+  .opt:hover{border-color:var(--u-green-line)}
+  .opt.sel{border-color:var(--u-green);background:var(--u-green-fill)}
+  .opt .radio{flex:none;width:18px;height:18px;border:1.5px solid var(--u-border-strong);border-radius:50%;margin-top:2px;position:relative;transition:border-color .2s}
+  .opt.sel .radio{border-color:var(--u-green)}
+  .opt.sel .radio::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--u-green)}
+  .opt .ot{font-size:14px;color:#fff;margin:0 0 4px}
+  .opt .ot em{font-style:normal;color:var(--u-text-faint);font-size:12px;letter-spacing:.04em}
+  .opt .od{font-size:12.5px;line-height:1.55;color:var(--u-text-muted);margin:0}
+  .declare{display:flex;gap:12px;align-items:flex-start;margin:8px 0 22px;cursor:pointer}
+  .declare .box{flex:none;width:18px;height:18px;border:1.5px solid var(--u-border-strong);margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .declare.on .box{border-color:var(--u-green);background:var(--u-green)}
+  .declare .box svg{width:12px;height:12px;color:var(--u-on-green);opacity:0;transition:opacity .2s}
+  .declare.on .box svg{opacity:1}
+  .declare p{font-size:12.5px;line-height:1.6;color:var(--u-text-muted);margin:0}
+  .gate-cta{display:inline-flex;align-items:center;gap:10px;justify-content:center;width:100%;
+    background:var(--u-green);color:var(--u-on-green);border:none;font-family:inherit;font-size:13px;
+    text-transform:uppercase;font-weight:var(--u-weight-button);letter-spacing:var(--u-tracking-button);
+    padding:15px 22px;cursor:pointer;opacity:.4;pointer-events:none;transition:opacity .3s var(--u-ease),box-shadow .3s var(--u-ease)}
+  .gate-cta.ready{opacity:1;pointer-events:auto}
+  .gate-cta.ready:hover{box-shadow:var(--u-shadow-cta)}
+  .gate-cta svg{width:15px;height:15px}
+  .gate-hint{font-size:11.5px;color:var(--u-text-faint);text-align:center;margin:12px 0 0;min-height:14px;transition:color .2s}
+  .gate-note{font-size:11.5px;color:var(--u-text-footer);line-height:1.6;margin:18px 0 0}
+
+  /* platform door */
+  .door.plat{position:sticky;top:96px}
+  .door .go{margin-top:26px;display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+    font-size:13px;text-transform:uppercase;letter-spacing:var(--u-tracking-button);color:var(--u-green);
+    padding-bottom:4px;border-bottom:1px solid transparent;transition:border-color .3s var(--u-ease)}
+  .door.plat:hover .go{border-color:var(--u-green)}
+  .door .go svg{width:15px;height:15px;transition:transform .3s var(--u-ease)}
+  .door.plat:hover .go svg{transform:translateX(4px)}
+
+  /* explainer */
+  .explain{max-width:760px;margin:0 auto;padding:8px var(--u-gutter) 64px;text-align:center}
+  .explain .rule{height:1px;background:linear-gradient(90deg,transparent,var(--u-green-line),transparent);margin-bottom:24px}
+  .explain p{font-family:var(--u-font-serif);font-size:13.5px;line-height:1.75;color:var(--u-text-muted);margin:0}
+  .explain b{color:#fff;font-weight:var(--u-weight-regular)}
+  .explain a{color:var(--u-green);border-bottom:1px solid var(--u-green-line)}
+
+  footer{background:var(--u-bg-deepest);border-top:1px solid var(--u-hairline);padding:26px var(--u-gutter)}
+  .fin{max-width:var(--u-container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:11px;color:var(--u-text-footer)}
+  .fin img{height:14px;opacity:.5}
+
+  @media(max-width:860px){
+    .doors{grid-template-columns:1fr}
+    .door.plat{position:static}
+    .navlinks{display:none}
+    .fin{flex-direction:column;align-items:flex-start}
+  }
+</style></head>
+<body>
+
+<div class="proto"><b>Prototype</b> · Zone 0 (neutral router) · illustrative data · no investment inducement</div>
+
+<nav><div class="navin">
+  <div class="navleft">
+    <a class="brand" href="router.html"><img src="../../assets/unlock-white.svg" alt="Unlock"><span class="dot">.</span></a>
+    <ul class="navlinks">
+      <li class="cur">Home</li>
+      <li><a href="platform.html">Platform</a></li>
+      <li><a href="platform.html#how">How it works</a></li>
+      <li><a href="platform.html#pricing">Pricing</a></li>
+      <li><a href="platform.html#about">About</a></li>
+      <li><a href="investors.html">Investors</a></li>
+    </ul>
+  </div>
+  <a class="nav-cta" href="platform.html#demo">Book a demo</a>
+</div></nav>
+
+<section class="hero">
+  <div class="glow"></div>
+  <div class="in u-heroin">
+    <div class="mark">Unlock<span>.</span></div>
+    <h1>Two ways in.</h1>
+    <p class="lead">Unlock is portfolio-intelligence software for UK private investors.
+      Choose how you'd like to continue.</p>
+  </div>
+</section>
+
+<section class="doors">
+  <!-- investor door / gate -->
+  <div class="door invest">
+    <p class="tag">For qualifying investors · financial promotion</p>
+    <h2>Investing in Unlock</h2>
+    <p class="body">Behind this door is information about investing in Unlock — a financial promotion
+      for high-net-worth and self-certified sophisticated investors. These investments are high-risk
+      and illiquid; you could lose all your capital. UK rules mean we can only show it once you
+      confirm your investor category below.</p>
+
+    <p class="gate-q">Confirm which category applies to you</p>
+
+    <label class="opt" data-opt>
+      <span class="radio"></span>
+      <span>
+        <p class="ot">High-net-worth individual <em>(FPO Art 48)</em></p>
+        <p class="od">Income £100,000+ in the last financial year, or net assets £250,000+
+          (excluding home, pensions and certain items).</p>
+      </span>
+    </label>
+
+    <label class="opt" data-opt>
+      <span class="radio"></span>
+      <span>
+        <p class="ot">Self-certified sophisticated investor <em>(FPO Art 50A)</em></p>
+        <p class="od">e.g. two or more unlisted-company investments in two years; director of a
+          £1m+ turnover company; angel-network member; or relevant PE/SME-finance experience.</p>
+      </span>
+    </label>
+
+    <label class="declare" id="declare">
+      <span class="box"><i data-lucide="check"></i></span>
+      <p>I understand these investments are high-risk, that I could lose all the money I invest, and
+        that I won't have retail-client protections. I accept the statutory statement for my category.</p>
+    </label>
+
+    <a class="gate-cta" id="gateBtn">Confirm &amp; view the investment <i data-lucide="arrow-right"></i></a>
+    <p class="gate-hint" id="gateHint">Please choose a category and tick the box to continue.</p>
+    <p class="gate-note">Takes a few seconds — a regulatory requirement before investment information
+      can be shown, not a credit check.</p>
+  </div>
+
+  <!-- platform door -->
+  <a class="door plat" href="platform.html">
+    <p class="tag">Open to everyone</p>
+    <h2>Just here for the platform?</h2>
+    <p class="body">See everything about the Unlock platform on its own — the tools, pricing and team —
+      without the investment information reserved for qualifying investors.</p>
+    <span class="go">Continue to the platform <i data-lucide="arrow-right"></i></span>
+  </a>
+</section>
+
+<section class="explain">
+  <div class="rule"></div>
+  <p>A neutral router (Zone 0): it states the two paths and the risk, and sells nothing. The investor
+    path leads to a statutory self-certification before any promotional material is shown.<br>
+    For the build team: <a href="spec.html">read the build spec &amp; handoff for Lovable →</a></p>
+</section>
+
+<footer><div class="fin">
+  <span style="display:flex;align-items:center;gap:12px"><img src="../../assets/unlock-white.svg" alt="Unlock"> Unlock Services Limited</span>
+  <span>© 2026 · Prototype build</span>
+</div></footer>
+
+<script>
+  let cat=null, declared=false;
+  const opts=[...document.querySelectorAll('[data-opt]')];
+  const declare=document.getElementById('declare');
+  const btn=document.getElementById('gateBtn');
+  const hint=document.getElementById('gateHint');
+
+  function refresh(){
+    const ready = cat!==null && declared;
+    btn.classList.toggle('ready', ready);
+    hint.textContent = ready ? 'Ready — you may continue.'
+      : (cat===null ? 'Please choose a category and tick the box to continue.'
+                    : 'Please tick the box to continue.');
+    hint.style.color = ready ? 'var(--u-green)' : 'var(--u-text-faint)';
+  }
+  opts.forEach((o,i)=>o.addEventListener('click',e=>{
+    e.preventDefault();
+    cat=i; opts.forEach(x=>x.classList.remove('sel')); o.classList.add('sel'); refresh();
+  }));
+  declare.addEventListener('click',e=>{
+    e.preventDefault(); declared=!declared; declare.classList.toggle('on',declared); refresh();
+  });
+  btn.addEventListener('click',()=>{ if(cat!==null&&declared) location.href='investors.html'; });
+
+  if(window.lucide) lucide.createIcons();
+</script>
+</body></html>

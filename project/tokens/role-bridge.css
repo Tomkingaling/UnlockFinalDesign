@@ -1,0 +1,29 @@
+/* OPT-IN token bridge — Phase 6.
+   Import this AFTER styles.css to make the component-facing --u-* tokens resolve from
+   the --role-* ramp (tokens/scales.css). With this on, every .jsx component themes exactly
+   like design-system-live.html — including the .demo-light surface swap and accent changes —
+   without editing a single component file.
+
+   It is NOT imported by styles.css on purpose: the dark defaults stay pixel-stable for the
+   live site/kit. Opt in (per-project, or per-page <link>) when you want full ramp theming.
+
+   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="tokens/role-bridge.css">   ← then toggle .demo-light / swap --role-* */
+:root {
+  --u-green:       var(--role-primary);
+  --u-green-deep:  var(--role-primary-hover);
+  --u-green-line:  color-mix(in srgb, var(--role-primary) 20%, transparent);
+  --u-green-fill:  color-mix(in srgb, var(--role-primary) 5%, transparent);
+  --u-green-fill-strong: color-mix(in srgb, var(--role-primary) 12%, transparent);
+  --u-on-green:    var(--role-on-primary);
+
+  --u-text:        var(--role-text);
+  --u-text-muted:  var(--role-text-muted);
+  --u-text-faint:  var(--role-text-faint);
+
+  --u-border:      var(--role-border);
+  --u-bg:          var(--role-surface);
+  --u-surface:     var(--role-surface-raised);
+  --u-bg-deep:     var(--role-page);
+  --u-bg-deepest:  var(--role-page);
+}

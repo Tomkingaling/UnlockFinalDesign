@@ -1,0 +1,31 @@
+<!-- @dsCard group="Components" viewport="700x260" subtitle="Confirmation toast — status dot, slide-up" name="Toast" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg-deep);font-family:var(--u-font-body);padding:34px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .toast{display:flex;align-items:flex-start;gap:12px;max-width:380px;padding:16px 18px;background:var(--u-surface);border:1px solid var(--u-border);border-radius:var(--u-radius-m);box-shadow:0 12px 32px -8px rgba(0,0,0,0.5)}
+  .dot{flex-shrink:0;width:8px;height:8px;margin-top:6px;border-radius:50%}
+  .dot.ok{background:var(--u-green);box-shadow:0 0 10px 1px rgba(0,187,119,.5)}
+  .dot.info{background:var(--u-info)}
+  .dot.err{background:var(--u-red)}
+  .t{color:var(--u-text);font-size:14px;font-weight:500}
+  .m{color:var(--u-text-muted);font-size:13px;line-height:1.5;margin-top:3px}
+  .x{flex-shrink:0;color:var(--u-text-faint);font-size:16px;line-height:1}
+  .body{flex:1}
+</style></head><body>
+  <div class="toast">
+    <span class="dot ok"></span>
+    <div class="body"><div class="t">You're on the list</div><div class="m">We'll email you priority access when we launch.</div></div>
+    <span class="x">&times;</span>
+  </div>
+  <div class="toast">
+    <span class="dot info"></span>
+    <div class="body"><div class="t">Portfolio synced</div><div class="m">Last updated just now — 4 accounts connected.</div></div>
+    <span class="x">&times;</span>
+  </div>
+  <div class="toast">
+    <span class="dot err"></span>
+    <div class="body"><div class="t">Couldn't connect that account</div><div class="m">Check your credentials and try again.</div></div>
+    <span class="x">&times;</span>
+  </div>
+</body></html>

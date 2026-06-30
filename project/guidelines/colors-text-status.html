@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x170" subtitle="Text strengths + status colours" name="Text & status" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg);font-family:var(--u-font-body);padding:22px}
+  .row{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-end}
+  .t{display:flex;flex-direction:column;gap:4px}
+  .lab{font-size:11px;color:var(--u-text-faint);font-family:var(--u-font-serif)}
+  .swrow{display:flex;gap:14px;margin-top:20px}
+  .sw{width:120px}
+  .chip{height:44px;border-radius:8px}
+  .n{font-size:12px;font-weight:500;margin-top:6px;color:var(--u-text)}
+</style></head><body>
+  <div class="row">
+    <div class="t"><span style="color:var(--u-text);font-size:22px">Heading white</span><span class="lab">#FFFFFF</span></div>
+    <div class="t"><span style="color:var(--u-text-muted);font-size:18px">Body — white 50%</span><span class="lab">rgba(255,255,255,.5)</span></div>
+    <div class="t"><span style="color:var(--u-text-faint);font-size:14px">Faint — white 30%</span><span class="lab">rgba(255,255,255,.3)</span></div>
+  </div>
+  <div class="swrow">
+    <div class="sw"><div class="chip" style="background:var(--u-amber)"></div><div class="n">Amber #F59E0B</div></div>
+    <div class="sw"><div class="chip" style="background:var(--u-red)"></div><div class="n">Red #EF4444</div></div>
+    <div class="sw"><div class="chip" style="background:var(--u-info)"></div><div class="n">Info #3B82F6</div></div>
+  </div>
+</body></html>

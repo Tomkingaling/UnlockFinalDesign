@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlock DS — proposed additions</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  @font-face{font-family:'Aeonik';font-weight:300;font-display:swap;src:url('fonts/Aeonik-Light.otf') format('opentype')}
+  @font-face{font-family:'Aeonik';font-weight:400;font-display:swap;src:url('fonts/Aeonik-Regular.otf') format('opentype')}
+  @font-face{font-family:'Aeonik';font-weight:500;font-display:swap;src:url('fonts/Aeonik-Medium.otf') format('opentype')}
+  @font-face{font-family:'Noto Serif JP';font-weight:400;font-display:swap;src:url('fonts/NotoSerifJP-Regular.otf') format('opentype')}
+  @font-face{font-family:'Noto Serif JP';font-weight:500;font-display:swap;src:url('fonts/NotoSerifJP-Medium.otf') format('opentype')}
+  @font-face{font-family:'Noto Serif JP';font-weight:600;font-display:swap;src:url('fonts/NotoSerifJP-SemiBold.otf') format('opentype')}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Aeonik','Inter',sans-serif;background:#e7e5df;color:#1a1a1a}
+  .page{width:max-content;min-width:100%;min-height:100vh;padding:48px;box-sizing:border-box}
+  .head{max-width:1100px;margin:0 0 8px}
+  .head h1{font-size:30px;font-weight:600;letter-spacing:-0.02em;margin:0 0 8px}
+  .head p{font-size:15px;color:#55524d;margin:0 0 4px;max-width:760px;line-height:1.55}
+  .grouplab{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#8a857d;margin:40px 0 18px}
+  .row{display:flex;gap:28px;align-items:flex-start;flex-wrap:nowrap}
+  .frame{flex:none;width:300px}
+  .flabel{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:0 0 4px;color:#1a1a1a}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#00bb77;color:#08120d;font-size:11px;font-weight:700;flex:none}
+  .fcap{font-size:12px;color:#6c685f;margin:0 0 10px;line-height:1.45;min-height:34px}
+  .card{background:#1f1f1f;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.14);overflow:hidden;height:212px;position:relative;color:#fff}
+  /* shared mini bits */
+  .mini{padding:16px;height:100%;font-size:11px}
+  .eyebrow{color:#00bb77;font-size:8.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin:0 0 8px}
+  .mh{font-weight:300;letter-spacing:-0.01em;line-height:1.12;margin:0}
+  .muted{color:rgba(255,255,255,.5)}
+  .faint{color:rgba(255,255,255,.32)}
+  .green{color:#00bb77}
+  .chip{display:inline-block;background:#333;border-radius:4px;padding:2px 6px;font-size:8.5px;color:rgba(255,255,255,.7);margin-right:4px}
+  .pill{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(0,187,119,.3);background:rgba(0,187,119,.12);color:#00bb77;border-radius:100px;padding:3px 9px;font-size:9px;font-weight:600}
+  .btnp{background:#00bb77;color:#08120d;font-weight:400;font-size:10px;border-radius:0;padding:7px 0;text-align:center;text-transform:uppercase;letter-spacing:.04em}
+  .ucard{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);border-radius:6px;padding:10px}
+  .divln{height:1px;background:rgba(255,255,255,.08);margin:8px 0}
+  /* app shell */
+  .shell{display:flex;height:100%}
+  .sb{width:78px;background:#1a1a1a;border-right:1px solid #2f2f2f;padding:10px 8px;flex:none}
+  .sbi{font-size:8.5px;color:rgba(255,255,255,.55);padding:4px 6px;border-radius:5px;margin-bottom:3px;display:flex;gap:5px;align-items:center}
+  .sbi.on{background:#262626;color:#fff;position:relative}
+  .sbi.on::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:2px;border-radius:2px;background:#00bb77}
+  .dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4)} .sbi.on .dot{background:#00bb77}
+  .appmain{flex:1;padding:12px}
+  /* donut */
+  .donut{width:96px;height:96px;border-radius:50%;background:conic-gradient(#00bb77 0 46%,#1f8a5b 46% 64%,#5a8d76 64% 78%,#8a9690 78% 90%,#4f5552 90% 100%);position:relative;margin:6px auto}
+  .donut::after{content:'';position:absolute;inset:24px;border-radius:50%;background:#1f1f1f}
+  .legrow{display:flex;align-items:center;gap:6px;margin:5px 0;font-size:9px}
+  .sw{width:7px;height:7px;border-radius:2px;flex:none}
+  /* table */
+  .trow{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:9.5px}
+  .ava{width:18px;height:18px;border-radius:4px;background:#333;flex:none}
+  /* amber */
+  .amber{border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.06);border-radius:6px;padding:10px;display:flex;gap:8px}
+  .tri{color:#f59e0b;font-size:13px;line-height:1}
+  /* comparison */
+  .cmp{display:grid;grid-template-columns:1.3fr .8fr .8fr;font-size:9px;gap:0}
+  .cmp div{padding:5px 4px;border-bottom:1px solid rgba(255,255,255,.07)}
+  .cmp .hd{color:rgba(255,255,255,.4);font-size:8px;text-transform:uppercase;letter-spacing:.08em}
+  /* faq */
+  .faq{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:10px;color:#00bb77}
+  .chev{color:#00bb77}
+  /* quote */
+  .quote{font-family:'Noto Serif JP',serif;font-style:italic;font-size:14px;line-height:1.5;color:#fff}
+  /* phone */
+  .phone{width:120px;height:188px;margin:8px auto 0;border:6px solid #333;border-radius:18px;background:#1f1f1f;padding:8px;position:relative}
+  .pnav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:7px}
+  .burger{display:flex;flex-direction:column;gap:2px} .burger i{width:13px;height:1.5px;background:rgba(255,255,255,.6);display:block}
+  .pmenu{margin-top:8px} .pmenu div{font-size:9px;color:rgba(255,255,255,.6);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  /* trust strip */
+  .logos{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;height:100%;padding:18px}
+  .lg{width:64px;height:20px;border-radius:4px;background:rgba(255,255,255,.07)}
+  /* inline form */
+  .field{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:5px;padding:7px 9px;font-size:9.5px;color:rgba(255,255,255,.4)}
+  /* KPI */
+  .kpi{display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);border-radius:6px;padding:12px}
+  .kpibig{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+  .insight{border:1px solid rgba(255,255,255,.09);border-left:3px solid #00bb77;background:rgba(255,255,255,.03);border-radius:6px;padding:10px}
+  .stub{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:16px}
+  .badge-amber{display:inline-block;color:#f0c060;background:rgba(245,158,11,.12);font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:8px}
+  .tag-have{font-size:9px;font-weight:700;color:#0a7a4f;background:#c8efdd;border-radius:100px;padding:2px 8px}
+  .tag-new{font-size:9px;font-weight:700;color:#7a4a00;background:#fde3b0;border-radius:100px;padding:2px 8px}
+</style></head>
+<body>
+<div class="page">
+  <div class="head">
+    <h1>What we could add to the Unlock design system</h1>
+    <p>A menu of candidate surfaces, components and assets — each shown in the real Unlock style. Tell me which numbers you want and I'll build them out (real React components + spec cards + kit screens).</p>
+    <p style="margin-top:10px"><span class="tag-have">● already in the system</span> &nbsp; <span class="tag-new">＋ proposed</span></p>
+  </div>
+
+  <!-- ===== APP SURFACES ===== -->
+  <div class="grouplab">A · Authenticated-app UI kit (a second kit)</div>
+  <div class="row">
+
+    <div class="frame">
+      <div class="flabel"><span class="num">1</span> App shell + sidebar <span class="tag-new">＋</span></div>
+      <div class="fcap">Grouped left nav with green active marker + content area. (The Asset Register demo already exists in Unlock.dc.html — this packages it as kit screens.)</div>
+      <div class="card"><div class="shell">
+        <div class="sb">
+          <div class="sbi on"><span class="dot"></span>Register</div>
+          <div class="sbi"><span class="dot"></span>Health</div>
+          <div class="sbi"><span class="dot"></span>Tax</div>
+          <div class="sbi"><span class="dot"></span>Deals</div>
+          <div class="sbi"><span class="dot"></span>Reports</div>
+        </div>
+        <div class="appmain">
+          <div style="font-size:12px;font-weight:700;margin-bottom:8px">Asset Register</div>
+          <div class="kpi" style="padding:8px"><span class="muted" style="font-size:9px">Total</span><span class="kpibig" style="font-size:14px;color:#00bb77">£2,945,000</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">2</span> Holdings table <span class="tag-new">＋</span></div>
+      <div class="fcap">Dense rows — icon, label, wrapper/class tags, value, row actions. With group subtotals.</div>
+      <div class="card"><div class="mini">
+        <div class="trow"><span class="ava"></span><span style="flex:1">Acme plc</span><span class="chip">GIA</span><span style="font-weight:700">£900k</span></div>
+        <div class="trow"><span class="ava"></span><span style="flex:1">Family Home</span><span class="chip">GIA</span><span style="font-weight:700">£850k</span></div>
+        <div class="trow"><span class="ava"></span><span style="flex:1">SIPP</span><span class="chip">Pension</span><span style="font-weight:700">£600k</span></div>
+        <div class="trow"><span class="ava"></span><span style="flex:1">Cash Reserve</span><span class="chip">Cash</span><span style="font-weight:700">£250k</span></div>
+        <div class="trow" style="border:none"><span class="ava"></span><span style="flex:1">S&amp;S ISA</span><span class="chip">ISA</span><span style="font-weight:700">£200k</span></div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">3</span> Allocation donut <span class="tag-new">＋</span></div>
+      <div class="fcap">Asset-class ring + legend with values & percentages. Uses the data-viz palette.</div>
+      <div class="card"><div class="mini" style="display:flex;gap:10px;align-items:center">
+        <div class="donut"></div>
+        <div style="flex:1">
+          <div class="legrow"><span class="sw" style="background:#00bb77"></span>UK Equity <span class="faint" style="margin-left:auto">46%</span></div>
+          <div class="legrow"><span class="sw" style="background:#1f8a5b"></span>Property <span class="faint" style="margin-left:auto">18%</span></div>
+          <div class="legrow"><span class="sw" style="background:#5a8d76"></span>Cash <span class="faint" style="margin-left:auto">14%</span></div>
+          <div class="legrow"><span class="sw" style="background:#8a9690"></span>Global <span class="faint" style="margin-left:auto">12%</span></div>
+          <div class="legrow"><span class="sw" style="background:#4f5552"></span>Private <span class="faint" style="margin-left:auto">10%</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">4</span> KPI + insight banner <span class="tag-new">＋</span></div>
+      <div class="fcap">Portfolio-total stat card and the green left-border "insight" callout used across modules.</div>
+      <div class="card"><div class="mini">
+        <div class="kpi" style="margin-bottom:10px"><span class="muted">Portfolio total</span><span class="kpibig" style="color:#00bb77">£2.95m</span></div>
+        <div class="insight"><div class="green" style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">Your first insight</div><div class="muted" style="line-height:1.45">IHT exposure <span style="color:#fff">£4.31m</span>. Acme plc is <span style="color:#fff">30.5%</span> of the portfolio.</div></div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">5</span> Module empty state <span class="tag-new">＋</span></div>
+      <div class="fcap">"Vision — not live" stub for modules that read from the register but aren't built yet.</div>
+      <div class="card"><div class="stub">
+        <span class="badge-amber">Vision — not live</span>
+        <div style="font-weight:400;font-size:13px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Tax Intelligence</div>
+        <div class="muted" style="line-height:1.45;margin-bottom:10px;font-size:9.5px">Part of the intelligence suite — reads from your Asset Register.</div>
+        <span class="btnp" style="padding:6px 12px">← Back to Register</span>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ===== MARKETING COMPONENTS ===== -->
+  <div class="grouplab">B · New marketing components</div>
+  <div class="row">
+
+    <div class="frame">
+      <div class="flabel"><span class="num">6</span> Pricing tier card <span class="tag-new">＋</span></div>
+      <div class="fcap">Core / Pro / Family Office tier with price, check-list and CTA; "most popular" highlighted variant.</div>
+      <div class="card"><div class="mini ucard" style="border-color:rgba(0,187,119,.3);background:rgba(0,187,119,.05);height:auto">
+        <span class="pill" style="margin-bottom:6px">Most popular</span>
+        <div style="font-weight:500;font-size:13px">Pro</div>
+        <div style="margin:2px 0 8px"><span style="font-size:20px;font-weight:300">£499</span><span class="faint">/mo</span></div>
+        <div class="muted" style="margin-bottom:4px">✓ Everything in Core</div>
+        <div class="muted" style="margin-bottom:4px">✓ EIS/SEIS deal flow</div>
+        <div class="muted" style="margin-bottom:10px">✓ IHT Modeller</div>
+        <div class="btnp">Join waiting list</div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">7</span> Risk-warning callout <span class="tag-new">＋</span></div>
+      <div class="fcap">Amber compliance/risk box (capital at risk, FPO wording) used on EIS/SEIS & founding pages.</div>
+      <div class="card"><div class="mini">
+        <div class="amber"><span class="tri">▲</span><div><div style="font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em">Important risk warning</div><div class="muted" style="line-height:1.45">EIS/SEIS are illiquid, high-risk; you may lose all capital. Tax treatment depends on circumstances.</div></div></div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">8</span> Comparison table <span class="tag-new">＋</span></div>
+      <div class="fcap">"Unlock vs incumbents" — Unlock column emphasised, others greyed (the brand's fee-comparison motif).</div>
+      <div class="card"><div class="mini">
+        <div class="cmp">
+          <div class="hd"></div><div class="hd green">Unlock</div><div class="hd faint">Adviser</div>
+          <div class="muted">AUM fee</div><div class="green">£0</div><div class="faint">1%+</div>
+          <div class="muted">Deal access</div><div class="green">✓</div><div class="faint">—</div>
+          <div class="muted">IHT modelling</div><div class="green">✓</div><div class="faint">Annual</div>
+          <div class="muted" style="border:none">Real-time</div><div class="green" style="border:none">✓</div><div class="faint" style="border:none">—</div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">9</span> FAQ accordion <span class="tag-new">＋</span></div>
+      <div class="fcap">Expandable question rows with green chevrons — for pricing / how-it-works pages.</div>
+      <div class="card"><div class="mini">
+        <div class="faq">Is Unlock regulated? <span class="chev">›</span></div>
+        <div class="faq">How do you access my accounts? <span class="chev">›</span></div>
+        <div class="faq">What does it cost? <span class="chev" style="transform:rotate(90deg);display:inline-block">›</span></div>
+        <div class="muted" style="padding:6px 0;line-height:1.45;color:#fff">Flat subscription, no AUM fees — from £199/mo.</div>
+        <div class="faq" style="border:none">Can I cancel anytime? <span class="chev">›</span></div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">10</span> Pull-quote / testimonial <span class="tag-new">＋</span></div>
+      <div class="fcap">Noto Serif italic quote block — the one place the serif face is used.</div>
+      <div class="card"><div class="mini" style="display:flex;flex-direction:column;justify-content:center">
+        <div class="quote">"Finally, one place that shows my whole estate — and what HMRC will take."</div>
+        <div style="margin-top:12px;display:flex;align-items:center;gap:8px"><span class="ava" style="border-radius:50%"></span><div><div style="font-size:10px;font-weight:600;color:#00bb77">David H.</div><div class="faint" style="font-size:9px">Legacy builder</div></div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:28px">
+    <div class="frame">
+      <div class="flabel"><span class="num">11</span> Mobile nav <span class="tag-new">＋</span></div>
+      <div class="fcap">Hamburger → slide-in menu sheet, matching the responsive nav from the real site.</div>
+      <div class="card"><div class="phone">
+        <div class="pnav"><span class="green" style="font-weight:700;font-size:11px;letter-spacing:.02em">UNLOCK</span><span class="burger"><i></i><i></i><i></i></span></div>
+        <div class="pmenu"><div>Platform</div><div>Pricing</div><div>EIS &amp; SEIS</div><div>The Advice Gap</div><div>About</div></div>
+        <div class="btnp" style="margin-top:8px">Log in</div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">12</span> Trust / logo strip <span class="tag-new">＋</span></div>
+      <div class="fcap">"As featured in" / partner row — muted placeholder marks on the deep background.</div>
+      <div class="card"><div class="logos">
+        <div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">13</span> Inline lead-capture <span class="tag-new">＋</span></div>
+      <div class="fcap">Compact email + button band for mid-page conversion (lighter than the full waiting-list form).</div>
+      <div class="card"><div class="mini" style="display:flex;flex-direction:column;justify-content:center">
+        <div class="mh" style="font-size:15px;margin-bottom:10px">Join the waiting list</div>
+        <div style="display:flex;gap:6px"><div class="field" style="flex:1">james@example.com</div><div class="btnp" style="padding:7px 12px">Join</div></div>
+        <div class="faint" style="margin-top:8px">No commitment — priority access at launch.</div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">14</span> Team member card <span class="tag-new">＋</span></div>
+      <div class="fcap">Initials avatar + role + bio (already on the About/Team page — promote to a reusable component).</div>
+      <div class="card"><div class="mini">
+        <div class="ucard" style="border-radius:12px">
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(0,187,119,.1);border:1px solid rgba(0,187,119,.2);color:#00bb77;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:11px;margin-bottom:8px">JH</div>
+          <div style="font-size:11px;font-weight:500">James Harrington</div>
+          <div class="green" style="font-size:9px;margin:1px 0 6px">CEO &amp; Co-founder</div>
+          <div class="muted" style="line-height:1.45">15 years managing UHNW portfolios at a London multi-family office.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="frame">
+      <div class="flabel"><span class="num">15</span> Section header layouts <span class="tag-new">＋</span></div>
+      <div class="fcap">A small set of reusable hero/section headers (centered, split, with-eyebrow) as starting points.</div>
+      <div class="card"><div class="mini" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
+        <div class="eyebrow">The opportunity</div>
+        <div class="mh" style="font-size:18px">The rules are changing.<br>Your portfolio should too.</div>
+        <div class="u-divider" style="margin:12px auto 0;max-width:60px"></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE SCREENS ===== -->
+  <div class="grouplab">C · Full page screens (kit thumbnails — built in Unlock.dc.html, could become kit cards)</div>
+  <div class="row">
+    <div class="frame">
+      <div class="flabel"><span class="num">16</span> Homepage <span class="tag-have">●</span></div>
+      <div class="fcap">Already a UI-kit screen.</div>
+      <div class="card"><div class="mini"><div class="eyebrow">Portfolio intelligence</div><div class="mh" style="font-size:16px">See everything. <span class="green">Protect everything.</span></div><div class="muted" style="margin:8px 0">One subscription. Full visibility.</div><div style="display:flex;gap:6px"><span class="btnp" style="padding:6px 10px">Join</span></div><div class="divln"></div><div class="faint">FTSE 250 · AIM · GBP/USD · Gold</div></div></div>
+    </div>
+    <div class="frame">
+      <div class="flabel"><span class="num">17</span> Pricing / EIS / About / Team / Waiting / Founding <span class="tag-new">＋</span></div>
+      <div class="fcap">All six are built & wired in Unlock.dc.html — I can register each as its own kit screen + starting point.</div>
+      <div class="card"><div class="mini">
+        <div class="ucard" style="margin-bottom:6px;padding:7px"><span class="muted">Pricing — 3 tiers</span></div>
+        <div class="ucard" style="margin-bottom:6px;padding:7px"><span class="muted">EIS &amp; SEIS — relief table</span></div>
+        <div class="ucard" style="margin-bottom:6px;padding:7px"><span class="muted">About / Team — values + bios</span></div>
+        <div class="ucard" style="padding:7px"><span class="muted">Waiting list / Founding — forms</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div style="height:20px"></div>
+</div>
+</body></html>

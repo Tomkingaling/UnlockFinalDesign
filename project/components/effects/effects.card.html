@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" viewport="700x110" subtitle="Scrolling market ticker" name="DataTicker" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg-deep);font-family:var(--u-font-body);display:flex;align-items:center;min-height:110px}
+  .tick{width:100%;overflow:hidden;background:rgba(31,31,31,0.8);border-top:1px solid var(--u-hairline);border-bottom:1px solid var(--u-hairline);padding:11px 0}
+  .track{display:flex;white-space:nowrap;width:max-content;animation:u-ticker 40s linear infinite}
+  .item{display:inline-flex;align-items:center;gap:8px;margin:0 24px;font-size:12px;color:var(--u-text-faint)}
+  .item .l{color:var(--u-text-muted)}
+  .up{color:var(--u-green)} .down{color:#f87171}
+</style></head><body>
+  <div class="tick"><div class="track">
+    <span class="item"><span class="l">FTSE 250</span>20,412<span class="up">+0.34%</span></span>
+    <span class="item"><span class="l">AIM All-Share</span>731.2<span class="down">-0.12%</span></span>
+    <span class="item"><span class="l">GBP/USD</span>1.2714<span class="up">+0.08%</span></span>
+    <span class="item"><span class="l">Gold</span>$2,341<span class="up">+0.42%</span></span>
+    <span class="item"><span class="l">10Y Gilt</span>4.28%<span class="up">+2bp</span></span>
+    <span class="item"><span class="l">BTC/GBP</span>£54,210<span class="up">+1.2%</span></span>
+    <span class="item"><span class="l">FTSE 250</span>20,412<span class="up">+0.34%</span></span>
+    <span class="item"><span class="l">AIM All-Share</span>731.2<span class="down">-0.12%</span></span>
+  </div></div>
+</body></html>

@@ -1,0 +1,36 @@
+<!-- @dsCard group="Components" viewport="700x300" subtitle="Button state matrix — variant × state" name="Button states" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--neutral-850);font-family:var(--u-font-body,'Inter',sans-serif);padding:26px;color:#fff}
+  table{border-collapse:collapse}
+  th,td{padding:12px 16px;text-align:left}
+  th{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+  .rl{font-size:12px;font-weight:600;color:rgba(255,255,255,.6);padding-right:8px}
+  .btn{position:relative;font-size:13px;font-weight:600;padding:10px 20px;border-radius:6px;border:none;cursor:default;white-space:nowrap}
+  .p{background:var(--green-500);color:#fff}
+  .p.hover{background:var(--green-700)}
+  .p.focus{background:var(--green-500);color:#fff;box-shadow:0 0 0 2px var(--neutral-850),0 0 0 4px var(--green-500)}
+  .p.disabled{background:var(--green-900);color:rgba(255,255,255,.4)}
+  .o{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2)}
+  .o.hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.4)}
+  .o.focus{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);box-shadow:0 0 0 2px var(--neutral-850),0 0 0 4px var(--green-500)}
+  .o.disabled{color:rgba(255,255,255,.3);border-color:rgba(255,255,255,.08)}
+</style></head><body>
+  <table>
+    <thead><tr><th></th><th>Default</th><th>Hover</th><th>Focused</th><th>Disabled</th></tr></thead>
+    <tbody>
+      <tr><td class="rl">Primary</td>
+        <td><button class="btn p">Join the waiting list</button></td>
+        <td><button class="btn p hover">Join the waiting list</button></td>
+        <td><button class="btn p focus">Join the waiting list</button></td>
+        <td><button class="btn p disabled">Join the waiting list</button></td></tr>
+      <tr><td class="rl">Secondary</td>
+        <td><button class="btn o">See how it works</button></td>
+        <td><button class="btn o hover">See how it works</button></td>
+        <td><button class="btn o focus">See how it works</button></td>
+        <td><button class="btn o disabled">See how it works</button></td></tr>
+    </tbody>
+  </table>
+  <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:18px;max-width:560px;line-height:1.5">Primary = <code style="color:var(--green-500)">green-500</code> fill → hover <code style="color:var(--green-500)">green-700</code> → disabled <code style="color:var(--green-500)">green-900</code>. Focus = 2px accent ring + background offset. Web CTA keeps white text (documented exception); document layer uses near-black on green.</div>
+</body></html>

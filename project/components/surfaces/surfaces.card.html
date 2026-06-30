@@ -1,0 +1,17 @@
+<!-- @dsCard group="Components" viewport="700x230" subtitle="Card states + FeatureCard" name="Card / FeatureCard" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg);font-family:var(--u-font-body);padding:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;color:var(--u-text)}
+  .card{padding:24px;border-radius:8px;border:1px solid var(--u-border);background:rgba(255,255,255,0.03)}
+  .card.hover{background:rgba(255,255,255,0.06);border-color:rgba(0,187,119,0.25)}
+  .card.hl{background:var(--u-green-fill);border:1px solid rgba(0,187,119,0.3);border-radius:12px}
+  h3{font-size:16px;font-weight:500;margin:0 0 8px}
+  p{font-size:14px;color:var(--u-text-muted);line-height:1.6;margin:0}
+  .ic{color:var(--u-green);margin-bottom:14px}
+  .tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--u-green);display:block;margin-bottom:8px}
+</style></head><body>
+  <div class="card"><span class="tag">Default</span><h3>Plain surface</h3><p>Hairline border, 3% fill, 8px radius.</p></div>
+  <div class="card hover"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><h3>FeatureCard (hover)</h3><p>Fill brightens, border turns green.</p></div>
+  <div class="card hl"><span class="tag">Most popular</span><h3>Highlighted</h3><p>Green-tinted fill + green border, 12px radius.</p></div>
+</body></html>

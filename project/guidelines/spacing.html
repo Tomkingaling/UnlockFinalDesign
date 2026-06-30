@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x190" subtitle="4px rhythm, radii & container widths" name="Spacing & radii" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--u-bg-deep);font-family:var(--u-font-body);padding:24px;color:var(--u-text)}
+  .row{display:flex;align-items:flex-end;gap:10px;margin-bottom:22px}
+  .bar{background:var(--u-green);border-radius:2px;width:18px}
+  .cap{font-size:10px;color:var(--u-text-faint);text-align:center;margin-top:5px}
+  .radii{display:flex;gap:16px}
+  .rc{width:74px;height:48px;background:rgba(255,255,255,0.04);border:1px solid var(--u-border)}
+  .n{font-size:11px;color:var(--u-text-muted);margin-top:6px}
+</style></head><body>
+  <div class="row">
+    <div><div class="bar" style="height:8px"></div><div class="cap">4</div></div>
+    <div><div class="bar" style="height:16px"></div><div class="cap">8</div></div>
+    <div><div class="bar" style="height:24px"></div><div class="cap">12</div></div>
+    <div><div class="bar" style="height:32px"></div><div class="cap">16</div></div>
+    <div><div class="bar" style="height:48px"></div><div class="cap">24</div></div>
+    <div><div class="bar" style="height:64px"></div><div class="cap">32</div></div>
+    <div><div class="bar" style="height:80px"></div><div class="cap">56</div></div>
+    <div style="margin-left:20px;color:var(--u-text-muted);font-size:12px">Section padding 112 · container 1240 / 720 / 520</div>
+  </div>
+  <div class="radii">
+    <div><div class="rc" style="border-radius:var(--u-radius-s)"></div><div class="n">6 — buttons/inputs</div></div>
+    <div><div class="rc" style="border-radius:var(--u-radius-m)"></div><div class="n">8 — cards</div></div>
+    <div><div class="rc" style="border-radius:var(--u-radius-l)"></div><div class="n">12 — panels</div></div>
+    <div><div class="rc" style="border-radius:var(--u-radius-pill);width:48px"></div><div class="n">pill — badges</div></div>
+  </div>
+</body></html>

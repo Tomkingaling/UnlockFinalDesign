@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlock — photography & imagery (add-on)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* STANDALONE imagery page — how Unlock uses photography + the brand photo shapes.
+     Soft Black #212023 · Green Jade #00bb77 · Green Bone #f5f7f0. Drop real portraits in. */
+  :root{--acc:#00bb77;--ink:#212023;--bone:#f5f7f0;--muted:#6c7066}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;padding:0 0 100px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+  h1{font-weight:300;font-size:clamp(32px,5vw,56px);letter-spacing:-.02em;margin:0 0 14px;line-height:1.05}
+  .sub{color:var(--muted);max-width:54ch}
+  h2{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:54px 0 16px}
+  .cap{font-size:11px;color:var(--muted);margin-top:8px}
+  /* hero: portrait masked in a U/pill, paired with a jade block */
+  .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;padding-top:56px}
+  .ph{background:linear-gradient(150deg,#c7cabf,#8f968a) center/cover no-repeat;position:relative;overflow:hidden}
+  .heroimg{height:420px;border-radius:24px 24px 200px 200px;position:relative}
+  .heroimg .block{position:absolute;left:-18px;bottom:40px;width:90px;height:90px;background:var(--acc);border-radius:14px}
+  .row{display:flex;gap:22px;flex-wrap:wrap}
+  .pill{width:140px;height:200px;border-radius:999px}
+  .circ{width:160px;height:160px;border-radius:50%}
+  .rsq{width:160px;height:190px;border-radius:18px}
+  .uframe{width:150px;height:200px;border-radius:18px 18px 999px 999px}
+  .duo{filter:grayscale(1) contrast(1.05);position:relative}
+  .duo::after{content:'';position:absolute;inset:0;background:var(--acc);mix-blend-mode:color;opacity:.55}
+  .tag{position:absolute;bottom:10px;left:12px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#fff;opacity:.9}
+  ul{color:var(--muted);font-size:14px;line-height:1.8;padding-left:18px;max-width:60ch}
+  .board{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px;margin-top:4px}
+  .board .ph{aspect-ratio:3/4;border-radius:14px}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Real people.<br>Real decisions.</h1>
+      <p class="sub">Unlock's imagery is warm, candid portraits of investors and advisers — never stock-abstract. Masked into the brand shapes and paired with a single Green Jade block.</p>
+    </div>
+    <div class="ph heroimg"><image-slot id="hero" placeholder="Drop a portrait" style="width:100%;height:100%"></image-slot><div class="block"></div></div>
+  </div>
+
+  <h2>Photo containers</h2>
+  <div class="row">
+    <div><div class="ph pill duo" style="background-image:url('assets/claudia.jpg');background-position:center 20%"></div></div>
+    <div><div class="ph circ duo" style="background-image:url('assets/claudia.jpg');background-position:center 18%"></div></div>
+    <div><div class="ph rsq duo" style="background-image:url('assets/claudia.jpg');background-position:center 18%"></div></div>
+    <div><div class="ph uframe duo" style="background-image:url('assets/claudia.jpg');background-position:center 20%"><span class="tag">U-frame</span></div></div>
+  </div>
+  <p class="cap">Portraits clip to pill / circle / rounded frames; the duotone treatment tints a greyscale photo with Green Jade for hero and section moments.</p>
+
+  <h2>Try images — drop into any window</h2>
+  <p class="cap" style="margin:0 0 16px">Lots of slots to audition different portraits. Drag a downloaded photo onto any frame; it masks to the shape and persists.</p>
+  <div class="board" id="board"></div>
+
+  <h2>Direction</h2>
+  <ul>
+    <li>Candid, in-context professionals (40s–70s) — investors, advisers, families.</li>
+    <li>Warm neutral backgrounds; soft natural light; eye contact or considered gaze.</li>
+    <li>Masked into the unlock shapes; one Jade block per composition, never more.</li>
+    <li>Greyscale + Jade duotone for covers / heroes; full-colour for content rows.</li>
+    <li>No glossy stock, no abstract 3D, no busy backgrounds.</li>
+  </ul>
+</div>
+<script>(function(){var b=document.getElementById('board');for(var i=1;i<=18;i++){var d=document.createElement('div');d.className='ph';d.innerHTML='<image-slot id="b'+i+'" shape="rounded" radius="14" placeholder="Drop" style="width:100%;height:100%"></image-slot>';b.appendChild(d);}})();</script>
+<script src="image-slot.js"></script>
+</body></html>

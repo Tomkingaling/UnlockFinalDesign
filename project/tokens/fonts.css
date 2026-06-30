@@ -1,0 +1,16 @@
+/* Webfonts — the real Unlock brand faces.
+   Aeonik (body + headings) is self-hosted from /fonts.
+   Noto Serif JP (display / pull-quotes / legal) is loaded from Google Fonts —
+   the repo referenced self-hosted NotoSerifJP-*.otf files that were not present,
+   so Google Fonts is used as the faithful substitute (same family, same weights).
+   Inter is kept only as a fallback / comparison face. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap");
+
+@font-face { font-family: "Aeonik"; font-weight: 100; font-style: normal; font-display: swap; src: url("../fonts/Aeonik-Thin.otf") format("opentype"); }
+@font-face { font-family: "Aeonik"; font-weight: 300; font-style: normal; font-display: swap; src: url("../fonts/Aeonik-Light.otf") format("opentype"); }
+@font-face { font-family: "Aeonik"; font-weight: 400; font-style: normal; font-display: swap; src: url("../fonts/Aeonik-Regular.otf") format("opentype"); }
+@font-face { font-family: "Aeonik"; font-weight: 500; font-style: normal; font-display: swap; src: url("../fonts/Aeonik-Medium.otf") format("opentype"); }
+
+/* Noto Serif JP self-hosted faces are provided by the Google Fonts @import above.
+   Drop NotoSerifJP-*.otf into /fonts and restore @font-face rules here to self-host. */

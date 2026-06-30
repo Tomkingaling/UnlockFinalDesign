@@ -1,0 +1,36 @@
+/* ============================================================
+   BRAND LAYER TEMPLATE — the ONLY file a new brand edits.
+   Copy to tokens/<brand>.css, fill the inputs, link AFTER styles.css:
+     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="tokens/<brand>.css">
+   Everything else (atoms → organisms, the live hub) reads --role-* / --u-font-*,
+   so swapping brands is THIS file only. Greyscale-first: leave the accent neutral
+   and the whole system still reads correctly.
+   ============================================================ */
+:root {
+  /* 1 · ACCENT RAMP — your brand colour as a 50–900 scale (here: Unlock green). */
+  --brand-50:#E6F8F0; --brand-300:#57D2A1; --brand-500:#00bb77; --brand-700:#008655; --brand-900:#024D32;
+
+  /* 2 · FONTS */
+  --brand-display:'Aeonik','Inter',sans-serif;   /* headings */
+  --brand-body:'Inter',system-ui,sans-serif;     /* body / UI */
+
+  /* 3 · SURFACE ANCHOR (dark example; for a light brand flip these + --brand-text) */
+  --brand-bg:#1e1e1e; --brand-surface:#2b2b2b; --brand-border:#444444;
+  --brand-text:#ffffff; --brand-muted:rgba(255,255,255,.55);
+
+  /* 4 · ON-ACCENT text — white OR near-black, whichever clears contrast on --brand-500 */
+  --brand-on-accent:#ffffff;
+
+  /* ---- WIRING (don't edit): roles + fonts ← brand inputs above ---- */
+  --green-300:var(--brand-300); --green-500:var(--brand-500); --green-700:var(--brand-700);
+  --role-primary:var(--brand-500); --role-primary-hover:var(--brand-700);
+  --role-text-green:var(--brand-700); --role-on-primary:var(--brand-on-accent);
+  --role-page:var(--brand-bg); --role-surface:var(--brand-surface); --role-surface-raised:var(--brand-surface);
+  --role-border:var(--brand-border); --role-text:var(--brand-text); --role-text-muted:var(--brand-muted);
+  --u-green:var(--brand-500); --u-green-deep:var(--brand-700);
+  --u-text:var(--brand-text); --u-text-muted:var(--brand-muted); --u-border:var(--brand-border);
+  --u-bg:var(--brand-surface); --u-bg-deep:var(--brand-bg); --u-bg-deepest:var(--brand-bg); --u-surface:var(--brand-surface);
+  --u-font-body:var(--brand-body); --u-font-heading:var(--brand-display); --u-font-display:var(--brand-display);
+  --u-font-serif:var(--brand-display);
+}
