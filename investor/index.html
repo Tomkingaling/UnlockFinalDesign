@@ -21,51 +21,28 @@
     .brand { display: inline-flex; align-items: baseline; text-decoration: none; margin-bottom: 40px; }
     .brand img { height: 20px; width: auto; }
     .brand .dot { color: var(--u-green); font-size: 21px; line-height: 0; transform: translateX(-11px); }
-    h1 { font-size: 28px; font-weight: var(--u-weight-light); letter-spacing: -.01em; margin: 0 0 10px; }
-    .lead { font-size: 15px; color: var(--u-text-muted); line-height: 1.6; margin: 0 0 32px; }
-    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    @media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
-    .card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid var(--u-border);
-      padding: 22px;
-      cursor: pointer;
-      text-align: left;
-      color: inherit;
-      font: inherit;
-      transition: border-color .15s, background .15s;
-      width: 100%;
-    }
-    .card:hover { border-color: var(--u-green-line); background: var(--u-green-fill); }
-    .card h2 { font-size: 15px; font-weight: var(--u-weight-regular); margin: 0 0 6px; color: #fff; }
-    .card p { font-size: 13px; color: var(--u-text-muted); margin: 0; line-height: 1.5; }
-    .cert { margin-top: 28px; border: 1px solid var(--u-border); background: rgba(255,255,255,.02); padding: 28px; }
-    .cert h2 { font-size: 17px; font-weight: var(--u-weight-regular); margin: 0 0 10px; color: #fff; }
-    .cert .sub { font-size: 13.5px; color: var(--u-text-muted); line-height: 1.6; margin: 0 0 22px; }
+    h1 { font-size: var(--u-type-section-sm); font-weight: var(--u-weight-light); letter-spacing: var(--u-tracking-section); margin: 0 0 10px; line-height: var(--u-leading-section); }
+    .lead { font-size: var(--u-type-body); color: var(--u-text-muted); line-height: var(--u-leading-body); margin: 0 0 28px; }
     .opts { border: 1px solid var(--u-border); margin: 0 0 18px; }
     .opt { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-bottom: 1px solid var(--u-border); }
     .opt:last-child { border-bottom: none; }
     .opt input[type=radio] { margin-top: 3px; flex: none; accent-color: var(--u-green); }
     .opt label { cursor: pointer; }
-    .opt .t { font-size: 14px; color: #fff; font-weight: var(--u-weight-regular); display: block; margin-bottom: 4px; }
-    .opt .d { font-size: 12.5px; color: var(--u-text-muted); line-height: 1.55; }
+    .opt .t { font-size: var(--u-type-body); color: #fff; font-weight: var(--u-weight-regular); display: block; margin-bottom: 4px; }
+    .opt .d { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; }
     .opt .d em { color: var(--u-amber); font-style: normal; }
     .ack { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
     .ack input { margin-top: 3px; flex: none; accent-color: var(--u-green); }
-    .ack label { font-size: 13px; color: var(--u-text-muted); line-height: 1.55; cursor: pointer; }
-    .err { font-size: 13px; color: #f87171; min-height: 1.4em; margin-bottom: 12px; }
-    .actions { display: flex; align-items: center; gap: 16px; }
+    .ack label { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; cursor: pointer; }
+    .err { font-size: var(--u-type-body-sm); color: var(--u-red); min-height: 1.4em; margin-bottom: 12px; }
     .btnP {
-      font-family: inherit; font-size: 12.5px; background: var(--u-green); color: var(--u-on-green);
+      font-family: inherit; font-size: var(--u-type-body-sm); background: var(--u-green); color: var(--u-on-green);
       border: none; padding: 13px 24px; text-transform: uppercase;
       font-weight: var(--u-weight-button); letter-spacing: var(--u-tracking-button); cursor: pointer;
     }
     .btnP:hover { box-shadow: var(--u-shadow-cta); }
     .btnP:disabled { opacity: .35; cursor: not-allowed; box-shadow: none; }
-    .btnG { background: none; border: none; font-family: inherit; font-size: 13px; color: var(--u-text-faint); cursor: pointer; padding: 0; }
-    .btnG:hover { color: var(--u-text-muted); }
-    .hidden { display: none !important; }
-    footer { margin-top: 32px; font-size: 11.5px; color: var(--u-text-compliance); line-height: 1.6; max-width: 60ch; }
+    footer { margin-top: 32px; font-size: var(--u-type-legal); color: var(--u-text-compliance); line-height: var(--u-leading-body); max-width: 60ch; }
   </style>
 </head>
 <body>
@@ -75,100 +52,62 @@
       <span class="dot">.</span>
     </a>
 
-    <h1>How would you like to explore?</h1>
-    <p class="lead">Choose the path that fits you. Investor material is restricted to eligible persons.</p>
+    <h1>Confirm your investor category</h1>
+    <p class="lead">The material beyond this point is a financial promotion intended only for investors who meet one of the categories below. Please select and confirm the statement that applies to you.</p>
 
-    <div class="cards" id="fork">
-      <button class="card" id="userPath">
-        <h2>Platform overview →</h2>
-        <p>Learn about Unlock and how it works. Open to everyone.</p>
-      </button>
-      <button class="card" id="investorPath">
-        <h2>Investor walkthrough →</h2>
-        <p>Access the pitch, deck, and due-diligence material. Eligibility required.</p>
-      </button>
-    </div>
-
-    <section class="cert hidden" id="certPanel" aria-live="polite">
-      <h2>Investor eligibility statement</h2>
-      <p class="sub">
-        The material beyond this point is a financial promotion intended only for investors
-        who meet one of the categories below. Please select and confirm the statement that applies to you.
-      </p>
-
-      <div class="opts">
-        <div class="opt">
-          <input type="radio" name="ctype" id="t-hnw" value="hnw">
-          <label for="t-hnw">
-            <span class="t">Certified High Net Worth Investor</span>
-            <span class="d"><em>[ Insert HNW declaration wording from your compliance framework ]</em></span>
-          </label>
-        </div>
-        <div class="opt">
-          <input type="radio" name="ctype" id="t-soph" value="sophisticated">
-          <label for="t-soph">
-            <span class="t">Certified Sophisticated Investor</span>
-            <span class="d"><em>[ Insert certified-sophisticated declaration wording from your compliance framework ]</em></span>
-          </label>
-        </div>
-        <div class="opt">
-          <input type="radio" name="ctype" id="t-self" value="self-sophisticated">
-          <label for="t-self">
-            <span class="t">Self-Certified Sophisticated Investor</span>
-            <span class="d"><em>[ Insert self-certified-sophisticated declaration wording from your compliance framework ]</em></span>
-          </label>
-        </div>
-      </div>
-
-      <div class="ack">
-        <input type="checkbox" id="ack">
-        <label for="ack">
-          I confirm the statement I have selected is true, and I understand the material I am about to
-          access is a financial promotion that has not been approved by an authorised person.
+    <div class="opts">
+      <div class="opt">
+        <input type="radio" name="ctype" id="t-hnw" value="hnw">
+        <label for="t-hnw">
+          <span class="t">Certified High Net Worth Investor</span>
+          <span class="d"><em>[ Insert HNW declaration wording from your compliance framework ]</em></span>
         </label>
       </div>
-
-      <p class="err" id="err"></p>
-
-      <div class="actions">
-        <button class="btnP" id="continueBtn" disabled>Begin the walkthrough</button>
-        <button class="btnG" id="backBtn">← Back</button>
+      <div class="opt">
+        <input type="radio" name="ctype" id="t-soph" value="sophisticated">
+        <label for="t-soph">
+          <span class="t">Certified Sophisticated Investor</span>
+          <span class="d"><em>[ Insert certified-sophisticated declaration wording from your compliance framework ]</em></span>
+        </label>
       </div>
-    </section>
+      <div class="opt">
+        <input type="radio" name="ctype" id="t-self" value="self-sophisticated">
+        <label for="t-self">
+          <span class="t">Self-Certified Sophisticated Investor</span>
+          <span class="d"><em>[ Insert self-certified-sophisticated declaration wording from your compliance framework ]</em></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="ack">
+      <input type="checkbox" id="ack">
+      <label for="ack">
+        I confirm the statement I have selected is true, and I understand the material I am about to
+        access is a financial promotion that has not been approved by an authorised person.
+      </label>
+    </div>
+
+    <p class="err" id="err"></p>
+
+    <button class="btnP" id="continueBtn" disabled>Begin the walkthrough</button>
 
     <footer>
       Capital at risk. Investments of this type are illiquid and high risk. The value of investments
       and any income from them can fall as well as rise. This is not investment advice.
-      <!-- Replace with approved risk-warning wording from your compliance framework. -->
     </footer>
   </div>
 
   <script>
-    const PUBLIC = 'https://www.unlockdd.com';
     const next = new URLSearchParams(location.search).get('next') || '/gated/';
-
-    const fork = document.getElementById('fork');
-    const panel = document.getElementById('certPanel');
     const btn = document.getElementById('continueBtn');
     const ack = document.getElementById('ack');
     const err = document.getElementById('err');
-
-    document.getElementById('userPath').onclick = () => { location.href = PUBLIC; };
-    document.getElementById('investorPath').onclick = () => {
-      fork.classList.add('hidden');
-      panel.classList.remove('hidden');
-    };
-    document.getElementById('backBtn').onclick = () => {
-      panel.classList.add('hidden');
-      fork.classList.remove('hidden');
-      err.textContent = '';
-    };
 
     function refresh() {
       const sel = document.querySelector('input[name=ctype]:checked');
       btn.disabled = !(sel && ack.checked);
     }
-    panel.addEventListener('change', refresh);
+    document.querySelector('.gate').addEventListener('change', refresh);
 
     btn.addEventListener('click', async () => {
       err.textContent = '';

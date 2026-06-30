@@ -80,16 +80,6 @@
     padding:80px 80px 100px;position:relative;z-index:2;
   }
 
-  /* entrances — DS u-reveal (transform-only, never opacity:0) */
-  .anim{animation:none}
-  .section.visible .anim{animation:u-reveal var(--u-dur-reveal) var(--u-ease) both}
-  .section.visible .d1{animation-delay:.08s}
-  .section.visible .d2{animation-delay:.18s}
-  .section.visible .d3{animation-delay:.30s}
-  .section.visible .d4{animation-delay:.42s}
-  .section.visible .d5{animation-delay:.54s}
-  .section.visible .d6{animation-delay:.66s}
-
   /* ---------- slide content patterns ---------- */
   .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--u-green);font-size:13px;
     font-weight:var(--u-weight-medium);letter-spacing:.28em;text-transform:uppercase;margin:0 0 30px}
@@ -333,7 +323,7 @@
     #sidebar{display:none}:root{--side-w:0px}
   }
   @media(prefers-reduced-motion:reduce){
-    .anim{opacity:1;transform:none;transition:none}
+    .{opacity:1;transform:none;transition:none}
     .orbit .spin{animation:none}
   }
 </style></head>
@@ -371,14 +361,14 @@
     <section class="section deepest" id="s-0" data-idx="0">
       <div class="gw" style="width:700px;height:700px;top:50%;left:62%;transform:translate(-50%,-50%)"></div>
       <div class="cover-inner">
-        <div class="anim">
+        <div>
           <p class="roi" style="font-family:var(--u-font-serif);font-size:20px;color:var(--u-text-muted);letter-spacing:.02em;margin:0 0 22px"><b style="color:var(--u-green);font-weight:400">R</b>eturn <b style="color:var(--u-green);font-weight:400">O</b>n <b style="color:var(--u-green);font-weight:400">I</b>ntelligence</p>
           <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--u-text-faint);margin:0 0 26px">Founding round 2026 · EIS + SEIS · KIC-confirmed</p>
           <h1 style="font-size:var(--u-type-hero);line-height:var(--u-leading-display);letter-spacing:var(--u-tracking-display);max-width:14ch">Built to be one of the 1 in 10 that deliver <span class="grad">10×+</span>.</h1>
           <p class="lead" style="margin-top:28px"><b>This is not a build round.</b> The platform exists, the tools are in use, and development was founder-funded. This round funds growth, not invention. Most early-stage companies don't make it — Unlock is built to be one that does, and the EIS/SEIS structure is designed to soften the cost if it isn't.</p>
           <p style="margin-top:32px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--u-text-faint)">↓ scroll · ↑↓ arrows · side menu</p>
         </div>
-        <div class="orbit anim d2">
+        <div class="orbit ">
           <div class="o o1"></div><div class="o o2"></div><div class="o o3"></div>
           <div class="spin s1"><span class="dot"></span></div>
           <div class="spin s2"><span class="dot"></span></div>
@@ -390,29 +380,29 @@
     <!-- 02 · What & who -->
     <section class="section" id="s-1" data-idx="1">
       <div class="wrapc">
-        <p class="eyebrow anim">What we are · who it's for</p>
-        <h2 class="disp anim d1">Portfolio intelligence for serious private investors.</h2>
-        <p class="lead anim d2">Not a broker. Not an aggregator. Not a robo-adviser. A whole-of-wealth analysis and planning environment for UK investors with <b>£1M–£20M+</b> held across regulated <em>and</em> alternative assets — conflict-free, and outside the FCA perimeter by design.</p>
+        <p class="eyebrow ">What we are · who it's for</p>
+        <h2 class="disp ">Portfolio intelligence for serious private investors.</h2>
+        <p class="lead ">Not a broker. Not an aggregator. Not a robo-adviser. A whole-of-wealth analysis and planning environment for UK investors with <b>£1M–£20M+</b> held across regulated <em>and</em> alternative assets — conflict-free, and outside the FCA perimeter by design.</p>
         <div class="g3" style="margin-top:44px">
-          <div class="card anim d3"><h3>The Estate Architect</h3><p>£1M–£3M, building a deliberate legacy structure across multiple assets.</p></div>
-          <div class="card anim d4"><h3>The Operator-Owner</h3><p>£1M–£5M, wealth tied to an enterprise; self-directing and time-poor.</p></div>
-          <div class="card anim d5"><h3>The Multi-Family Principal</h3><p>£5M–£20M+, wealth held across generations and entities.</p></div>
+          <div class="card "><h3>The Estate Architect</h3><p>£1M–£3M, building a deliberate legacy structure across multiple assets.</p></div>
+          <div class="card "><h3>The Operator-Owner</h3><p>£1M–£5M, wealth tied to an enterprise; self-directing and time-poor.</p></div>
+          <div class="card "><h3>The Multi-Family Principal</h3><p>£5M–£20M+, wealth held across generations and entities.</p></div>
         </div>
-        <p class="foot anim d6">Year-1 bullseye personas from the Unlock discovery. A decision-support tool, not advice.</p>
+        <p class="foot ">Year-1 bullseye personas from the Unlock discovery. A decision-support tool, not advice.</p>
       </div>
     </section>
 
     <!-- 03 · The problem -->
     <section class="section alt" id="s-2" data-idx="2">
       <div class="wrapc">
-        <p class="eyebrow anim">The problem</p>
-        <h2 class="disp anim d1" style="max-width:24ch">HNW investors can't see their full position — and no one is incentivised to fix it.</h2>
+        <p class="eyebrow ">The problem</p>
+        <h2 class="disp " style="max-width:24ch">HNW investors can't see their full position — and no one is incentivised to fix it.</h2>
         <div class="g3" style="margin-top:40px">
-          <div class="card anim d2"><h3>Fragmented</h3><p>The average HNW investor holds assets across <b style="color:#fff">4.7 platforms</b>. No single view exists — not from the IFA, the accountant, or any one platform.</p></div>
-          <div class="card anim d3"><h3>Conflicted</h3><p>Every platform earns from what you hold through it. The intelligence is optimised for their outcomes, not yours. Architectural, not incidental.</p></div>
-          <div class="card anim d4"><h3>Inaccessible</h3><p>Institutions have analysts and models. Private investors with comparable wealth have a spreadsheet and gut instinct.</p></div>
+          <div class="card "><h3>Fragmented</h3><p>The average HNW investor holds assets across <b style="color:#fff">4.7 platforms</b>. No single view exists — not from the IFA, the accountant, or any one platform.</p></div>
+          <div class="card "><h3>Conflicted</h3><p>Every platform earns from what you hold through it. The intelligence is optimised for their outcomes, not yours. Architectural, not incidental.</p></div>
+          <div class="card "><h3>Inaccessible</h3><p>Institutions have analysts and models. Private investors with comparable wealth have a spreadsheet and gut instinct.</p></div>
         </div>
-        <div class="anim d5" style="display:flex;align-items:flex-end;gap:44px;margin-top:40px;flex-wrap:wrap">
+        <div style="display:flex;align-items:flex-end;gap:44px;margin-top:40px;flex-wrap:wrap">
           <div>
             <div style="font-size:var(--u-type-stat);font-weight:var(--u-weight-light);color:var(--u-green);line-height:1">75%</div>
             <p style="font-size:15px;color:var(--u-text-muted);margin:12px 0 0;max-width:42ch">of typical UK household wealth sits in just two assets — property &amp; pension. The concentration most investors never see.</p>
@@ -433,25 +423,25 @@
     <!-- 04 · Why it stays broken -->
     <section class="section" id="s-3" data-idx="3">
       <div class="wrapc">
-        <p class="eyebrow anim">Why it stays broken</p>
-        <h2 class="disp anim d1">Four truths leave only one answer.</h2>
+        <p class="eyebrow ">Why it stays broken</p>
+        <h2 class="disp ">Four truths leave only one answer.</h2>
         <div class="g4" style="margin-top:48px">
-          <div class="card num-card anim d2"><span class="n">01</span><h3 style="font-size:20px">Structural</h3><p>Information asymmetry across every alternative asset class.</p></div>
-          <div class="card num-card anim d3"><span class="n">02</span><h3 style="font-size:20px">Self-perpetuating</h3><p>No party in the system is incentivised to solve it.</p></div>
-          <div class="card num-card anim d4"><span class="n">03</span><h3 style="font-size:20px">Incumbent-proof</h3><p>Their business models depend on the current structure.</p></div>
-          <div class="card num-card anim d5"><span class="n">04</span><h3 style="font-size:20px">Beyond regulation</h3><p>Restricting information increases risk — it doesn't reduce it.</p></div>
+          <div class="card num-card "><span class="n">01</span><h3 style="font-size:20px">Structural</h3><p>Information asymmetry across every alternative asset class.</p></div>
+          <div class="card num-card "><span class="n">02</span><h3 style="font-size:20px">Self-perpetuating</h3><p>No party in the system is incentivised to solve it.</p></div>
+          <div class="card num-card "><span class="n">03</span><h3 style="font-size:20px">Incumbent-proof</h3><p>Their business models depend on the current structure.</p></div>
+          <div class="card num-card "><span class="n">04</span><h3 style="font-size:20px">Beyond regulation</h3><p>Restricting information increases risk — it doesn't reduce it.</p></div>
         </div>
-        <p class="foot anim d6" style="font-size:24px;color:var(--u-text-muted);max-width:none;padding-top:44px">A new entrant. A new model. A new default. <b style="color:#fff">That's Unlock.</b></p>
+        <p class="foot " style="font-size:24px;color:var(--u-text-muted);max-width:none;padding-top:44px">A new entrant. A new model. A new default. <b style="color:#fff">That's Unlock.</b></p>
       </div>
     </section>
 
     <!-- 05 · The solution -->
     <section class="section alt" id="s-4" data-idx="4">
       <div class="wrapc">
-        <p class="eyebrow anim">The solution</p>
-        <h2 class="disp anim d1">Your whole position — seen, in seconds.</h2>
-        <p class="lead anim d2" style="max-width:60ch">The one thing investors at this level have never had: a complete, lot-level, tax-aware picture — regulated <em>and</em> alternative — before they act.</p>
-        <div class="anim d3" style="display:flex;gap:48px;margin-top:36px;align-items:flex-start;flex-wrap:wrap">
+        <p class="eyebrow ">The solution</p>
+        <h2 class="disp ">Your whole position — seen, in seconds.</h2>
+        <p class="lead " style="max-width:60ch">The one thing investors at this level have never had: a complete, lot-level, tax-aware picture — regulated <em>and</em> alternative — before they act.</p>
+        <div style="display:flex;gap:48px;margin-top:36px;align-items:flex-start;flex-wrap:wrap">
           <div style="flex:1.4;min-width:320px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px">
               <span class="tag amber">Illustrative data</span>
@@ -473,87 +463,87 @@
     <!-- 06 · The product -->
     <section class="section" id="s-5" data-idx="5">
       <div class="wrapc">
-        <p class="eyebrow anim">The solution · in use today</p>
-        <h2 class="disp anim d1">Three core systems — already live.</h2>
+        <p class="eyebrow ">The solution · in use today</p>
+        <h2 class="disp ">Three core systems — already live.</h2>
         <div class="g3" style="margin-top:44px">
-          <div class="card anim d2"><span class="pill ok">Live</span><h3>Asset Register</h3><p>Complete position across regulated and unregulated assets. Modelling David Irons' full estate.</p></div>
-          <div class="card anim d3"><span class="pill ok">Live</span><h3>Decumulation Planner</h3><p>Retirement and drawdown across the whole estate — designed with Tony Vine-Lott on his own position.</p></div>
-          <div class="card anim d4"><span class="pill amber">Compounding</span><h3>Tax Intelligence Engine</h3><p>Real-time optimisation; quantified <b style="color:var(--u-green)">&gt;£2M</b> tax saving on a single user.</p></div>
+          <div class="card "><span class="pill ok">Live</span><h3>Asset Register</h3><p>Complete position across regulated and unregulated assets. Modelling David Irons' full estate.</p></div>
+          <div class="card "><span class="pill ok">Live</span><h3>Decumulation Planner</h3><p>Retirement and drawdown across the whole estate — designed with Tony Vine-Lott on his own position.</p></div>
+          <div class="card "><span class="pill amber">Compounding</span><h3>Tax Intelligence Engine</h3><p>Real-time optimisation; quantified <b style="color:var(--u-green)">&gt;£2M</b> tax saving on a single user.</p></div>
         </div>
-        <p class="foot anim d5">Decision-support tool, not advice; outside the FCA perimeter by design.</p>
+        <p class="foot ">Decision-support tool, not advice; outside the FCA perimeter by design.</p>
       </div>
     </section>
 
     <!-- 07 · Why we win -->
     <section class="section alt" id="s-6" data-idx="6">
       <div class="wrapc">
-        <p class="eyebrow anim">Proof · why we win</p>
-        <h2 class="disp anim d1">We're not starting from zero.</h2>
-        <div class="statrow anim d2" style="margin-top:48px">
+        <p class="eyebrow ">Proof · why we win</p>
+        <h2 class="disp ">We're not starting from zero.</h2>
+        <div class="statrow " style="margin-top:48px">
           <div class="stat"><div class="v">30k</div><div class="l">HNW investors introduced over 12 years</div></div>
           <div class="stat"><div class="v">600k</div><div class="l">behavioural-match lookalikes · our targeting tier</div></div>
           <div class="stat"><div class="v">1.6M</div><div class="l">broader universe for scale</div></div>
         </div>
-        <p class="foot anim d3" style="font-size:var(--u-type-body);max-width:none;color:var(--u-text-muted)"><b style="color:#fff">You couldn't buy this data — it isn't for sale.</b> Paired with an AI-native 23-agent workforce that scales with compute, not headcount. Conflict-free, subscription-only, HNW — a quadrant no incumbent occupies. We're disrupting UK HNW wealth management (£3T+ of assets, 2.6M UK HNWIs) the way Amazon, Airbnb and Uber took theirs — by becoming the default.</p>
+        <p class="foot " style="font-size:var(--u-type-body);max-width:none;color:var(--u-text-muted)"><b style="color:#fff">You couldn't buy this data — it isn't for sale.</b> Paired with an AI-native 23-agent workforce that scales with compute, not headcount. Conflict-free, subscription-only, HNW — a quadrant no incumbent occupies. We're disrupting UK HNW wealth management (£3T+ of assets, 2.6M UK HNWIs) the way Amazon, Airbnb and Uber took theirs — by becoming the default.</p>
       </div>
     </section>
 
     <!-- 08 · How we grow -->
     <section class="section" id="s-7" data-idx="7">
       <div class="wrapc">
-        <p class="eyebrow anim">Proof · how we grow</p>
-        <h2 class="disp anim d1">A repeatable acquisition engine — already tested.</h2>
+        <p class="eyebrow ">Proof · how we grow</p>
+        <h2 class="disp ">A repeatable acquisition engine — already tested.</h2>
         <div class="g3" style="margin-top:44px">
-          <div class="card anim d2"><div class="ico"><i data-lucide="radio"></i></div><h3>Get them</h3><p>AI outreach (the dialler), the owned 30k-strong HNW database and paid channels fill weekly webinars.</p></div>
-          <div class="card anim d3"><div class="ico"><i data-lucide="repeat"></i></div><h3>Convert them</h3><p>Demo → Sandbox → platform value. Q1 2026 pilot: ~50% demo-to-subscriber; ≈ 1–2 subscribers per 100 dials.</p></div>
-          <div class="card anim d4"><div class="ico"><i data-lucide="lock"></i></div><h3>Keep them</h3><p>Data lock-in, product depth and an embedded position. Every record makes the engine smarter.</p></div>
+          <div class="card "><div class="ico"><i data-lucide="radio"></i></div><h3>Get them</h3><p>AI outreach (the dialler), the owned 30k-strong HNW database and paid channels fill weekly webinars.</p></div>
+          <div class="card "><div class="ico"><i data-lucide="repeat"></i></div><h3>Convert them</h3><p>Demo → Sandbox → platform value. Q1 2026 pilot: ~50% demo-to-subscriber; ≈ 1–2 subscribers per 100 dials.</p></div>
+          <div class="card "><div class="ico"><i data-lucide="lock"></i></div><h3>Keep them</h3><p>Data lock-in, product depth and an embedded position. Every record makes the engine smarter.</p></div>
         </div>
-        <p class="foot anim d5">The flywheel compounds: dataset → outreach → demo → subscriber → more behavioural data → sharper conversion → a more valuable product — each loop driven by the 23-agent AI workforce, not new headcount.</p>
+        <p class="foot ">The flywheel compounds: dataset → outreach → demo → subscriber → more behavioural data → sharper conversion → a more valuable product — each loop driven by the 23-agent AI workforce, not new headcount.</p>
       </div>
     </section>
 
     <!-- 09 · Why now -->
     <section class="section alt" id="s-8" data-idx="8">
       <div class="wrapc">
-        <p class="eyebrow anim">The case · why now</p>
-        <h2 class="disp anim d1">Three windows are open at once.</h2>
+        <p class="eyebrow ">The case · why now</p>
+        <h2 class="disp ">Three windows are open at once.</h2>
         <div class="g3" style="margin-top:44px">
-          <div class="card anim d2"><div class="ico"><i data-lucide="scale"></i></div><h3>Regulatory</h3><p>VCT relief cut 30%→20% (Apr 2026); EIS keeps 30%. BPR capped at £2.5M/estate. Pensions enter IHT from Apr 2027 — the biggest estate-planning shift in a generation.</p></div>
-          <div class="card anim d3"><div class="ico"><i data-lucide="swords"></i></div><h3>Competitive</h3><p>No independent HNW portfolio-intelligence platform exists at this level. UK tax complexity takes 18–24 months to replicate. The data flywheel rewards the first mover.</p></div>
-          <div class="card anim d4"><div class="ico"><i data-lucide="flag"></i></div><h3>Founding round</h3><p>Advance assurance confirmed. £6.5M pre-money — moves up with traction. Step-ups Sept 2026 &amp; Jan 2027; close April 2027.</p></div>
+          <div class="card "><div class="ico"><i data-lucide="scale"></i></div><h3>Regulatory</h3><p>VCT relief cut 30%→20% (Apr 2026); EIS keeps 30%. BPR capped at £2.5M/estate. Pensions enter IHT from Apr 2027 — the biggest estate-planning shift in a generation.</p></div>
+          <div class="card "><div class="ico"><i data-lucide="swords"></i></div><h3>Competitive</h3><p>No independent HNW portfolio-intelligence platform exists at this level. UK tax complexity takes 18–24 months to replicate. The data flywheel rewards the first mover.</p></div>
+          <div class="card "><div class="ico"><i data-lucide="flag"></i></div><h3>Founding round</h3><p>Advance assurance confirmed. £6.5M pre-money — moves up with traction. Step-ups Sept 2026 &amp; Jan 2027; close April 2027.</p></div>
         </div>
-        <p class="foot anim d5">From April 2027, under the Finance Act 2026 (enacted law, Royal Assent April 2026), defined-contribution pensions become part of the estate for inheritance tax purposes. Subject to individual circumstances.</p>
+        <p class="foot ">From April 2027, under the Finance Act 2026 (enacted law, Royal Assent April 2026), defined-contribution pensions become part of the estate for inheritance tax purposes. Subject to individual circumstances.</p>
       </div>
     </section>
 
     <!-- 10 · The market -->
     <section class="section" id="s-9" data-idx="9">
       <div class="wrapc">
-        <p class="eyebrow anim">The case · the market</p>
-        <h2 class="disp anim d1">Large, specific, underserved.</h2>
+        <p class="eyebrow ">The case · the market</p>
+        <h2 class="disp ">Large, specific, underserved.</h2>
         <div style="display:flex;gap:56px;margin-top:36px;align-items:center;flex-wrap:wrap">
-          <div class="anim d2" style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:28px">
+          <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:28px">
             <div class="stat" style="border-color:var(--u-green)"><div class="v">£1B+/yr</div><div class="l">TAM · ~600,000 liquid millionaires</div></div>
             <div class="stat"><div class="v" style="font-size:var(--u-type-section-sm)">£200M+/yr</div><div class="l">SAM · ~180,000 self-directed HNW</div></div>
             <div class="stat"><div class="v" style="font-size:var(--u-type-section-sm)">~3% of SAM</div><div class="l">SOM by Year 5 · 5,000 → target 45,000 subscribers</div></div>
           </div>
-          <div class="circles anim d3">
+          <div class="circles ">
             <div class="ring r1"><span>TAM 600k</span></div>
             <div class="ring r2"><span>SAM 180k</span></div>
             <div class="ring r3"><span style="margin-top:5px;color:var(--u-green)">45k</span></div>
           </div>
         </div>
-        <p class="foot anim d4">The moat compounds: 18–24 months to replicate the UK tax engine, and a data flywheel that sharpens the platform with every subscriber. Sources: Henley &amp; Partners; FCA Financial Lives; HMRC; Investment Association. Illustrative — to be source-verified (RVL).</p>
+        <p class="foot ">The moat compounds: 18–24 months to replicate the UK tax engine, and a data flywheel that sharpens the platform with every subscriber. Sources: Henley &amp; Partners; FCA Financial Lives; HMRC; Investment Association. Illustrative — to be source-verified (RVL).</p>
       </div>
     </section>
 
     <!-- 11 · EIS model (interactive) -->
     <section class="section alt" id="s-10" data-idx="10">
       <div class="wrapc">
-        <p class="eyebrow anim">The case · the structure</p>
-        <h2 class="disp anim d1">How SEIS reshapes the bet — model it yourself.</h2>
-        <p class="lead anim d2" style="font-size:var(--u-type-body);max-width:64ch">Move the ticket size and outcome. Watch what the reliefs do to the downside and the upside, over time.</p>
-        <div class="eis anim d2">
+        <p class="eyebrow ">The case · the structure</p>
+        <h2 class="disp ">How SEIS reshapes the bet — model it yourself.</h2>
+        <p class="lead " style="font-size:var(--u-type-body);max-width:64ch">Move the ticket size and outcome. Watch what the reliefs do to the downside and the upside, over time.</p>
+        <div class="eis ">
           <div class="controls">
             <div>
               <p class="ctl-lbl">Ticket size</p>
@@ -577,16 +567,16 @@
             <div class="out exit"><p class="ok">Value at exit (CGT-free)</p><div class="ov" id="eisExit">£120,000</div></div>
           </div>
         </div>
-        <p class="foot anim d3" style="font-size:12px;max-width:none">SEIS income tax relief is 50% of the amount invested, up to £200,000 per tax year. Loss relief is shown at 45% of net cost (additional rate) — a net loss of about 27.5p in the £ if it fails. Gains are CGT-free after the qualifying hold. Above the SEIS limits the founding round uses EIS: EIS income tax relief is 30% of the amount invested, up to £1,000,000 per tax year (£2,000,000 for Knowledge Intensive Companies). These figures are modelled, not guaranteed. Tax outcomes depend on individual circumstances and may change in the future, and are not personalised tax advice. Most early-stage companies fail; capital is at risk.</p>
+        <p class="foot " style="font-size:12px;max-width:none">SEIS income tax relief is 50% of the amount invested, up to £200,000 per tax year. Loss relief is shown at 45% of net cost (additional rate) — a net loss of about 27.5p in the £ if it fails. Gains are CGT-free after the qualifying hold. Above the SEIS limits the founding round uses EIS: EIS income tax relief is 30% of the amount invested, up to £1,000,000 per tax year (£2,000,000 for Knowledge Intensive Companies). These figures are modelled, not guaranteed. Tax outcomes depend on individual circumstances and may change in the future, and are not personalised tax advice. Most early-stage companies fail; capital is at risk.</p>
       </div>
     </section>
 
     <!-- 12 · The bet -->
     <section class="section" id="s-11" data-idx="11">
       <div class="wrapc">
-        <p class="eyebrow anim">The case · the bet</p>
-        <h2 class="disp anim d1">Asymmetric — because the downside is real.</h2>
-        <div class="g2 anim d2" style="margin-top:40px">
+        <p class="eyebrow ">The case · the bet</p>
+        <h2 class="disp ">Asymmetric — because the downside is real.</h2>
+        <div class="g2 " style="margin-top:40px">
           <div class="card" style="border-color:rgba(239,68,68,.25)">
             <h3 style="color:var(--u-red)">If it doesn't work</h3>
             <ul style="margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px">
@@ -606,30 +596,30 @@
             </ul>
           </div>
         </div>
-        <p class="foot anim d3">Not tax advice — take independent advice. Capital is at risk.</p>
+        <p class="foot ">Not tax advice — take independent advice. Capital is at risk.</p>
       </div>
     </section>
 
     <!-- 13 · Returns & exit -->
     <section class="section alt" id="s-12" data-idx="12">
       <div class="wrapc">
-        <p class="eyebrow anim">The case · returns &amp; exit</p>
-        <h2 class="disp anim d1">Value follows adoption — two horizons.</h2>
-        <div class="g2 anim d2" style="margin-top:44px">
+        <p class="eyebrow ">The case · returns &amp; exit</p>
+        <h2 class="disp ">Value follows adoption — two horizons.</h2>
+        <div class="g2 " style="margin-top:44px">
           <div class="card"><span class="pill ok">Plan-case floor</span><div style="font-size:var(--u-type-stat);font-weight:var(--u-weight-light);color:var(--u-green);line-height:1;margin-bottom:16px">~10×</div><p style="font-size:var(--u-type-body)">~5,000 subscribers (~£9.5M ARR) ≈ a class return at an 8× ARR multiple (anchored to Citywire 4–6×, argued up on HNW + conflict-free).</p></div>
           <div class="card" style="border-color:var(--u-green-line)"><span class="pill ok">Full HNW-addressable</span><div style="font-size:var(--u-type-stat);font-weight:var(--u-weight-light);color:var(--u-green);line-height:1;margin-bottom:16px">~89×</div><p style="font-size:var(--u-type-body)">~45,000 subscribers (~£86M ARR) ≈ ~£687M EV on the founding entry. The plan targets 45,000; 5,000 is the floor for 10×.</p></div>
         </div>
-        <p class="foot anim d3">Illustrative, <b>not forecasts</b>. 45,000 ≈ 1.7% of the UK's ~2.6M HNW pool; not guaranteed — you could lose all your capital. Buyer universe: Morningstar, LSEG, S&amp;P Global, Bloomberg, FNZ.</p>
+        <p class="foot ">Illustrative, <b>not forecasts</b>. 45,000 ≈ 1.7% of the UK's ~2.6M HNW pool; not guaranteed — you could lose all your capital. Buyer universe: Morningstar, LSEG, S&amp;P Global, Bloomberg, FNZ.</p>
       </div>
     </section>
 
     <!-- 14 · Terms & Sandbox -->
     <section class="section" id="s-13" data-idx="13">
       <div class="wrapc">
-        <p class="eyebrow anim">The offer</p>
-        <h2 class="disp anim d1">Founding terms — and a Sandbox.</h2>
+        <p class="eyebrow ">The offer</p>
+        <h2 class="disp ">Founding terms — and a Sandbox.</h2>
         <div style="display:flex;gap:48px;margin-top:36px;flex-wrap:wrap;align-items:flex-start">
-          <table class="terms anim d2" style="flex:1.1;min-width:280px">
+          <table class="terms " style="flex:1.1;min-width:280px">
             <tr><td>Pre-money</td><td>£6.5M</td></tr>
             <tr><td>Round</td><td>£1.2M · 30 × £40k min</td></tr>
             <tr><td>EIS / SEIS · KIC</td><td>All confirmed</td></tr>
@@ -637,7 +627,7 @@
             <tr><td>Anti-dilution</td><td>To Growth Capital round</td></tr>
             <tr><td>Closes</td><td>April 2027</td></tr>
           </table>
-          <div class="sandbox anim d3" style="flex:1;min-width:260px">
+          <div class="sandbox " style="flex:1;min-width:260px">
             <div><div style="font-size:19px;color:#fff;margin-bottom:4px">Every founding investor gets a Sandbox</div><span class="lbl">Your Sandbox · illustrative</span></div>
             <p class="scn">Scenario — transfer all assets to spouse today</p>
             <div class="row"><span class="k">IHT now</span><span class="vv g">£0</span></div>
@@ -645,7 +635,7 @@
             <div class="row"><span class="k">vs EIS route</span><span class="vv g">£96k</span></div>
           </div>
         </div>
-        <p class="foot anim d4">Your actual position loaded into a private instance — test decisions before you make them. A feedback loop, not a cap table. Your instance of the platform — not an FCA regulatory sandbox. Illustrative figures.</p>
+        <p class="foot ">Your actual position loaded into a private instance — test decisions before you make them. A feedback loop, not a cap table. Your instance of the platform — not an FCA regulatory sandbox. Illustrative figures.</p>
       </div>
     </section>
 
@@ -653,12 +643,12 @@
     <section class="section deepest" id="s-14" data-idx="14">
       <div class="gw" style="width:700px;height:700px;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
       <div class="close-inner">
-        <p class="eyebrow anim">Close</p>
-        <h1 class="anim d1">One conversation is all it takes.</h1>
-        <p class="sub anim d2">Discovery call (20 min) → platform demo with your own asset classes (30 min) → reserve your allocation via SeedLegals. No commitment at the call stage.</p>
-        <button class="u-cta anim d3" style="margin-top:36px" onclick="openBooking()">Book a discovery call</button>
-        <p class="contact anim d3">tom@unlockdd.com · unlockdd.com</p>
-        <p class="roi anim d4"><b>R</b>eturn <b>O</b>n <b>I</b>ntelligence</p>
+        <p class="eyebrow ">Close</p>
+        <h1>One conversation is all it takes.</h1>
+        <p class="sub ">Discovery call (20 min) → platform demo with your own asset classes (30 min) → reserve your allocation via SeedLegals. No commitment at the call stage.</p>
+        <button class="u-cta " style="margin-top:36px" onclick="openBooking()">Book a discovery call</button>
+        <p class="contact ">tom@unlockdd.com · unlockdd.com</p>
+        <p class="roi "><b>R</b>eturn <b>O</b>n <b>I</b>ntelligence</p>
       </div>
     </section>
 
