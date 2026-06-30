@@ -1,0 +1,79 @@
+/* Unlock color system — dark by default. Brand green #00bb77 on near-black greys.
+   Values lifted from the live site (src/index.css :root). */
+:root {
+  /* ---- Brand green ---- */
+  --u-green: #00bb77;            /* hsl(157 99% 37%) — primary accent, CTAs, eyebrows */
+  --u-green-deep: #008655;       /* canonical accent-hover (sweet-design-specs) */
+  --u-green-accent: #008a55;     /* hsl(157 100% 27%) — glows, deep accents */
+  --u-green-fill: rgba(0,187,119,0.05);   /* tinted card fill (highlighted tiers) */
+  --u-green-fill-strong: rgba(0,187,119,0.12); /* badge / icon chip fill */
+  --u-green-line: rgba(0,187,119,0.2);    /* hairline accents, stat top-borders */
+  --u-on-green: #0d0d0d;         /* text/icons on a green fill */
+
+  /* ---- Near-black surfaces (dark theme) ---- */
+  --u-bg-deepest: #1a1a1a;       /* hsl(0 0% 10%) — page base + footer */
+  --u-bg-deep: #1f1f1f;          /* hsl(0 0% 12%) — hero & alternating sections */
+  --u-bg: #2b2b2b;               /* hsl(0 0% 17%) — primary section background */
+  --u-surface: #333333;          /* hsl(0 0% 20%) — raised chips / icon wells */
+
+  /* ---- Borders & hairlines ---- */
+  --u-border: rgba(255,255,255,0.09);  /* card borders on dark */
+  --u-border-strong: #444444;          /* solid border (app surfaces, inputs) */
+  --u-hairline: rgba(255,255,255,0.06);/* nav / divider hairline */
+
+  /* ---- Text ---- */
+  --u-text: #ffffff;                   /* primary text */
+  --u-text-muted: rgba(255,255,255,0.5);  /* body / supporting copy */
+  --u-text-faint: rgba(255,255,255,0.3);  /* module labels, ticker */
+  --u-text-footer: #555555;            /* footer links */
+  --u-text-compliance: #444444;        /* legal / FP disclaimer */
+
+  /* ---- Semantic status ---- */
+  --u-amber: #f59e0b;   /* warnings, "illustrative data", base-case */
+  --u-red: #ef4444;     /* destructive, downside */
+  --u-info: #3b82f6;    /* informational */
+
+  /* ---- Data-viz palette (allocation rings, charts) ----
+     CODIFIED CONVENTION (Jun 2026): charts use a GREEN-GREYSCALE ramp, not multicolour.
+     Brand green leads, then desaturates toward neutral grey. */
+  --u-viz-1: #00bb77;
+  --u-viz-2: #1f8a5b;
+  --u-viz-3: #5a8d76;
+  --u-viz-4: #8a9690;
+  --u-viz-5: #4f5552;
+  --u-viz-6: #6e7a73;
+  --u-viz-7: #356b52;
+  --u-viz-8: #9aa39d;
+
+  /* ---- Semantic aliases ---- */
+  --u-accent: var(--u-green);
+  --u-page-bg: var(--u-bg-deepest);
+  --u-surface-card: var(--u-bg);
+  --u-text-body: var(--u-text-muted);
+  --u-text-heading: var(--u-text);
+
+  /* ---- Canonical spec names (sweet-design-specs / shadcn) ----
+     Mirror the authoritative token names so markup written against the spec
+     (bg-surface, text-muted-foreground, border-border, text-accent) maps here. */
+  --background: #1e1e1e;            /* spec page bg (note: our marketing stack also uses #1f1f1f / #1a1a1a) */
+  --foreground: #ffffff;
+  --surface: #2b2b2b;
+  --surface-raised: #333333;
+  --border: #444444;                /* spec uses a SOLID hairline; our cards use white-9% — see RECONCILIATION */
+  --muted-foreground: #b0b0b0;
+  --accent: #00bb77;
+  --accent-hover: #008655;
+  --accent-foreground: #ffffff;     /* spec: WHITE on green (documented 2.7:1 brand exception) */
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+
+/* Optional light theme (spec .demo-light) — swap surfaces, keep brand + semantic colours. */
+:root.demo-light, .demo-light {
+  --background: #ffffff;
+  --foreground: #212022;
+  --surface: #f5f6f8;
+  --surface-raised: #ffffff;
+  --border: #e3e6ea;
+  --muted-foreground: #5b6470;
+}

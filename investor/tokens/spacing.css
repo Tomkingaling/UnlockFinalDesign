@@ -1,0 +1,38 @@
+/* Unlock spacing, radii, shadows. 4px base rhythm. */
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --u-space-1: 4px;
+  --u-space-2: 8px;
+  --u-space-3: 12px;
+  --u-space-4: 16px;
+  --u-space-5: 20px;
+  --u-space-6: 24px;
+  --u-space-8: 32px;
+  --u-space-10: 40px;
+  --u-space-14: 56px;
+  --u-space-section: 112px;   /* vertical rhythm between marketing sections */
+
+  /* ---- Container ---- */
+  --u-container: 1240px;      /* standard content max-width */
+  --u-container-narrow: 720px;/* centered hero / prose */
+  --u-container-form: 520px;  /* single-column forms */
+  --u-gutter: 24px;           /* horizontal page padding */
+
+  /* ---- Radii ----
+     CODIFIED CONVENTION (Jun 2026): CTAs, inputs, chips, badges, table headers and
+     stamps are SQUARE (radius 0). Cards/panels keep a soft radius. */
+  --u-radius-cta: 0;     /* all call-to-action buttons — square */
+  --u-radius-input: 0;   /* text inputs, selects */
+  --u-radius-s: 0;       /* buttons, chips, badges — square */
+  --u-radius-m: 8px;   /* cards */
+  --u-radius-l: 12px;  /* feature panels, pricing tiers, forms */
+  --u-radius-pill: 100px;
+
+  /* ---- Shadows / glows ---- */
+  --u-shadow-cta: 0 4px 18px -2px rgba(0,187,119,0.45);  /* green CTA hover */
+  --u-shadow-card: 0 12px 32px -8px rgba(0,0,0,0.12);    /* hover-lift */
+  --u-glow-green: 0 0 30px 4px rgba(0,187,119,0.15);     /* ambient accent glow */
+
+  /* ---- Nav ---- */
+  --u-nav-height: 60px;
+}

@@ -1,0 +1,84 @@
+/* Unlock tonal ramps — primitive scales (the "50–900" layer the atomic kit got right,
+   rebuilt on Unlock green instead of generic blue). Semantic roles map onto these below,
+   so a brand/theme swap is a handful of mapping changes, not a hunt through inline hexes.
+   AA notes are against WHITE unless stated. */
+:root {
+  /* ---- Green (brand) ---- */
+  --green-50:  #E6F8F0;
+  --green-100: #C2EFDC;
+  --green-200: #8FE2C0;
+  --green-300: #57D2A1;
+  --green-400: #1FC587;
+  --green-500: #00bb77;  /* BRAND — fills only (white text 2.5:1 ✗; near-black 7:1 ✓) */
+  --green-600: #019E66;
+  --green-700: #008655;  /* TEXT-GREEN — green text on white = 4.6:1 ✓ (labels, anchors) */
+  --green-800: #016C45;
+  --green-900: #024D32;
+
+  /* ---- Neutral (near-black → white; the surface + text spine) ---- */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #F5F6F8;
+  --neutral-100: #E3E6EA;  /* light-theme border */
+  --neutral-200: #C9CED6;
+  --neutral-300: #A6ADB8;
+  --neutral-400: #7B8492;
+  --neutral-500: #5B6470;  /* light-theme muted text (AA on white 4.7:1 ✓) */
+  --neutral-600: #444444;  /* dark-theme solid hairline (spec border) */
+  --neutral-700: #333333;  /* raised chip */
+  --neutral-800: #2B2B2B;  /* section surface */
+  --neutral-850: #1F1F1F;  /* deep section / hero */
+  --neutral-900: #1A1A1A;  /* page + footer */
+  --neutral-950: #141414;  /* deepest */
+
+  /* ---- Semantic status ramps (condensed) ---- */
+  --amber-100: #FDE7C0; --amber-300: #F9C95A; --amber-500: #F59E0B; --amber-700: #B7770A; --amber-900: #7A4F08;
+  --red-100:   #FBD5D2; --red-300:   #F58A83; --red-500:   #EF4444; --red-700:   #C2322B; --red-900:   #7F231E;
+
+  /* ============================================================
+     SEMANTIC ROLES — point these at the primitives above.
+     Web (dark) defaults; .demo-light remaps the surface/text rungs.
+     ============================================================ */
+  --role-primary:        var(--green-500);  /* CTA fill, eyebrow accents */
+  --role-primary-hover:  var(--green-700);
+  --role-primary-fill:   var(--green-500);
+  --role-on-primary:     var(--neutral-900); /* near-black on green (docs); web CTA overrides to #fff per exception */
+  --role-text-green:     var(--green-700);   /* any GREEN TEXT — never the 500 brand on light bg */
+
+  --role-page:           var(--neutral-900);
+  --role-surface:        var(--neutral-800);
+  --role-surface-raised: var(--neutral-700);
+  --role-border:         var(--neutral-600);
+
+  --role-text:           var(--neutral-0);
+  --role-text-muted:     rgba(255,255,255,0.55);
+  --role-text-faint:     rgba(255,255,255,0.45); /* floor — below this fails AA at small sizes */
+
+  --role-error:          var(--red-500);
+  --role-warning:        var(--amber-500);
+  --role-success:        var(--green-600);
+
+  /* Data-viz ramp (CODIFIED Jun 2026) — green leads, desaturates to grey. */
+  --role-viz-1: #00bb77;
+  --role-viz-2: #1f8a5b;
+  --role-viz-3: #5a8d76;
+  --role-viz-4: #8a9690;
+  --role-viz-5: #4f5552;
+  --role-viz-6: #6e7a73;
+
+  /* CTA shape + type (CODIFIED Jun 2026) — square, uppercase, normal weight. */
+  --role-cta-radius:  0;
+  --role-cta-weight:  400;
+  --role-cta-case:    uppercase; /* @kind other */
+  --role-cta-tracking: 0.04em;
+}
+
+:root.demo-light, .demo-light {
+  --role-page:           var(--neutral-0);
+  --role-surface:        var(--neutral-50);
+  --role-surface-raised: var(--neutral-0);
+  --role-border:         var(--neutral-100);
+  --role-text:           #212022;
+  --role-text-muted:     var(--neutral-500);
+  --role-text-faint:     var(--neutral-400);
+  --role-on-primary:     var(--neutral-900); /* still near-black on green */
+}
