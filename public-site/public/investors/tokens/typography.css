@@ -1,0 +1,52 @@
+/* Unlock typography.
+   Body + headings: Inter. Headings render LIGHT (300) at large sizes — the site's
+   defining editorial-but-modern look. Noto Serif is reserved for pull-quotes and
+   compliance/legal footnotes. Numbers use tabular-nums in data contexts. */
+:root {
+  /* Canonical brand fonts (sweet-design-specs). Aeonik + Noto Serif JP binaries are
+     hosted on the Unlock asset CDN — NOT in this project yet, so these fall back to
+     Inter / Noto Serif until the .otf files are added (see references/RECONCILIATION.md). */
+  --u-font-body: 'Aeonik', 'Inter', system-ui, -apple-system, sans-serif;
+  --u-font-display: 'Noto Serif JP', 'Noto Serif', Georgia, serif;  /* canonical display = SERIF, weight 400 */
+  --u-font-serif: 'Noto Serif JP', 'Noto Serif', Georgia, serif;    /* pull-quotes, legal */
+  /* Heading face. Canonical spec = serif display (var(--u-font-display)).
+     Currently set to body to match the live marketing site's Inter-light headings —
+     flip to --u-font-display for the documented brand look. */
+  --u-font-heading: var(--u-font-body);
+
+  /* ---- Type scale (fluid) ---- */
+  --u-type-hero: clamp(40px, 7.2vw, 76px);     /* h1 hero — weight 300 */
+  --u-type-display: clamp(36px, 6vw, 64px);    /* page hero h1 — weight 300 */
+  --u-type-section: clamp(28px, 4.4vw, 50px);  /* section h2 — weight 300 */
+  --u-type-section-sm: clamp(26px, 3.6vw, 40px);
+  --u-type-stat: clamp(38px, 5vw, 52px);       /* big stat numbers — weight 300 */
+  --u-type-title: 20px;   /* card / tier title */
+  --u-type-lead: clamp(17px, 2.2vw, 21px);     /* hero sub-lead */
+  --u-type-body: 16px;
+  --u-type-body-sm: 14px;
+  --u-type-label: 12px;   /* eyebrow / caps label */
+  --u-type-legal: 11px;
+
+  /* ---- Weights ---- */
+  --u-weight-light: 300;   /* all display headings */
+  --u-weight-regular: 400;
+  --u-weight-medium: 500;  /* card titles, eyebrows, nav */
+  --u-weight-semibold: 600;
+  --u-weight-bold: 700;
+  /* CODIFIED CONVENTION (Jun 2026): CTA text is UPPERCASE at NORMAL (400) weight,
+     never bold. See --u-weight-button + .u-cta utility (effects.css). */
+  --u-weight-button: 400;
+  --u-tracking-button: 0.04em;
+
+  /* ---- Line height ---- */
+  --u-leading-display: 1.1;
+  --u-leading-section: 1.15;
+  --u-leading-body: 1.6;
+  --u-leading-tight: 1.08;
+
+  /* ---- Letter spacing ---- */
+  --u-tracking-display: -0.015em;  /* tighten large light headings */
+  --u-tracking-section: -0.01em;
+  --u-tracking-caps: 0.25em;       /* eyebrow labels (0.3em on hero eyebrow) */
+  --u-tracking-modules: 0.15em;    /* module strip */
+}
