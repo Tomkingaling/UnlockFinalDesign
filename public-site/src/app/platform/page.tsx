@@ -55,6 +55,7 @@ const TEAM = [
   ['TK', 'Tom King — Founder & CEO', '15 years building investor-introduction and capital-facilitation technology; facilitated significant investor capital over that period.'],
   ['WS', 'Werner Snyman — Head of Product', '19 years in senior product leadership at Nedbank; wealth-platform architecture across four markets.'],
   ['WC', 'William Corke — Head of Service & Compliance', 'Multi-million-pound delivery for FTSE 500 clients.'],
+  ['TV', 'Tony Vine-Lott — Commercial Strategy Adviser', 'Founder of Barclays Stockbrokers. Former Director General of TISA. Founding investor.'],
 ];
 
 export default function PlatformPage() {
