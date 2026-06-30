@@ -199,10 +199,11 @@ export default function PlatformPage() {
 
       {/* PROBLEM */}
       <section className={styles.sec} style={{ background: 'var(--u-bg)' }}>
+        <div className={styles.water}>Problem</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>Why this exists</p>
           <h2 className={styles.h2} style={{ maxWidth: '18ch', margin: '0 0 52px' }}>
-            Three problems that were never properly solved.
+            <span className={styles.vbar}>Three problems</span> that were never properly solved<span className={styles.hdot}>.</span>
           </h2>
           <div className={styles.grid3}>
             {PROBLEMS.map((p, i) => (
@@ -220,10 +221,11 @@ export default function PlatformPage() {
 
       {/* ADVICE GAP — CP1 */}
       <section className={styles.sec} style={{ background: 'var(--u-bg-deep)' }}>
+        <div className={styles.water}>Gap</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>The advice gap</p>
           <h2 className={styles.h2} style={{ fontSize: 'var(--u-type-display)', maxWidth: '20ch', margin: '0 0 16px' }}>
-            The advice gap is widening upward, not just downward.
+            <span className={styles.vbar}>The advice gap</span> is widening upward, not just downward<span className={styles.hdot}>.</span>
           </h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '54ch', margin: '0 0 52px', lineHeight: '1.6' }}>
             The UK advice gap isn&apos;t just a mass-market problem. The £500k–£25M cohort falls
@@ -244,10 +246,11 @@ export default function PlatformPage() {
 
       {/* SOLUTION */}
       <section className={styles.sec} style={{ background: 'var(--u-bg)' }}>
+        <div className={styles.water}>Solution</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>The solution</p>
           <h2 className={styles.h2} style={{ maxWidth: '22ch', margin: '0 0 16px' }}>
-            A single source of truth — with the interpretation layer on top.
+            <span className={styles.vbar}>A single source of truth</span> — with the interpretation layer on top<span className={styles.hdot}>.</span>
           </h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '54ch', margin: '0 0 52px', lineHeight: '1.6' }}>
             The Asset Register is the heartbeat of Unlock. Everything else builds on it.
@@ -276,10 +279,11 @@ export default function PlatformPage() {
 
       {/* TOOLS */}
       <section className={styles.sec} id="tools" style={{ background: 'var(--u-bg)', overflow: 'hidden' }}>
+        <div className={styles.water}>Platform</div>
         <GridPulse />
         <div className={styles.wrap} style={{ position: 'relative', zIndex: 1 }}>
           <p className={styles.eyebrow}>The platform</p>
-          <h2 className={styles.h2} style={{ margin: '0 0 16px' }}>Eight tools. One source of truth.</h2>
+          <h2 className={styles.h2} style={{ margin: '0 0 16px' }}><span className={styles.vbar}>Eight tools</span><span className={styles.hdot}>.</span> One source of truth<span className={styles.hdot}>.</span></h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '60ch', margin: '0 0 52px', lineHeight: '1.6' }}>
             Each tool runs off your Asset Register — the more complete it is, the sharper everything
             else gets. Read-only by design. The decision is always yours.
@@ -298,9 +302,10 @@ export default function PlatformPage() {
 
       {/* ASSET REGISTER DETAIL */}
       <section className={styles.sec} style={{ background: 'var(--u-bg-deep)' }}>
+        <div className={styles.water}>Register</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>The heartbeat</p>
-          <h2 className={styles.h2} style={{ margin: '0 0 52px' }}>The Asset Register, in detail.</h2>
+          <h2 className={styles.h2} style={{ margin: '0 0 52px' }}><span className={styles.vbar}>The Asset Register</span>, in detail<span className={styles.hdot}>.</span></h2>
           <div className={styles.twocol}>
             <div className={styles.dash}>
               <div className={styles.dashBar}>
@@ -348,9 +353,10 @@ export default function PlatformPage() {
 
       {/* HOW IT WORKS */}
       <section className={styles.sec} id="how" style={{ background: 'var(--u-bg)' }}>
+        <div className={styles.water}>Process</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>How it works</p>
-          <h2 className={styles.h2} style={{ margin: '0 0 12px' }}>Three steps. The platform does the work.</h2>
+          <h2 className={styles.h2} style={{ margin: '0 0 12px' }}>Three steps<span className={styles.hdot}>.</span> <span className={styles.vbar}>The platform does the work</span><span className={styles.hdot}>.</span></h2>
           <p className={styles.muted} style={{ fontSize: '18px', margin: '0 0 52px' }}>
             You&apos;re onboarded before you&apos;ve added a single asset.
           </p>
@@ -374,9 +380,10 @@ export default function PlatformPage() {
 
       {/* PRICING */}
       <section className={styles.sec} id="pricing" style={{ background: 'var(--u-bg)' }}>
+        <div className={styles.water}>Pricing</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>Pricing</p>
-          <h2 className={styles.h2} style={{ margin: '0 0 12px' }}>One subscription. No product conflicts.</h2>
+          <h2 className={styles.h2} style={{ margin: '0 0 12px' }}>One subscription<span className={styles.hdot}>.</span> <span className={styles.vbar}>No product conflicts</span><span className={styles.hdot}>.</span></h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '54ch', margin: '0 0 52px' }}>
             Unlock earns from your subscription — never from what you hold, trade or buy.
           </p>
@@ -411,9 +418,10 @@ export default function PlatformPage() {
 
       {/* ABOUT */}
       <section className={styles.sec} id="about" style={{ background: 'var(--u-bg-deep)' }}>
+        <div className={styles.water}>About</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>About Unlock</p>
-          <h2 className={styles.h2} style={{ maxWidth: '16ch', margin: '0 0 16px' }}>Built independent, on purpose.</h2>
+          <h2 className={styles.h2} style={{ maxWidth: '16ch', margin: '0 0 16px' }}><span className={styles.vbar}>Built independent</span>, on purpose<span className={styles.hdot}>.</span></h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '60ch', margin: '0 0 52px', lineHeight: '1.6' }}>
             Every existing platform earns from what you hold through it. Unlock doesn&apos;t. The only
             thing we optimise for is the clarity of your decisions.
@@ -431,9 +439,10 @@ export default function PlatformPage() {
 
       {/* TEAM */}
       <section className={styles.sec} id="team" style={{ background: 'var(--u-bg-deep)', paddingTop: 0 }}>
+        <div className={styles.water}>Team</div>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>The team</p>
-          <h2 className={styles.h2} style={{ margin: '0 0 52px' }}>Who&apos;s building Unlock.</h2>
+          <h2 className={styles.h2} style={{ margin: '0 0 52px' }}><span className={styles.vbar}>Who&apos;s building</span> Unlock<span className={styles.hdot}>.</span></h2>
           <div className={styles.team}>
             {TEAM.map((m, i) => (
               <div key={i} className={styles.member}>

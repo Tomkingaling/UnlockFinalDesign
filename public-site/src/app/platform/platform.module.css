@@ -123,8 +123,22 @@
 .badgeG { background: var(--u-green-fill-strong); color: var(--u-green); }
 
 /* sections */
-.sec { padding: var(--u-space-section) var(--u-gutter); position: relative; }
-.wrap { max-width: var(--u-container); margin: 0 auto; padding: 0 var(--u-gutter); }
+.sec { padding: var(--u-space-section) var(--u-gutter); position: relative; overflow: hidden; }
+.wrap { max-width: var(--u-container); margin: 0 auto; padding: 0 var(--u-gutter); position: relative; z-index: 2; }
+
+/* section watermark + green-dot + vertical-bar accent — quiet, one-per-section, never escalating */
+.water {
+  position: absolute; top: -0.18em; left: 50%; transform: translateX(-50%);
+  font-size: clamp(48px, 13vw, 168px); font-weight: 700; letter-spacing: .01em;
+  color: rgba(255,255,255,.009); line-height: 1; white-space: nowrap;
+  z-index: 1; pointer-events: none; user-select: none; text-transform: uppercase;
+}
+.hdot { color: var(--u-green); }
+.vbar { position: relative; padding-left: 14px; }
+.vbar::before {
+  content: ""; position: absolute; left: 0; top: 0.08em; bottom: 0.1em; width: 2px;
+  background: var(--u-green); opacity: .55;
+}
 .eyebrow {
   color: var(--u-green); font-size: var(--u-type-label); font-weight: var(--u-weight-medium);
   letter-spacing: .25em; text-transform: uppercase; margin: 0 0 18px;
