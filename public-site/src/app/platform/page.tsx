@@ -342,7 +342,11 @@ export default function PlatformPage() {
                     </li>
                   ))}
                 </ul>
-                <button className={styles.tierBtn}>{t.cta}</button>
+                {t.cta === 'Book a demo' ? (
+                  <a className={styles.tierBtn} href="https://calendly.com/tom-unlockdd/unlock-demo" target="_blank" rel="noopener noreferrer">{t.cta}</a>
+                ) : (
+                  <a className={styles.tierBtn} href="#demo">{t.cta}</a>
+                )}
               </div>
             ))}
           </div>

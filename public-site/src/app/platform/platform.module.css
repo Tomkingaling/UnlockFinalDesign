@@ -190,7 +190,7 @@
   margin-top: auto; font-family: inherit; font-size: 12.5px; cursor: pointer; padding: 12px;
   text-transform: uppercase; font-weight: var(--u-weight-button); letter-spacing: var(--u-tracking-button);
   border: 1px solid rgba(255,255,255,.2); background: transparent; color: #fff; text-align: center;
-  width: 100%;
+  width: 100%; display: block; text-decoration: none; box-sizing: border-box;
 }
 .tierBtn:hover { border-color: var(--u-green); }
 .tierFeat .tierBtn { background: var(--u-green); color: var(--u-on-green); border: none; }
