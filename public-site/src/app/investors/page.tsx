@@ -1,9 +1,9 @@
-import { redirect } from 'next/navigation';
-
-export const metadata = {
-  robots: 'noindex, nofollow',
-};
+'use client';
+import { useEffect } from 'react';
 
 export default function InvestorsPage() {
-  redirect('https://unlockdd-investor.pages.dev/');
+  useEffect(() => {
+    window.location.replace('https://unlockdd-investor.pages.dev/');
+  }, []);
+  return null;
 }
