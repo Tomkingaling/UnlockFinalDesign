@@ -222,7 +222,7 @@ export default function PlatformPage() {
       <section className={styles.sec} style={{ background: 'var(--u-bg-deep)' }}>
         <div className={styles.wrap}>
           <p className={styles.eyebrow}>The advice gap</p>
-          <h2 className={styles.h2} style={{ maxWidth: '22ch', margin: '0 0 16px' }}>
+          <h2 className={styles.h2} style={{ fontSize: 'var(--u-type-display)', maxWidth: '20ch', margin: '0 0 16px' }}>
             The advice gap is widening upward, not just downward.
           </h2>
           <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '54ch', margin: '0 0 52px', lineHeight: '1.6' }}>
@@ -239,6 +239,8 @@ export default function PlatformPage() {
           </div>
         </div>
       </section>
+
+      <div className="u-divider" />
 
       {/* SOLUTION */}
       <section className={styles.sec} style={{ background: 'var(--u-bg)' }}>
