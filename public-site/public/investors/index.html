@@ -38,9 +38,7 @@
     .opt details[open] summary::before { content: 'Hide full declaration ▴ '; }
     .opt .d { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; margin-top: 8px; }
     .opt .d em { color: var(--u-amber); font-style: normal; }
-    .ack { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
-    .ack input { margin-top: 3px; flex: none; accent-color: var(--u-green); }
-    .ack label { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; cursor: pointer; }
+    .ackText { font-size: var(--u-type-body-sm); color: var(--u-text-muted); line-height: 1.55; margin: 0 0 20px; }
     .err { font-size: var(--u-type-body-sm); color: var(--u-red); min-height: 1.4em; margin-bottom: 12px; }
     .btnP {
       font-family: inherit; font-size: var(--u-type-body-sm); background: var(--u-green); color: var(--u-on-green);
@@ -95,16 +93,13 @@
       </div>
     </div>
 
-    <div class="ack">
-      <input type="checkbox" id="ack">
-      <label for="ack">
-        I confirm that the statement I have selected above is true. I understand that the material I am about to access is a financial promotion that has not been approved by an authorised person within the meaning of the Financial Services and Markets Act 2000. I accept that I may expose myself to a significant risk of losing all of the money or other property I invest.
-      </label>
-    </div>
+    <p class="ackText">
+      By clicking below, I confirm that the statement I have selected above is true. I understand that the material I am about to access is a financial promotion that has not been approved by an authorised person within the meaning of the Financial Services and Markets Act 2000. I accept that I may expose myself to a significant risk of losing all of the money or other property I invest.
+    </p>
 
     <p class="err" id="err"></p>
 
-    <button class="btnP" id="continueBtn" disabled>Begin the walkthrough</button>
+    <button class="btnP" id="continueBtn" disabled>Confirm &amp; begin the walkthrough</button>
 
     <footer>
       Capital at risk. Investments of this type are illiquid and high risk. The value of investments
@@ -116,19 +111,18 @@
   <script>
     const next = new URLSearchParams(location.search).get('next') || '/investors/pitch/';
     const btn = document.getElementById('continueBtn');
-    const ack = document.getElementById('ack');
     const err = document.getElementById('err');
 
     function refresh() {
       const sel = document.querySelector('input[name=ctype]:checked');
-      btn.disabled = !(sel && ack.checked);
+      btn.disabled = !sel;
     }
     document.querySelector('.gate').addEventListener('change', refresh);
 
     btn.addEventListener('click', async () => {
       err.textContent = '';
       const type = document.querySelector('input[name=ctype]:checked')?.value;
-      if (!type || !ack.checked) return;
+      if (!type) return;
       btn.disabled = true;
       try {
         const res = await fetch('/api/certify', {
