@@ -338,7 +338,7 @@
     </div>
     <div class="r">
       <button class="reset" onclick="certReset()">Certified · reset</button>
-      <button class="book" onclick="openBooking()">Book a call</button>
+      <button class="book" onclick="window.open('https://calendly.com/tom-unlockdd/unlock-demo','_blank')">Book a call</button>
     </div>
   </div>
 
@@ -347,7 +347,7 @@
     <div id="sideList"></div>
     <div id="sideFooter">
       <div id="sideCounter">1 of 15</div>
-      <button class="side-book" onclick="openBooking()">Book a call</button>
+      <button class="side-book" onclick="window.open('https://calendly.com/tom-unlockdd/unlock-demo','_blank')">Book a call</button>
     </div>
   </nav>
 
@@ -671,9 +671,13 @@
       <div class="head"><span class="rad"></span><span class="ttl">High-net-worth individual <span>FPO Art 48</span></span></div>
       <p class="desc">Income £100,000+ last year, or net assets £250,000+ (excluding home, pensions and certain items).</p>
     </div>
-    <div class="opt" data-cat="sophisticated" onclick="selCat(this)">
+    <div class="opt" data-cat="certified-sophisticated" onclick="selCat(this)">
+      <div class="head"><span class="rad"></span><span class="ttl">Certified sophisticated investor <span>FPO Art 50</span></span></div>
+      <p class="desc">Certified by an authorised person as sufficiently knowledgeable to understand the risks associated with this type of investment.</p>
+    </div>
+    <div class="opt" data-cat="self-sophisticated" onclick="selCat(this)">
       <div class="head"><span class="rad"></span><span class="ttl">Self-certified sophisticated investor <span>FPO Art 50A</span></span></div>
-      <p class="desc">e.g. director of a £1m+ turnover company; angel-network member; or relevant PE/SME-finance experience. (Note: the "two unlisted investments in two years" criterion was removed by SI 2024/301.)</p>
+      <p class="desc">e.g. director of a £1m+ turnover company; angel-network member; or relevant PE/SME-finance experience.</p>
     </div>
 
     <label class="ack" id="gateAck" onclick="toggleAck()">
@@ -684,7 +688,7 @@
     <button class="begin" id="gateBegin" disabled onclick="enterDeck()">Begin the walkthrough</button>
     <p class="hint" id="gateHint">Select a category and tick the box.</p>
 
-    <p class="legal">Prototype gate. Binding self-certification is the prescribed FPO statement — captured via SeedLegals or transcribed verbatim in production. This prototype stores your certification locally to mimic a real session.</p>
+    <p class="legal">This financial promotion is directed only at persons who fall within one of the categories above as defined in the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005, as amended by SI 2024/301. Capital is at risk.</p>
 
     <div class="glogo">
       <span style="display:inline-flex;align-items:baseline"><img src="/assets/unlock-green.svg" alt="Unlock"><span class="dot">.</span></span>
