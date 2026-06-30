@@ -2,11 +2,9 @@ import Link from 'next/link';
 import { Check, User, Layers, Search } from 'lucide-react';
 import styles from './platform.module.css';
 
-// Sparse "default" pattern: [col, row] pairs out of a 12×8 grid
+// Exact "default" pattern from gridPulsePatterns.ts — 8 active cells
 const PULSE_CELLS = new Set([
-  '0,2','1,5','2,1','3,6','4,3','5,0','6,4','7,2','8,6','9,1','10,4','11,3',
-  '1,0','3,3','5,5','7,7','9,5','11,1','0,6','2,4','4,7','6,0','8,2','10,6',
-  '2,7','4,1','6,3','8,5','10,0','1,3','3,5','5,7',
+  '2,1','8,1','5,2','10,3','1,4','7,4','4,5','9,6',
 ]);
 
 function GridPulse() {
@@ -22,6 +20,13 @@ function GridPulse() {
 }
 
 const STEP_ICONS = [User, Layers, Search];
+
+// CP1 AdviceGap — canonical wording from Unlock-Content-Brain/04_pillars/CP1_AdviceGap.md
+const ADVICE_GAP = [
+  ['Between two markets', 'Investable assets between £500k and £25M sit in the middle of a market built for either mass-affluent platforms or family offices. Neither was built for that cohort.'],
+  ['Outside the regulated perimeter', 'Your IFA can confirm EIS is suitable in principle. What they cannot do is advise which specific companies to back — the decision that most directly determines whether your programme succeeds.'],
+  ['Structural, not personal', 'This is not a gap a better adviser can close. It is a feature of the regulatory landscape — and it is exactly the territory Unlock was built to cover.'],
+];
 
 const REG = [
   { name: 'Global equity tracker', sub: 'lot basis £6.90/unit', wrapper: 'HL ISA', value: '£284,100', status: 'CGT-free', green: true },
@@ -212,6 +217,28 @@ export default function PlatformPage() {
       </section>
 
       <div className="u-divider" />
+
+      {/* ADVICE GAP — CP1 */}
+      <section className={styles.sec} style={{ background: 'var(--u-bg-deep)' }}>
+        <div className={styles.wrap}>
+          <p className={styles.eyebrow}>The advice gap</p>
+          <h2 className={styles.h2} style={{ maxWidth: '22ch', margin: '0 0 16px' }}>
+            The advice gap is widening upward, not just downward.
+          </h2>
+          <p className={styles.muted} style={{ fontSize: '18px', maxWidth: '54ch', margin: '0 0 52px', lineHeight: '1.6' }}>
+            The UK advice gap isn&apos;t just a mass-market problem. The £500k–£25M cohort falls
+            between the two market structures that exist — and neither was built for them.
+          </p>
+          <div className={styles.grid3}>
+            {ADVICE_GAP.map((a, i) => (
+              <div key={i} className={styles.card}>
+                <h3>{a[0]}</h3>
+                <p>{a[1]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SOLUTION */}
       <section className={styles.sec} style={{ background: 'var(--u-bg)' }}>

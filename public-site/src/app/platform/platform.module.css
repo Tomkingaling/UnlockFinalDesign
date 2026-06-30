@@ -161,18 +161,19 @@
 .stepIcon svg { width: 18px; height: 18px; }
 .stepCard h3, .stepCard p { position: relative; z-index: 1; }
 
-/* GridPulse */
+/* GridPulse — matches source: gap-px, opacity-[0.03] on container, rounded-sm, 8 cells */
 .gridPulse {
   position: absolute; inset: 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  gap: 3px;
+  gap: 1px;
+  opacity: 0.03;
   pointer-events: none;
   z-index: 0;
 }
-.gridCell { border-radius: 0; }
-.gridCellActive { background: #00bb77; opacity: .06; border-radius: 0; }
+.gridCell { border-radius: 2px; }
+.gridCellActive { background: #00bb77; border-radius: 2px; }
 .card h3 { font-size: 18px; font-weight: var(--u-weight-regular); color: #fff; margin: 0 0 10px; }
 .card p { font-size: 14px; line-height: var(--u-leading-body); color: var(--u-text-muted); margin: 0; }
 .ic {
