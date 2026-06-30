@@ -1,5 +1,7 @@
 node_modules/
 .next/
-.env*.local
+public-site/.next/
+public-site/out/
+public-site/node_modules/
 *.tsbuildinfo
-out/
+.env*.local

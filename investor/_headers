@@ -1,0 +1,16 @@
+# Investor surface — invest.unlockdd.com / dd.unlockdd.com
+# noindex at the HTTP layer (covers non-HTML assets too), plus security headers.
+
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Cache-Control: no-store
+
+# NOTE on Content-Security-Policy:
+# A strict CSP is good hardening but must be tuned to YOUR actual asset/font/
+# analytics origins or it will silently break rendering. Add one once you know
+# them, e.g. (loosen as needed):
+#   Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'

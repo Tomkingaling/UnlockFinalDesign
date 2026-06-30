@@ -1,0 +1,5 @@
+# Investor surface (invest.unlockdd.com / dd.unlockdd.com)
+# Financial promotion content. Not for public indexing.
+
+User-agent: *
+Disallow: /

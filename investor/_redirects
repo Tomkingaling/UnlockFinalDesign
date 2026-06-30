@@ -1,0 +1,8 @@
+# INVESTOR SURFACE redirects (invest.unlockdd.com / dd.unlockdd.com)
+#
+# Most access control is handled by functions/_middleware.js (the self-cert
+# gate). Use this file only for content-path moves WITHIN the investor surface
+# — e.g. if you rename a gated page.
+#
+# Example:
+# /old-dd-page    /gated/dd-page    301
