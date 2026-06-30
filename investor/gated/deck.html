@@ -80,21 +80,21 @@
     padding:80px 80px 100px;position:relative;z-index:2;
   }
 
-  /* entrances */
-  .anim{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s var(--u-ease)}
-  .section.visible .anim{opacity:1;transform:none}
-  .section.visible .d1{transition-delay:.08s}
-  .section.visible .d2{transition-delay:.18s}
-  .section.visible .d3{transition-delay:.30s}
-  .section.visible .d4{transition-delay:.42s}
-  .section.visible .d5{transition-delay:.54s}
-  .section.visible .d6{transition-delay:.66s}
+  /* entrances — DS u-reveal (transform-only, never opacity:0) */
+  .anim{animation:none}
+  .section.visible .anim{animation:u-reveal var(--u-dur-reveal) var(--u-ease) both}
+  .section.visible .d1{animation-delay:.08s}
+  .section.visible .d2{animation-delay:.18s}
+  .section.visible .d3{animation-delay:.30s}
+  .section.visible .d4{animation-delay:.42s}
+  .section.visible .d5{animation-delay:.54s}
+  .section.visible .d6{animation-delay:.66s}
 
   /* ---------- slide content patterns ---------- */
   .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--u-green);font-size:13px;
     font-weight:var(--u-weight-medium);letter-spacing:.28em;text-transform:uppercase;margin:0 0 30px}
-  h2.disp{font-size:clamp(36px,4.4vw,56px);line-height:1.1;letter-spacing:-.015em;max-width:21ch}
-  .lead{font-size:clamp(17px,1.8vw,22px);line-height:1.55;color:var(--u-text-muted);max-width:56ch;margin:24px 0 0}
+  h2.disp{font-size:var(--u-type-section);line-height:var(--u-leading-section);letter-spacing:var(--u-tracking-section);max-width:21ch}
+  .lead{font-size:var(--u-type-lead);line-height:var(--u-leading-body);color:var(--u-text-muted);max-width:56ch;margin:24px 0 0}
   .lead b{color:#fff;font-weight:var(--u-weight-regular)}
   .foot{margin-top:auto;padding-top:32px;font-size:14px;color:var(--u-text-faint);line-height:1.6;max-width:90ch}
   .foot b{color:var(--u-text-muted);font-weight:var(--u-weight-regular)}
@@ -119,7 +119,7 @@
   /* stats */
   .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px}
   .stat{border-top:1px solid var(--u-green-line);padding-top:24px}
-  .stat .v{font-size:clamp(48px,5.5vw,68px);font-weight:var(--u-weight-light);letter-spacing:-.02em;line-height:1;
+  .stat .v{font-size:var(--u-type-stat);font-weight:var(--u-weight-light);letter-spacing:-.02em;line-height:1;
     background:linear-gradient(135deg,var(--u-green),rgba(0,187,119,.55));-webkit-background-clip:text;
     background-clip:text;-webkit-text-fill-color:transparent}
   .stat .l{font-size:16px;color:var(--u-text-muted);margin:14px 0 0;line-height:1.5;max-width:30ch}
@@ -132,10 +132,10 @@
   .tag{font-size:12px;letter-spacing:.03em;text-transform:uppercase;padding:2px 8px;white-space:nowrap}
   .tag.ok{color:var(--u-green);background:var(--u-green-fill-strong)}
   .tag.amber{color:var(--u-amber);background:rgba(245,158,11,.1)}
-  .tag.red{color:#f87171;background:rgba(239,68,68,.1)}
+  .tag.red{color:var(--u-red);background:rgba(239,68,68,.1)}
 
   /* asset-load table */
-  .ltable{width:100%;border-collapse:collapse;font-size:17px;margin-top:8px}
+  .ltable{width:100%;border-collapse:collapse;font-size:var(--u-type-body);margin-top:8px}
   .ltable td{padding:14px 4px;border-bottom:1px solid var(--u-hairline);color:var(--u-text-muted)}
   .ltable td:first-child{color:#fff}
   .ltable td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;color:#fff;width:160px}
@@ -194,12 +194,12 @@
     padding:36px;border-radius:0;border:1px solid var(--u-border);background:rgba(255,255,255,.03)}
   .eis .out .ok{font-size:15px;color:var(--u-text-muted);margin:0 0 8px}
   .eis .out .ov{font-size:46px;font-weight:var(--u-weight-light);letter-spacing:-.015em}
-  .eis .out.cost .ov{color:#fff} .eis .out.loss .ov{color:#f87171} .eis .out.exit .ov{color:var(--u-green)}
+  .eis .out.cost .ov{color:#fff} .eis .out.loss .ov{color:var(--u-red)} .eis .out.exit .ov{color:var(--u-green)}
 
   /* ---------- cover / mission ---------- */
   .cover-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;
     min-height:calc(100vh - var(--chrome-h) - var(--risk-h));padding:80px}
-  .cover-inner h1{font-size:clamp(46px,6vw,70px);line-height:1.06;letter-spacing:-.02em;max-width:14ch}
+  .cover-inner h1{font-size:var(--u-type-display);line-height:var(--u-leading-display);letter-spacing:var(--u-tracking-display);max-width:14ch}
   .cover-inner .roi{font-family:var(--u-font-serif);font-size:20px;color:var(--u-text-muted);
     letter-spacing:.02em;margin:0 0 22px}
   .cover-inner .roi b{color:var(--u-green);font-weight:400}
@@ -228,8 +228,8 @@
   /* ---------- closing section ---------- */
   .close-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;min-height:calc(100vh - var(--chrome-h) - var(--risk-h));padding:80px;position:relative;z-index:2}
-  .close-inner h1{font-size:clamp(42px,5.5vw,66px);line-height:1.05;letter-spacing:-.02em;max-width:18ch}
-  .close-inner .sub{font-size:clamp(16px,1.8vw,21px);color:var(--u-text-muted);max-width:54ch;
+  .close-inner h1{font-size:var(--u-type-display);line-height:var(--u-leading-display);letter-spacing:var(--u-tracking-display);max-width:18ch}
+  .close-inner .sub{font-size:var(--u-type-lead);color:var(--u-text-muted);max-width:54ch;
     margin:26px auto 0;line-height:1.55}
   .close-inner .contact{margin-top:36px;font-size:16px;color:var(--u-text-faint)}
   .close-inner .roi{font-family:var(--u-font-serif);margin-top:48px;font-size:20px;color:var(--u-text-muted)}
@@ -275,7 +275,7 @@
   #gate .restricted{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.18em;
     text-transform:uppercase;color:var(--u-amber);margin:0 0 26px}
   #gate .restricted svg{width:14px;height:14px}
-  #gate h1{font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.015em;margin:0 0 18px}
+  #gate h1{font-size:var(--u-type-section-sm);line-height:var(--u-leading-section);letter-spacing:var(--u-tracking-section);margin:0 0 18px}
   #gate .intro{font-size:16px;color:var(--u-text-muted);line-height:1.6;margin:0 0 30px}
   #gate .opt{display:block;padding:20px 22px;border:1px solid var(--u-border-strong);margin-bottom:10px;
     cursor:pointer;transition:all .22s var(--u-ease);border-radius:0}
@@ -374,7 +374,7 @@
         <div class="anim">
           <p class="roi" style="font-family:var(--u-font-serif);font-size:20px;color:var(--u-text-muted);letter-spacing:.02em;margin:0 0 22px"><b style="color:var(--u-green);font-weight:400">R</b>eturn <b style="color:var(--u-green);font-weight:400">O</b>n <b style="color:var(--u-green);font-weight:400">I</b>ntelligence</p>
           <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--u-text-faint);margin:0 0 26px">Founding round 2026 · EIS + SEIS · KIC-confirmed</p>
-          <h1 style="font-size:clamp(46px,6vw,70px);line-height:1.06;letter-spacing:-.02em;max-width:14ch">Built to be one of the 1 in 10 that deliver <span class="grad">10×+</span>.</h1>
+          <h1 style="font-size:var(--u-type-hero);line-height:var(--u-leading-display);letter-spacing:var(--u-tracking-display);max-width:14ch">Built to be one of the 1 in 10 that deliver <span class="grad">10×+</span>.</h1>
           <p class="lead" style="margin-top:28px"><b>This is not a build round.</b> The platform exists, the tools are in use, and development was founder-funded. This round funds growth, not invention. Most early-stage companies don't make it — Unlock is built to be one that does, and the EIS/SEIS structure is designed to soften the cost if it isn't.</p>
           <p style="margin-top:32px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--u-text-faint)">↓ scroll · ↑↓ arrows · side menu</p>
         </div>
@@ -414,7 +414,7 @@
         </div>
         <div class="anim d5" style="display:flex;align-items:flex-end;gap:44px;margin-top:40px;flex-wrap:wrap">
           <div>
-            <div style="font-size:clamp(48px,6vw,68px);font-weight:300;color:var(--u-green);line-height:1">75%</div>
+            <div style="font-size:var(--u-type-stat);font-weight:var(--u-weight-light);color:var(--u-green);line-height:1">75%</div>
             <p style="font-size:15px;color:var(--u-text-muted);margin:12px 0 0;max-width:42ch">of typical UK household wealth sits in just two assets — property &amp; pension. The concentration most investors never see.</p>
           </div>
           <div style="flex:1;min-width:260px;max-width:500px">
@@ -494,7 +494,7 @@
           <div class="stat"><div class="v">600k</div><div class="l">behavioural-match lookalikes · our targeting tier</div></div>
           <div class="stat"><div class="v">1.6M</div><div class="l">broader universe for scale</div></div>
         </div>
-        <p class="foot anim d3" style="font-size:17px;max-width:none;color:var(--u-text-muted)"><b style="color:#fff">You couldn't buy this data — it isn't for sale.</b> Paired with an AI-native 23-agent workforce that scales with compute, not headcount. Conflict-free, subscription-only, HNW — a quadrant no incumbent occupies. We're disrupting UK HNW wealth management (£3T+ of assets, 2.6M UK HNWIs) the way Amazon, Airbnb and Uber took theirs — by becoming the default.</p>
+        <p class="foot anim d3" style="font-size:var(--u-type-body);max-width:none;color:var(--u-text-muted)"><b style="color:#fff">You couldn't buy this data — it isn't for sale.</b> Paired with an AI-native 23-agent workforce that scales with compute, not headcount. Conflict-free, subscription-only, HNW — a quadrant no incumbent occupies. We're disrupting UK HNW wealth management (£3T+ of assets, 2.6M UK HNWIs) the way Amazon, Airbnb and Uber took theirs — by becoming the default.</p>
       </div>
     </section>
 
@@ -534,8 +534,8 @@
         <div style="display:flex;gap:56px;margin-top:36px;align-items:center;flex-wrap:wrap">
           <div class="anim d2" style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:28px">
             <div class="stat" style="border-color:var(--u-green)"><div class="v">£1B+/yr</div><div class="l">TAM · ~600,000 liquid millionaires</div></div>
-            <div class="stat"><div class="v" style="font-size:clamp(36px,4.5vw,54px)">£200M+/yr</div><div class="l">SAM · ~180,000 self-directed HNW</div></div>
-            <div class="stat"><div class="v" style="font-size:clamp(36px,4.5vw,54px)">~3% of SAM</div><div class="l">SOM by Year 5 · 5,000 → target 45,000 subscribers</div></div>
+            <div class="stat"><div class="v" style="font-size:var(--u-type-section-sm)">£200M+/yr</div><div class="l">SAM · ~180,000 self-directed HNW</div></div>
+            <div class="stat"><div class="v" style="font-size:var(--u-type-section-sm)">~3% of SAM</div><div class="l">SOM by Year 5 · 5,000 → target 45,000 subscribers</div></div>
           </div>
           <div class="circles anim d3">
             <div class="ring r1"><span>TAM 600k</span></div>
@@ -552,7 +552,7 @@
       <div class="wrapc">
         <p class="eyebrow anim">The case · the structure</p>
         <h2 class="disp anim d1">How SEIS reshapes the bet — model it yourself.</h2>
-        <p class="lead anim d2" style="font-size:clamp(15px,1.6vw,19px);max-width:64ch">Move the ticket size and outcome. Watch what the reliefs do to the downside and the upside, over time.</p>
+        <p class="lead anim d2" style="font-size:var(--u-type-body);max-width:64ch">Move the ticket size and outcome. Watch what the reliefs do to the downside and the upside, over time.</p>
         <div class="eis anim d2">
           <div class="controls">
             <div>
@@ -588,7 +588,7 @@
         <h2 class="disp anim d1">Asymmetric — because the downside is real.</h2>
         <div class="g2 anim d2" style="margin-top:40px">
           <div class="card" style="border-color:rgba(239,68,68,.25)">
-            <h3 style="color:#f87171">If it doesn't work</h3>
+            <h3 style="color:var(--u-red)">If it doesn't work</h3>
             <ul style="margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px">
               <li style="font-size:16px;color:var(--u-text-muted);line-height:1.5">Early-stage, unlisted, illiquid — you can lose your capital.</li>
               <li style="font-size:16px;color:var(--u-text-muted);line-height:1.5">No secondary market, no guaranteed exit.</li>
@@ -616,8 +616,8 @@
         <p class="eyebrow anim">The case · returns &amp; exit</p>
         <h2 class="disp anim d1">Value follows adoption — two horizons.</h2>
         <div class="g2 anim d2" style="margin-top:44px">
-          <div class="card"><span class="pill ok">Plan-case floor</span><div style="font-size:clamp(48px,5.5vw,66px);font-weight:300;color:var(--u-green);line-height:1;margin-bottom:16px">~10×</div><p style="font-size:17px">~5,000 subscribers (~£9.5M ARR) ≈ a class return at an 8× ARR multiple (anchored to Citywire 4–6×, argued up on HNW + conflict-free).</p></div>
-          <div class="card" style="border-color:var(--u-green-line)"><span class="pill ok">Full HNW-addressable</span><div style="font-size:clamp(48px,5.5vw,66px);font-weight:300;color:var(--u-green);line-height:1;margin-bottom:16px">~89×</div><p style="font-size:17px">~45,000 subscribers (~£86M ARR) ≈ ~£687M EV on the founding entry. The plan targets 45,000; 5,000 is the floor for 10×.</p></div>
+          <div class="card"><span class="pill ok">Plan-case floor</span><div style="font-size:var(--u-type-stat);font-weight:var(--u-weight-light);color:var(--u-green);line-height:1;margin-bottom:16px">~10×</div><p style="font-size:var(--u-type-body)">~5,000 subscribers (~£9.5M ARR) ≈ a class return at an 8× ARR multiple (anchored to Citywire 4–6×, argued up on HNW + conflict-free).</p></div>
+          <div class="card" style="border-color:var(--u-green-line)"><span class="pill ok">Full HNW-addressable</span><div style="font-size:var(--u-type-stat);font-weight:var(--u-weight-light);color:var(--u-green);line-height:1;margin-bottom:16px">~89×</div><p style="font-size:var(--u-type-body)">~45,000 subscribers (~£86M ARR) ≈ ~£687M EV on the founding entry. The plan targets 45,000; 5,000 is the floor for 10×.</p></div>
         </div>
         <p class="foot anim d3">Illustrative, <b>not forecasts</b>. 45,000 ≈ 1.7% of the UK's ~2.6M HNW pool; not guaranteed — you could lose all your capital. Buyer universe: Morningstar, LSEG, S&amp;P Global, Bloomberg, FNZ.</p>
       </div>
@@ -641,7 +641,7 @@
             <div><div style="font-size:19px;color:#fff;margin-bottom:4px">Every founding investor gets a Sandbox</div><span class="lbl">Your Sandbox · illustrative</span></div>
             <p class="scn">Scenario — transfer all assets to spouse today</p>
             <div class="row"><span class="k">IHT now</span><span class="vv g">£0</span></div>
-            <div class="row"><span class="k">IHT on 2nd death</span><span class="vv" style="color:#f87171">£412k</span></div>
+            <div class="row"><span class="k">IHT on 2nd death</span><span class="vv" style="color:var(--u-red)">£412k</span></div>
             <div class="row"><span class="k">vs EIS route</span><span class="vv g">£96k</span></div>
           </div>
         </div>
