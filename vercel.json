@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd public-site && npm install && npm run build",
+  "outputDirectory": "public-site/out",
+  "framework": null
+}
