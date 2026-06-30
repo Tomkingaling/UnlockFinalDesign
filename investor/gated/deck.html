@@ -207,10 +207,7 @@
     background-clip:text;-webkit-text-fill-color:transparent}
   .orbit .dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--u-green);
     box-shadow:0 0 14px 2px rgba(0,187,119,.6)}
-  @media(prefers-reduced-motion:no-preference){
-    .orbit .spin{animation:orb 26s linear infinite}
-    @keyframes orb{to{transform:translate(-50%,-50%) rotate(360deg)}}
-  }
+  /* orbit dots: static — no animation */
   .orbit .spin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
   .orbit .spin.s1{width:400px;height:400px} .orbit .spin.s2{width:288px;height:288px}
   .orbit .spin .dot{top:-5px;left:50%;margin-left:-5px}
