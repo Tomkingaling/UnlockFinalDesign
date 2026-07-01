@@ -131,9 +131,10 @@ export default function PlatformPage() {
             <p className={styles.eyebrow}>Portfolio intelligence · for investors managing £1M+</p>
             <h1>Everything you own, finally in one place — and finally making sense.</h1>
             <p className={styles.heroLead}>
-              Your wealth lives across more platforms, wrappers and structures than any single tool
-              was built to handle. Unlock assembles the complete picture — lot-level, tax-aware,
-              continuously checked — so you understand your position <b>before</b> you act, not after.
+              Until now, no single tool could handle wealth spread across multiple platforms,
+              wrappers and structures. Unlock assembles the complete picture, continuously
+              reconciling your holdings at lot level and with full tax awareness, so you
+              understand your position <b>before</b> you act, not after.
             </p>
             <div className={styles.ctarow}>
               <a className={`${styles.btn} ${styles.btnP}`} href="#demo">
