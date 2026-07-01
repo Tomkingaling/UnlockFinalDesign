@@ -99,10 +99,6 @@ export default function PlatformPage() {
 
   return (
     <>
-      <div className={styles.proto}>
-        <b>Prototype</b> · Zone 1 (open product path) · illustrative data · no investment inducement
-      </div>
-
       <nav className={styles.nav}>
         <div className={styles.navin}>
           <div className={styles.navleft}>
