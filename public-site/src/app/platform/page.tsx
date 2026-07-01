@@ -92,8 +92,8 @@ export default function PlatformPage() {
   const regRows = REG.map((r, i) => (
     <tr key={i}>
       <td>
-        <span className="nm">{r.name}</span>
-        {r.sub && <span className="sub">{r.sub}</span>}
+        <span className={styles.nm}>{r.name}</span>
+        {r.sub && <span className={styles.sub}>{r.sub}</span>}
       </td>
       <td>{r.wrapper}</td>
       <td>{r.value}</td>
@@ -201,7 +201,7 @@ export default function PlatformPage() {
                 </thead>
                 <tbody>
                   {regRows}
-                  <tr className="tot">
+                  <tr className={styles.tot}>
                     <td>Total</td><td></td><td>£1,847,320</td><td></td>
                   </tr>
                 </tbody>
@@ -338,13 +338,13 @@ export default function PlatformPage() {
                   <tbody>
                     {REG.slice(0, 4).map((r, i) => (
                       <tr key={i}>
-                        <td><span className="nm">{r.name}</span></td>
+                        <td><span className={styles.nm}>{r.name}</span></td>
                         <td>{r.wrapper}</td>
                         <td>{r.value}</td>
                         <td><span className={`${styles.badge} ${r.green ? styles.badgeG : ''}`}>{r.status}</span></td>
                       </tr>
                     ))}
-                    <tr className="tot"><td>Total</td><td></td><td>£1,847,320</td><td></td></tr>
+                    <tr className={styles.tot}><td>Total</td><td></td><td>£1,847,320</td><td></td></tr>
                   </tbody>
                 </table>
                 <p style={{ fontSize: '11px', color: 'var(--u-text-faint)', marginTop: '12px' }}>All figures illustrative</p>
