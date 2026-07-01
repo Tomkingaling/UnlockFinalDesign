@@ -31,6 +31,13 @@
   letter-spacing: var(--u-tracking-button); text-decoration: none;
 }
 .navCta:hover { box-shadow: var(--u-shadow-cta); }
+.navright { display: flex; align-items: center; gap: 18px; }
+.navToggle {
+  display: none; background: none; border: none; padding: 4px;
+  color: var(--u-text-muted); cursor: pointer; align-items: center; justify-content: center;
+}
+.navToggle:hover { color: var(--u-text); }
+.navToggle:focus-visible { outline: 1px solid var(--u-green); outline-offset: 2px; }
 
 /* hero */
 .hero {
@@ -270,5 +277,34 @@
 }
 @media (max-width: 620px) {
   .grid3,.tiers,.team,.tools { grid-template-columns: 1fr; }
-  .navlinks { display: none; }
+  .navToggle { display: flex; }
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--u-hairline);
+    padding: 4px 0;
+  }
+  .navlinksOpen { display: flex; }
+  .navlinks li {
+    padding: 15px var(--u-gutter);
+    border-bottom: 1px solid var(--u-border);
+  }
+  .navlinks li:last-child { border-bottom: none; }
+
+  .dashBody { padding: 16px; }
+  .regTable { table-layout: fixed; font-size: 11px; }
+  .regTable th:nth-child(1), .regTable td:nth-child(1) { width: 32%; }
+  .regTable th:nth-child(2), .regTable td:nth-child(2) { width: 18%; }
+  .regTable th:nth-child(3), .regTable td:nth-child(3) { width: 24%; }
+  .regTable th:nth-child(4), .regTable td:nth-child(4) { width: 26%; }
+  .regTable th { padding: 8px 4px; font-size: 8.5px; }
+  .regTable td { padding: 10px 4px; }
+  .badge { font-size: 9px; padding: 2px 5px; white-space: normal; line-height: 1.3; }
 }

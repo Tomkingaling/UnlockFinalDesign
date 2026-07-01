@@ -1,5 +1,8 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import { Check, User, Layers, Search } from 'lucide-react';
+import { Check, User, Layers, Search, Menu, X } from 'lucide-react';
 import styles from './platform.module.css';
 
 // Exact "default" pattern from gridPulsePatterns.ts — 8 active cells
@@ -85,6 +88,7 @@ const TEAM = [
 ];
 
 export default function PlatformPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const regRows = REG.map((r, i) => (
     <tr key={i}>
       <td>
@@ -106,7 +110,11 @@ export default function PlatformPage() {
               <img src="/assets/unlock-white.svg" alt="Unlock" />
               <span className={styles.dot}>.</span>
             </Link>
-            <ul className={styles.navlinks}>
+            <ul
+              id="platform-nav-menu"
+              className={`${styles.navlinks} ${menuOpen ? styles.navlinksOpen : ''}`}
+              onClick={() => setMenuOpen(false)}
+            >
               <li><Link href="/">Home</Link></li>
               <li className={styles.cur}>Platform</li>
               <li><a href="#how">How it works</a></li>
@@ -115,7 +123,19 @@ export default function PlatformPage() {
               <li><Link href="/investors">Investors</Link></li>
             </ul>
           </div>
-          <a className={styles.navCta} href="#demo">Book a demo</a>
+          <div className={styles.navright}>
+            <a className={styles.navCta} href="#demo">Book a demo</a>
+            <button
+              type="button"
+              className={styles.navToggle}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="platform-nav-menu"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </nav>
 
