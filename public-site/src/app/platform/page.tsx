@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Check, User, Layers, Search, Menu, X } from 'lucide-react';
 import styles from './platform.module.css';
@@ -87,8 +87,38 @@ const TEAM = [
   ['TV', 'Tony Vine-Lott — Commercial Strategy Adviser', 'Founder of Barclays Stockbrokers. Former Director General of TISA. Founding investor.'],
 ];
 
+const CALENDLY_URL = 'https://calendly.com/tom-unlockdd/30min';
+
+function openCalendly(e: React.MouseEvent) {
+  e.preventDefault();
+  const calendly = (window as unknown as { Calendly?: { initPopupWidget: (opts: { url: string }) => void } }).Calendly;
+  if (calendly) {
+    calendly.initPopupWidget({ url: CALENDLY_URL });
+  } else {
+    window.open(CALENDLY_URL, '_blank');
+  }
+}
+
 export default function PlatformPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(link);
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const regRows = REG.map((r, i) => (
     <tr key={i}>
       <td>
@@ -288,7 +318,7 @@ export default function PlatformPage() {
         <div className={styles.wrap} style={{ maxWidth: '640px' }}>
           <h2>See it with a real portfolio in 20 minutes.</h2>
           <p>Core tools live, others in active development. Illustrative data, no commitment.</p>
-          <a className={`${styles.btn} ${styles.btnP}`} href="https://calendly.com/tom-unlockdd/unlock-demo">
+          <a className={`${styles.btn} ${styles.btnP}`} href={CALENDLY_URL} onClick={openCalendly}>
             Book a demo <span>→</span>
           </a>
         </div>
@@ -422,7 +452,7 @@ export default function PlatformPage() {
                   ))}
                 </ul>
                 {t.cta === 'Book a demo' ? (
-                  <a className={styles.tierBtn} href="https://calendly.com/tom-unlockdd/unlock-demo" target="_blank" rel="noopener noreferrer">{t.cta}</a>
+                  <a className={styles.tierBtn} href={CALENDLY_URL} onClick={openCalendly}>{t.cta}</a>
                 ) : (
                   <a className={styles.tierBtn} href="#demo">{t.cta}</a>
                 )}

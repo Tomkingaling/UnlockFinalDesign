@@ -6,7 +6,9 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Unlock — Live Investor Walkthrough</title>
 <link rel="stylesheet" href="/investors/styles.css">
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -338,7 +340,7 @@
     </div>
     <div class="r">
       <button class="reset" onclick="certReset()">Certified · reset</button>
-      <button class="book" onclick="window.open('https://calendly.com/tom-unlockdd/unlock-demo','_blank')">Book a call</button>
+      <button class="book" onclick="Calendly.initPopupWidget({url:'https://calendly.com/tom-unlockdd/30min'})">Book a call</button>
     </div>
   </div>
 
@@ -347,7 +349,7 @@
     <div id="sideList"></div>
     <div id="sideFooter">
       <div id="sideCounter">1 of 15</div>
-      <button class="side-book" onclick="window.open('https://calendly.com/tom-unlockdd/unlock-demo','_blank')">Book a call</button>
+      <button class="side-book" onclick="Calendly.initPopupWidget({url:'https://calendly.com/tom-unlockdd/30min'})">Book a call</button>
     </div>
   </nav>
 
@@ -644,7 +646,7 @@
         <p class="eyebrow ">Close</p>
         <h1>One conversation is all it takes.</h1>
         <p class="sub ">Discovery call (20 min) → platform demo with your own asset classes (30 min) → reserve your allocation via SeedLegals. No commitment at the call stage.</p>
-        <button class="u-cta " style="margin-top:36px" onclick="window.open('https://calendly.com/tom-unlockdd/unlock-demo','_blank')">Book a discovery call</button>
+        <button class="u-cta " style="margin-top:36px" onclick="Calendly.initPopupWidget({url:'https://calendly.com/tom-unlockdd/30min'})">Book a discovery call</button>
         <p class="contact ">tom@unlockdd.com · unlockdd.com</p>
         <p class="roi "><b>R</b>eturn <b>O</b>n <b>I</b>ntelligence</p>
       </div>
