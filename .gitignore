@@ -5,3 +5,5 @@ public-site/out/
 public-site/node_modules/
 *.tsbuildinfo
 .env*.local
+
+.worktrees/
