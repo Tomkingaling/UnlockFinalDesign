@@ -1,5 +1,6 @@
 // public-site/src/app/learn/[topic]/page.tsx
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   LEARN_TOPIC_ORDER,
@@ -40,17 +41,17 @@ export default async function LearnTopicPage({
     <>
       <div className={styles.nav}>
         <div className={styles.navin}>
-          <span className={styles.brand}>
-            <img src="/assets/unlock-logo-white.svg" alt="Unlock" />
+          <Link className={styles.brand} href="/">
+            <img src="/assets/unlock-white.svg" alt="Unlock" />
             <span className={styles.dot}>.</span>
-          </span>
+          </Link>
           <span className={styles.related}>
             {LEARN_TOPIC_ORDER.map((slug) => {
               const t = LEARN_TOPICS[slug];
               return slug === entry.slug ? (
-                <a key={slug} className={styles.current} href="#">
+                <span key={slug} className={styles.current}>
                   {t.navLabel}
-                </a>
+                </span>
               ) : (
                 <a key={slug} href={`/learn/${slug}`}>
                   {t.navLabel}
@@ -69,15 +70,15 @@ export default async function LearnTopicPage({
         {entry.sections.map((section) => (
           <div key={section.heading}>
             <h2 className={styles.sectionHeading}>{section.heading}</h2>
-            {section.paragraphs.map((paragraph) => (
-              <p key={paragraph} className={styles.body}>
+            {section.paragraphs.map((paragraph, i) => (
+              <p key={`${section.heading}-p-${i}`} className={styles.body}>
                 {paragraph}
               </p>
             ))}
             {section.list && (
               <ul className={styles.list}>
-                {section.list.map((item) => (
-                  <li key={item.text}>
+                {section.list.map((item, i) => (
+                  <li key={`${section.heading}-li-${i}`}>
                     {item.term && <b>{item.term} </b>}
                     {item.text}
                   </li>

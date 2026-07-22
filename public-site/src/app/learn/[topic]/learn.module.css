@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(26, 26, 26, 0.92);
+  background: rgba(26, 26, 26, 0.92); /* 26,26,26 = --u-bg-deepest (#1a1a1a); no rgb-channel token exists for alpha compositing */
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--u-hairline);
   height: var(--u-nav-height);
@@ -23,6 +23,7 @@
 .brand {
   display: inline-flex;
   align-items: baseline;
+  text-decoration: none;
 }
 .brand img {
   height: 18px;
