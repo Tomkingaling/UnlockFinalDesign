@@ -18,7 +18,6 @@ export type ContentCardData = {
 
 export type ProspectBrief = {
   firstName: string;
-  callDate: string;
   greetingHeading: string;
   leadParagraphs: string[];
   sectionBlockLabel: string;
@@ -36,7 +35,6 @@ export type ProspectBrief = {
 export const PROSPECT_BRIEFS: Record<string, ProspectBrief> = {
   allanb: {
     firstName: "Allan",
-    callDate: "this afternoon",
     greetingHeading: "a few things ahead of this afternoon",
     leadParagraphs: [
       "Thanks again for the time on 14 July, good to hear the walkthrough gave you a useful general outlook of the platform.",
@@ -79,7 +77,6 @@ export const PROSPECT_BRIEFS: Record<string, ProspectBrief> = {
   },
   alvink: {
     firstName: "Alvin",
-    callDate: "Wednesday",
     greetingHeading: "a few things ahead of Wednesday",
     leadParagraphs: [
       "Thanks for the time on our call, and for the good questions, especially on the fee side, that's exactly the kind of thing worth being upfront about.",

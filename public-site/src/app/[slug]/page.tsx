@@ -60,12 +60,15 @@ export default async function ProspectPage({
           <ContentCard key={card.heading} {...card} />
         ))}
 
-        {brief.foundingInvestorLeadNote && (
-          <div className={styles.leadNote}>
-            <b>{brief.foundingInvestorLeadNote.split(":")[0]}:</b>
-            {brief.foundingInvestorLeadNote.split(":").slice(1).join(":")}
-          </div>
-        )}
+        {brief.foundingInvestorLeadNote && (() => {
+          const [label, ...rest] = brief.foundingInvestorLeadNote.split(":");
+          return (
+            <div className={styles.leadNote}>
+              <b>{label}:</b>
+              {rest.join(":")}
+            </div>
+          );
+        })()}
 
         <h2 className={styles.blockLabel}>The Founding Investor Programme</h2>
         <ContentCard
@@ -87,9 +90,7 @@ export default async function ProspectPage({
         </ul>
         <p className={styles.lead}>{brief.nextCallClosing}</p>
         {brief.footnote && (
-          <p className={styles.lead} style={{ fontSize: 13, color: "var(--u-text-faint)" }}>
-            {brief.footnote}
-          </p>
+          <p className={`${styles.lead} ${styles.footnote}`}>{brief.footnote}</p>
         )}
 
         <div className={styles.signoff}>

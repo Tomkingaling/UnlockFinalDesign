@@ -14,7 +14,7 @@
 .navin {
   display: flex;
   align-items: center;
-  max-width: 760px;
+  max-width: 760px; /* 760px per the approved personal-page mockups — wider than /learn's 720px (--u-container-narrow) by design */
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--u-gutter);
@@ -60,6 +60,10 @@
 .lead b {
   color: var(--u-text);
   font-weight: var(--u-weight-medium);
+}
+.footnote {
+  font-size: 13px;
+  color: var(--u-text-faint);
 }
 .card {
   background: var(--u-surface);
