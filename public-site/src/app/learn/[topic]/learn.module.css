@@ -1,0 +1,121 @@
+/* public-site/src/app/learn/[topic]/learn.module.css */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(26, 26, 26, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--u-hairline);
+  height: var(--u-nav-height);
+  display: flex;
+  align-items: center;
+}
+.navin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--u-container-narrow);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--u-gutter);
+}
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+}
+.brand img {
+  height: 18px;
+  width: auto;
+  display: block;
+}
+.dot {
+  color: var(--u-green);
+  font-size: 19px;
+  line-height: 0;
+  transform: translateX(-9px);
+}
+.related {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--u-text-faint);
+}
+.related a {
+  color: var(--u-text-faint);
+}
+.related a.current {
+  color: var(--u-green);
+}
+.main {
+  max-width: var(--u-container-narrow);
+  margin: 0 auto;
+  padding: 56px var(--u-gutter) 40px;
+}
+.kicker {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--u-green);
+  margin-bottom: 16px;
+}
+.title {
+  font-family: var(--u-font-display);
+  font-weight: var(--u-weight-light);
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+}
+.lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--u-text-muted);
+  margin: 0 0 40px;
+}
+.sectionHeading {
+  font-size: 20px;
+  font-weight: var(--u-weight-medium);
+  margin: 40px 0 14px;
+}
+.body {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--u-text-muted);
+  margin: 0 0 14px;
+}
+.list {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+.list li {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--u-text-muted);
+  margin-bottom: 8px;
+}
+.list li b {
+  color: var(--u-text);
+}
+.divider {
+  height: 1px;
+  background: var(--u-hairline);
+  margin: 44px 0;
+}
+.closingNote {
+  font-size: 13px;
+  color: var(--u-text-muted);
+}
+.footer {
+  border-top: 1px solid var(--u-hairline);
+  margin-top: 12px;
+  padding: 22px var(--u-gutter) 44px;
+  max-width: var(--u-container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer p {
+  font-size: 11px;
+  color: var(--u-text-footer);
+  line-height: 1.6;
+}
