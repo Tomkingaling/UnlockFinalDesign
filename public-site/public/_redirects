@@ -1,0 +1,4 @@
+# Root is a real 301 at the Cloudflare edge, so crawlers follow it without
+# executing JavaScript. The redirect() in src/app/page.tsx only works in a
+# browser (static export has no server), which left / returning HTTP 200.
+/    /platform/    301
