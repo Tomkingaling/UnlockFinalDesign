@@ -7,12 +7,13 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://unlockdd.com"),
+  alternates: { canonical: "/" },
   title: TITLE,
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/platform/",
+    url: "/",
     siteName: "Unlock",
     locale: "en_GB",
     type: "website",
