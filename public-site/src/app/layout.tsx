@@ -6,7 +6,7 @@ const DESCRIPTION =
   "Portfolio intelligence for UK investors with £1M+. Unlock reconciles every holding at lot level with full tax awareness — so you see your position before you act.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.unlockdd.com"),
+  metadataBase: new URL("https://unlockdd.com"),
   title: TITLE,
   description: DESCRIPTION,
   openGraph: {

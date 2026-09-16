@@ -1,6 +1,6 @@
 import type { SignatureEntry } from "@/data/signatures";
 
-const LOGO_URL = "https://www.unlockdd.com/assets/unlock-black.png";
+const LOGO_URL = "https://unlockdd.com/assets/unlock-black.png";
 const GREEN = "#00bb77";
 const INK = "#1a1a1a";
 const MUTED = "#555555";
